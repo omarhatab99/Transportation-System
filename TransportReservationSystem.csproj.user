@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Dialog\FrmConfirmationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Dialog\FrmValidationDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmAlert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmDashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmDriverCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmDrivers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmOverlay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmPassengers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmRegister.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmReservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\FrmUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Vehicles\FrmVehicleCrud.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Vehicles\FrmVehicles.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="RJControls\RJButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="RJControls\RJRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="RJControls\RJToggleButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="Rows\UCDriver.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Rows\UCVehicle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>
