@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Data.Context;
+using TransportReservationSystem.Pages.Passengers;
 
 namespace TransportReservationSystem.Dialog
 {
@@ -75,7 +76,29 @@ namespace TransportReservationSystem.Dialog
                     frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
                 }
             }
-           
+            else if (Collection == "PASSENGER")
+            {
+
+                Passenger passenger = applicaitonDbContext.Passengers.FirstOrDefault(x => x.Id == Id)!;
+                try
+                {
+
+                    applicaitonDbContext.Passengers.Remove(passenger);
+                    applicaitonDbContext.SaveChanges();
+
+                    FrmPassengers frmPassengers = new FrmPassengers();
+
+                    LoadForm(frmPassengers);
+
+                    this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                    frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
+                }
+            }
         }
 
 

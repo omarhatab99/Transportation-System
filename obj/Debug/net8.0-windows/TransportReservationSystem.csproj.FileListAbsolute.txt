@@ -259,7 +259,6 @@ G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSys
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmLogin.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmMain.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.FrmOverlay.resources
-G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmPassengers.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.FrmRegister.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmReservations.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmUsers.resources
@@ -279,3 +278,8 @@ G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSys
 G:\Transportation-System-master\obj\Debug\net8.0-windows\ref\TransportReservationSystem.dll
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCVehicle.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Vehicles.FrmVehicleCrud.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.sourcelink.json
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Passengers.FrmPassengers.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCPassenger.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Passengers.FrmPassengerCrud.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmTrips.resources

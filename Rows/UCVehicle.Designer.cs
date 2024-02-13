@@ -34,52 +34,155 @@
             deleteToolStripMenuItem = new ToolStripMenuItem();
             tripsToolStripMenuItem = new ToolStripMenuItem();
             toggleStatusVehicleToolStripMenuItem = new ToolStripMenuItem();
-            tableLayoutPanel1 = new TableLayoutPanel();
-            LblAvailable = new Label();
-            LblBrand = new Label();
-            LblModel = new Label();
-            LblCategory = new Label();
-            LblLicensePlate = new Label();
             panel1 = new Panel();
-            EditBtn = new CustomControls.RJControls.RJButton();
             DeleteBtn = new CustomControls.RJControls.RJButton();
+            EditBtn = new CustomControls.RJControls.RJButton();
+            LblLicensePlate = new Label();
+            LblCategory = new Label();
+            LblModel = new Label();
+            LblBrand = new Label();
+            LblAvailable = new Label();
+            tableLayoutPanel1 = new TableLayoutPanel();
             contextMenuStrip1.SuspendLayout();
-            tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, tripsToolStripMenuItem, toggleStatusVehicleToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(181, 114);
+            contextMenuStrip1.Size = new Size(145, 92);
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(180, 22);
+            editToolStripMenuItem.Size = new Size(144, 22);
             editToolStripMenuItem.Text = "Edit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(180, 22);
+            deleteToolStripMenuItem.Size = new Size(144, 22);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // tripsToolStripMenuItem
             // 
             tripsToolStripMenuItem.Name = "tripsToolStripMenuItem";
-            tripsToolStripMenuItem.Size = new Size(180, 22);
+            tripsToolStripMenuItem.Size = new Size(144, 22);
             tripsToolStripMenuItem.Text = "Trips";
             // 
             // toggleStatusVehicleToolStripMenuItem
             // 
             toggleStatusVehicleToolStripMenuItem.Name = "toggleStatusVehicleToolStripMenuItem";
-            toggleStatusVehicleToolStripMenuItem.Size = new Size(180, 22);
+            toggleStatusVehicleToolStripMenuItem.Size = new Size(144, 22);
             toggleStatusVehicleToolStripMenuItem.Text = "Toggle Status";
             toggleStatusVehicleToolStripMenuItem.Click += toggleStatusVehicleToolStripMenuItem_Click_1;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(EditBtn);
+            panel1.Controls.Add(DeleteBtn);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(704, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(153, 43);
+            panel1.TabIndex = 5;
+            // 
+            // DeleteBtn
+            // 
+            DeleteBtn.BackColor = Color.FromArgb(192, 0, 0);
+            DeleteBtn.BackgroundColor = Color.FromArgb(192, 0, 0);
+            DeleteBtn.BorderColor = Color.PaleVioletRed;
+            DeleteBtn.BorderRadius = 4;
+            DeleteBtn.BorderSize = 0;
+            DeleteBtn.FlatAppearance.BorderSize = 0;
+            DeleteBtn.FlatStyle = FlatStyle.Flat;
+            DeleteBtn.ForeColor = Color.White;
+            DeleteBtn.Location = new Point(83, 9);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(56, 25);
+            DeleteBtn.TabIndex = 0;
+            DeleteBtn.Text = "Delete";
+            DeleteBtn.TextColor = Color.White;
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
+            // 
+            // EditBtn
+            // 
+            EditBtn.BackColor = Color.FromArgb(255, 128, 0);
+            EditBtn.BackgroundColor = Color.FromArgb(255, 128, 0);
+            EditBtn.BorderColor = Color.PaleVioletRed;
+            EditBtn.BorderRadius = 4;
+            EditBtn.BorderSize = 0;
+            EditBtn.FlatAppearance.BorderSize = 0;
+            EditBtn.FlatStyle = FlatStyle.Flat;
+            EditBtn.ForeColor = Color.White;
+            EditBtn.Location = new Point(21, 9);
+            EditBtn.Name = "EditBtn";
+            EditBtn.Size = new Size(56, 25);
+            EditBtn.TabIndex = 1;
+            EditBtn.Text = "Edit";
+            EditBtn.TextColor = Color.White;
+            EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
+            // 
+            // LblLicensePlate
+            // 
+            LblLicensePlate.AutoSize = true;
+            LblLicensePlate.Dock = DockStyle.Fill;
+            LblLicensePlate.Location = new Point(3, 0);
+            LblLicensePlate.Name = "LblLicensePlate";
+            LblLicensePlate.Size = new Size(133, 49);
+            LblLicensePlate.TabIndex = 0;
+            LblLicensePlate.Text = "Licenece Plate";
+            LblLicensePlate.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LblCategory
+            // 
+            LblCategory.AutoSize = true;
+            LblCategory.Dock = DockStyle.Fill;
+            LblCategory.Location = new Point(142, 0);
+            LblCategory.Name = "LblCategory";
+            LblCategory.Size = new Size(139, 49);
+            LblCategory.TabIndex = 1;
+            LblCategory.Text = "Category";
+            LblCategory.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LblModel
+            // 
+            LblModel.AutoSize = true;
+            LblModel.Dock = DockStyle.Fill;
+            LblModel.Location = new Point(287, 0);
+            LblModel.Name = "LblModel";
+            LblModel.Size = new Size(133, 49);
+            LblModel.TabIndex = 2;
+            LblModel.Text = "Model";
+            LblModel.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LblBrand
+            // 
+            LblBrand.AutoSize = true;
+            LblBrand.Dock = DockStyle.Fill;
+            LblBrand.Location = new Point(426, 0);
+            LblBrand.Name = "LblBrand";
+            LblBrand.Size = new Size(133, 49);
+            LblBrand.TabIndex = 3;
+            LblBrand.Text = "Brand";
+            LblBrand.TextAlign = ContentAlignment.MiddleCenter;
+            // 
+            // LblAvailable
+            // 
+            LblAvailable.AutoSize = true;
+            LblAvailable.BackColor = Color.FromArgb(255, 192, 192);
+            LblAvailable.Dock = DockStyle.Fill;
+            LblAvailable.Location = new Point(565, 0);
+            LblAvailable.Name = "LblAvailable";
+            LblAvailable.Size = new Size(133, 49);
+            LblAvailable.TabIndex = 4;
+            LblAvailable.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // tableLayoutPanel1
             // 
@@ -108,109 +211,6 @@
             tableLayoutPanel1.Size = new Size(860, 49);
             tableLayoutPanel1.TabIndex = 5;
             // 
-            // LblAvailable
-            // 
-            LblAvailable.AutoSize = true;
-            LblAvailable.BackColor = Color.FromArgb(255, 192, 192);
-            LblAvailable.Dock = DockStyle.Fill;
-            LblAvailable.Location = new Point(565, 0);
-            LblAvailable.Name = "LblAvailable";
-            LblAvailable.Size = new Size(133, 49);
-            LblAvailable.TabIndex = 4;
-            LblAvailable.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // LblBrand
-            // 
-            LblBrand.AutoSize = true;
-            LblBrand.Dock = DockStyle.Fill;
-            LblBrand.Location = new Point(426, 0);
-            LblBrand.Name = "LblBrand";
-            LblBrand.Size = new Size(133, 49);
-            LblBrand.TabIndex = 3;
-            LblBrand.Text = "Brand";
-            LblBrand.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // LblModel
-            // 
-            LblModel.AutoSize = true;
-            LblModel.Dock = DockStyle.Fill;
-            LblModel.Location = new Point(287, 0);
-            LblModel.Name = "LblModel";
-            LblModel.Size = new Size(133, 49);
-            LblModel.TabIndex = 2;
-            LblModel.Text = "Model";
-            LblModel.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // LblCategory
-            // 
-            LblCategory.AutoSize = true;
-            LblCategory.Dock = DockStyle.Fill;
-            LblCategory.Location = new Point(142, 0);
-            LblCategory.Name = "LblCategory";
-            LblCategory.Size = new Size(139, 49);
-            LblCategory.TabIndex = 1;
-            LblCategory.Text = "Category";
-            LblCategory.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // LblLicensePlate
-            // 
-            LblLicensePlate.AutoSize = true;
-            LblLicensePlate.Dock = DockStyle.Fill;
-            LblLicensePlate.Location = new Point(3, 0);
-            LblLicensePlate.Name = "LblLicensePlate";
-            LblLicensePlate.Size = new Size(133, 49);
-            LblLicensePlate.TabIndex = 0;
-            LblLicensePlate.Text = "Licenece Plate";
-            LblLicensePlate.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(EditBtn);
-            panel1.Controls.Add(DeleteBtn);
-            panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(704, 3);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(153, 43);
-            panel1.TabIndex = 5;
-            // 
-            // EditBtn
-            // 
-            EditBtn.BackColor = Color.FromArgb(255, 128, 0);
-            EditBtn.BackgroundColor = Color.FromArgb(255, 128, 0);
-            EditBtn.BorderColor = Color.PaleVioletRed;
-            EditBtn.BorderRadius = 4;
-            EditBtn.BorderSize = 0;
-            EditBtn.FlatAppearance.BorderSize = 0;
-            EditBtn.FlatStyle = FlatStyle.Flat;
-            EditBtn.ForeColor = Color.White;
-            EditBtn.Location = new Point(21, 9);
-            EditBtn.Name = "EditBtn";
-            EditBtn.Size = new Size(56, 25);
-            EditBtn.TabIndex = 1;
-            EditBtn.Text = "Edit";
-            EditBtn.TextColor = Color.White;
-            EditBtn.UseVisualStyleBackColor = false;
-            EditBtn.Click += EditBtn_Click;
-            // 
-            // DeleteBtn
-            // 
-            DeleteBtn.BackColor = Color.FromArgb(192, 0, 0);
-            DeleteBtn.BackgroundColor = Color.FromArgb(192, 0, 0);
-            DeleteBtn.BorderColor = Color.PaleVioletRed;
-            DeleteBtn.BorderRadius = 4;
-            DeleteBtn.BorderSize = 0;
-            DeleteBtn.FlatAppearance.BorderSize = 0;
-            DeleteBtn.FlatStyle = FlatStyle.Flat;
-            DeleteBtn.ForeColor = Color.White;
-            DeleteBtn.Location = new Point(83, 9);
-            DeleteBtn.Name = "DeleteBtn";
-            DeleteBtn.Size = new Size(56, 25);
-            DeleteBtn.TabIndex = 0;
-            DeleteBtn.Text = "Delete";
-            DeleteBtn.TextColor = Color.White;
-            DeleteBtn.UseVisualStyleBackColor = false;
-            DeleteBtn.Click += DeleteBtn_Click;
-            // 
             // UCVehicle
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -220,9 +220,9 @@
             Name = "UCVehicle";
             Size = new Size(860, 49);
             contextMenuStrip1.ResumeLayout(false);
+            panel1.ResumeLayout(false);
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
-            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -232,15 +232,15 @@
         private ToolStripMenuItem editToolStripMenuItem;
         private ToolStripMenuItem tripsToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
-        private TableLayoutPanel tableLayoutPanel1;
-        public Label LblAvailable;
-        private Label LblBrand;
-        private Label LblModel;
-        private Label LblCategory;
-        private Label LblLicensePlate;
+        private ToolStripMenuItem toggleStatusVehicleToolStripMenuItem;
         private Panel panel1;
         private CustomControls.RJControls.RJButton EditBtn;
         private CustomControls.RJControls.RJButton DeleteBtn;
-        private ToolStripMenuItem toggleStatusVehicleToolStripMenuItem;
+        private Label LblLicensePlate;
+        private Label LblCategory;
+        private Label LblModel;
+        private Label LblBrand;
+        public Label LblAvailable;
+        private TableLayoutPanel tableLayoutPanel1;
     }
 }

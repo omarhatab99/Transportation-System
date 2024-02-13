@@ -28,44 +28,44 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
-            panel4 = new Panel();
-            dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
-            panel3 = new Panel();
+            dataGridView2 = new DataGridView();
+            panel4 = new Panel();
             panel5 = new Panel();
-            CbBoxCategory = new ComboBox();
-            LblLicensePlate = new TextBox();
-            pictureBox8 = new PictureBox();
-            ColorsTBOX = new TextBox();
-            BrandTBOX = new TextBox();
-            pictureBox7 = new PictureBox();
-            ModelTBOX = new TextBox();
-            pictureBox6 = new PictureBox();
-            YearTBOX = new TextBox();
-            pictureBox5 = new PictureBox();
-            pictureBox3 = new PictureBox();
-            pictureBox2 = new PictureBox();
             SubmitVehicleForm_CreateBtn = new CustomControls.RJControls.RJButton();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox5 = new PictureBox();
+            YearTBOX = new TextBox();
+            pictureBox6 = new PictureBox();
+            ModelTBOX = new TextBox();
+            pictureBox7 = new PictureBox();
+            BrandTBOX = new TextBox();
+            ColorsTBOX = new TextBox();
+            pictureBox8 = new PictureBox();
+            LicenseTBOX = new TextBox();
+            CbBoxCategory = new ComboBox();
+            panel3 = new Panel();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            panel4.SuspendLayout();
             panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            panel3.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -88,6 +88,76 @@
             pictureBox1.TabIndex = 2;
             pictureBox1.TabStop = false;
             // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.MintCream;
+            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.Purple;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Black;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.True;
+            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = SystemColors.Window;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle7.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle7.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dataGridView1.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridView1.Dock = DockStyle.Fill;
+            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
+            dataGridView1.GridColor = Color.FromArgb(192, 0, 192);
+            dataGridView1.Location = new Point(30, 15);
+            dataGridView1.Margin = new Padding(30, 3, 30, 3);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.ReadOnly = true;
+            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.Purple;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = Color.Purple;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            dataGridView1.Size = new Size(900, 206);
+            dataGridView1.TabIndex = 0;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = Color.MintCream;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = SystemColors.Window;
+            dataGridViewCellStyle9.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle9.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = Color.AliceBlue;
+            dataGridViewCellStyle9.SelectionForeColor = SystemColors.MenuHighlight;
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            dataGridView2.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridView2.Dock = DockStyle.Fill;
+            dataGridView2.GridColor = Color.FromArgb(192, 0, 192);
+            dataGridView2.Location = new Point(30, 15);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.ReadOnly = true;
+            dataGridViewCellStyle10.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = Color.Purple;
+            dataGridViewCellStyle10.Font = new Font("Segoe UI", 9F);
+            dataGridViewCellStyle10.ForeColor = Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = Color.Purple;
+            dataGridViewCellStyle10.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = DataGridViewTriState.True;
+            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridView2.Size = new Size(900, 206);
+            dataGridView2.TabIndex = 1;
+            dataGridView2.CellDoubleClick += dataGridView2_CellDoubleClick;
+            // 
             // panel4
             // 
             panel4.Controls.Add(dataGridView2);
@@ -99,90 +169,11 @@
             panel4.Size = new Size(960, 231);
             panel4.TabIndex = 2;
             // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = Color.MintCream;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = SystemColors.Window;
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle1.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle1.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle1.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.False;
-            dataGridView2.DefaultCellStyle = dataGridViewCellStyle1;
-            dataGridView2.Dock = DockStyle.Fill;
-            dataGridView2.GridColor = Color.FromArgb(192, 0, 192);
-            dataGridView2.Location = new Point(30, 15);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.Purple;
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.Purple;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            dataGridView2.Size = new Size(900, 206);
-            dataGridView2.TabIndex = 1;
-            dataGridView2.CellDoubleClick += dataGridView2_CellDoubleClick;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.MintCream;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.Purple;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle3.ForeColor = Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle3.SelectionForeColor = Color.Black;
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = SystemColors.Window;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle4.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = Color.AliceBlue;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.MenuHighlight;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.Dock = DockStyle.Fill;
-            dataGridView1.EditMode = DataGridViewEditMode.EditOnEnter;
-            dataGridView1.GridColor = Color.FromArgb(192, 0, 192);
-            dataGridView1.Location = new Point(30, 15);
-            dataGridView1.Margin = new Padding(30, 3, 30, 3);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
-            dataGridView1.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.Purple;
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 9F);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = Color.Purple;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridView1.Size = new Size(900, 206);
-            dataGridView1.TabIndex = 0;
-            // 
-            // panel3
-            // 
-            panel3.Controls.Add(panel5);
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(0, 305);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(960, 308);
-            panel3.TabIndex = 3;
-            // 
             // panel5
             // 
             panel5.BackColor = Color.MintCream;
             panel5.Controls.Add(CbBoxCategory);
-            panel5.Controls.Add(LblLicensePlate);
+            panel5.Controls.Add(LicenseTBOX);
             panel5.Controls.Add(pictureBox8);
             panel5.Controls.Add(ColorsTBOX);
             panel5.Controls.Add(BrandTBOX);
@@ -199,120 +190,6 @@
             panel5.Size = new Size(960, 308);
             panel5.TabIndex = 2;
             panel5.Paint += panel5_Paint;
-            // 
-            // CbBoxCategory
-            // 
-            CbBoxCategory.FlatStyle = FlatStyle.Flat;
-            CbBoxCategory.FormattingEnabled = true;
-            CbBoxCategory.Location = new Point(83, 90);
-            CbBoxCategory.Name = "CbBoxCategory";
-            CbBoxCategory.Size = new Size(204, 23);
-            CbBoxCategory.TabIndex = 1;
-            // 
-            // LblLicensePlate
-            // 
-            LblLicensePlate.BorderStyle = BorderStyle.None;
-            LblLicensePlate.ForeColor = Color.DimGray;
-            LblLicensePlate.Location = new Point(346, 179);
-            LblLicensePlate.Name = "LblLicensePlate";
-            LblLicensePlate.Size = new Size(195, 16);
-            LblLicensePlate.TabIndex = 5;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.Image = Properties.Resources.LicensePlateInput;
-            pictureBox8.Location = new Point(305, 142);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(257, 83);
-            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox8.TabIndex = 12;
-            pictureBox8.TabStop = false;
-            // 
-            // ColorsTBOX
-            // 
-            ColorsTBOX.BorderStyle = BorderStyle.None;
-            ColorsTBOX.ForeColor = Color.DimGray;
-            ColorsTBOX.Location = new Point(609, 180);
-            ColorsTBOX.Name = "ColorsTBOX";
-            ColorsTBOX.Size = new Size(195, 16);
-            ColorsTBOX.TabIndex = 6;
-            // 
-            // BrandTBOX
-            // 
-            BrandTBOX.BorderStyle = BorderStyle.None;
-            BrandTBOX.ForeColor = Color.DimGray;
-            BrandTBOX.Location = new Point(609, 93);
-            BrandTBOX.Name = "BrandTBOX";
-            BrandTBOX.Size = new Size(195, 16);
-            BrandTBOX.TabIndex = 3;
-            // 
-            // pictureBox7
-            // 
-            pictureBox7.Image = Properties.Resources.BrandInput;
-            pictureBox7.Location = new Point(568, 53);
-            pictureBox7.Name = "pictureBox7";
-            pictureBox7.Size = new Size(257, 83);
-            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox7.TabIndex = 11;
-            pictureBox7.TabStop = false;
-            // 
-            // ModelTBOX
-            // 
-            ModelTBOX.BorderStyle = BorderStyle.None;
-            ModelTBOX.ForeColor = Color.DimGray;
-            ModelTBOX.Location = new Point(346, 93);
-            ModelTBOX.Name = "ModelTBOX";
-            ModelTBOX.Size = new Size(195, 16);
-            ModelTBOX.TabIndex = 2;
-            // 
-            // pictureBox6
-            // 
-            pictureBox6.Image = Properties.Resources.ModelInput;
-            pictureBox6.Location = new Point(305, 53);
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.Size = new Size(257, 83);
-            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox6.TabIndex = 9;
-            pictureBox6.TabStop = false;
-            // 
-            // YearTBOX
-            // 
-            YearTBOX.BorderStyle = BorderStyle.None;
-            YearTBOX.ForeColor = Color.DimGray;
-            YearTBOX.Location = new Point(83, 181);
-            YearTBOX.Name = "YearTBOX";
-            YearTBOX.Size = new Size(195, 16);
-            YearTBOX.TabIndex = 4;
-            // 
-            // pictureBox5
-            // 
-            pictureBox5.Image = Properties.Resources.ColorInput;
-            pictureBox5.Location = new Point(568, 143);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(257, 83);
-            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox5.TabIndex = 5;
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Image = Properties.Resources.YearInput;
-            pictureBox3.Location = new Point(42, 140);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(257, 83);
-            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox3.TabIndex = 3;
-            pictureBox3.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Image = Properties.Resources.CategoryInput;
-            pictureBox2.Location = new Point(42, 52);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(257, 83);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 1;
-            pictureBox2.TabStop = false;
             // 
             // SubmitVehicleForm_CreateBtn
             // 
@@ -335,6 +212,129 @@
             SubmitVehicleForm_CreateBtn.UseVisualStyleBackColor = false;
             SubmitVehicleForm_CreateBtn.Click += SubmitVehicleForm_CreateBtn_Click;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = Properties.Resources.CategoryInput;
+            pictureBox2.Location = new Point(42, 52);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(257, 83);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.Image = Properties.Resources.YearInput;
+            pictureBox3.Location = new Point(42, 140);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(257, 83);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 3;
+            pictureBox3.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Image = Properties.Resources.ColorInput;
+            pictureBox5.Location = new Point(568, 143);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(257, 83);
+            pictureBox5.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox5.TabIndex = 5;
+            pictureBox5.TabStop = false;
+            // 
+            // YearTBOX
+            // 
+            YearTBOX.BorderStyle = BorderStyle.None;
+            YearTBOX.ForeColor = Color.DimGray;
+            YearTBOX.Location = new Point(83, 181);
+            YearTBOX.Name = "YearTBOX";
+            YearTBOX.Size = new Size(195, 16);
+            YearTBOX.TabIndex = 4;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.Image = Properties.Resources.ModelInput;
+            pictureBox6.Location = new Point(305, 53);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(257, 83);
+            pictureBox6.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox6.TabIndex = 9;
+            pictureBox6.TabStop = false;
+            // 
+            // ModelTBOX
+            // 
+            ModelTBOX.BorderStyle = BorderStyle.None;
+            ModelTBOX.ForeColor = Color.DimGray;
+            ModelTBOX.Location = new Point(346, 93);
+            ModelTBOX.Name = "ModelTBOX";
+            ModelTBOX.Size = new Size(195, 16);
+            ModelTBOX.TabIndex = 2;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.Image = Properties.Resources.BrandInput;
+            pictureBox7.Location = new Point(568, 53);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(257, 83);
+            pictureBox7.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox7.TabIndex = 11;
+            pictureBox7.TabStop = false;
+            // 
+            // BrandTBOX
+            // 
+            BrandTBOX.BorderStyle = BorderStyle.None;
+            BrandTBOX.ForeColor = Color.DimGray;
+            BrandTBOX.Location = new Point(609, 93);
+            BrandTBOX.Name = "BrandTBOX";
+            BrandTBOX.Size = new Size(195, 16);
+            BrandTBOX.TabIndex = 3;
+            // 
+            // ColorsTBOX
+            // 
+            ColorsTBOX.BorderStyle = BorderStyle.None;
+            ColorsTBOX.ForeColor = Color.DimGray;
+            ColorsTBOX.Location = new Point(609, 180);
+            ColorsTBOX.Name = "ColorsTBOX";
+            ColorsTBOX.Size = new Size(195, 16);
+            ColorsTBOX.TabIndex = 6;
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.Image = Properties.Resources.LicensePlateInput;
+            pictureBox8.Location = new Point(305, 142);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(257, 83);
+            pictureBox8.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox8.TabIndex = 12;
+            pictureBox8.TabStop = false;
+            // 
+            // LicenseTBOX
+            // 
+            LicenseTBOX.BorderStyle = BorderStyle.None;
+            LicenseTBOX.ForeColor = Color.DimGray;
+            LicenseTBOX.Location = new Point(346, 179);
+            LicenseTBOX.Name = "LicenseTBOX";
+            LicenseTBOX.Size = new Size(195, 16);
+            LicenseTBOX.TabIndex = 5;
+            // 
+            // CbBoxCategory
+            // 
+            CbBoxCategory.FlatStyle = FlatStyle.Flat;
+            CbBoxCategory.FormattingEnabled = true;
+            CbBoxCategory.Location = new Point(83, 90);
+            CbBoxCategory.Name = "CbBoxCategory";
+            CbBoxCategory.Size = new Size(204, 23);
+            CbBoxCategory.TabIndex = 1;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(panel5);
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(0, 305);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(960, 308);
+            panel3.TabIndex = 3;
+            // 
             // FrmVehicleCrud
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -350,18 +350,18 @@
             Load += FrmVehicleCrud_Load;
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            panel4.ResumeLayout(false);
             panel5.ResumeLayout(false);
             panel5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            panel3.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -369,10 +369,13 @@
 
         private Panel panel2;
         private PictureBox pictureBox1;
-        private Panel panel4;
         private DataGridView dataGridView1;
-        private Panel panel3;
+        private DataGridView dataGridView2;
+        private Panel panel4;
         private Panel panel5;
+        public ComboBox CbBoxCategory;
+        private TextBox LicenseTBOX;
+        private PictureBox pictureBox8;
         private TextBox ColorsTBOX;
         private TextBox BrandTBOX;
         private PictureBox pictureBox7;
@@ -383,9 +386,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         public CustomControls.RJControls.RJButton SubmitVehicleForm_CreateBtn;
-        private TextBox LblLicensePlate;
-        private PictureBox pictureBox8;
-        private DataGridView dataGridView2;
-        public ComboBox CbBoxCategory;
+        private Panel panel3;
     }
 }

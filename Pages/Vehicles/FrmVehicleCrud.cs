@@ -31,8 +31,8 @@ namespace TransportReservationSystem.Pages.Vehicles
         public int Id { get; set; }
         public long LicensePlate
         {
-            get { return Convert.ToInt64(LblLicensePlate.Text); }
-            set { LblLicensePlate.Text = Convert.ToString(value); }
+            get { return Convert.ToInt64(LicenseTBOX.Text); }
+            set { LicenseTBOX.Text = Convert.ToString(value); }
         }
 
         public string Category
@@ -135,7 +135,7 @@ namespace TransportReservationSystem.Pages.Vehicles
             long licencePlate = 0;
             int year = 0;
 
-            if (long.TryParse(LblLicensePlate.Text, out long result1))
+            if (long.TryParse(LicenseTBOX.Text, out long result1))
             {
 
                 licencePlate = result1;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Pages;
+using TransportReservationSystem.Pages.Passengers;
 
 namespace TransportReservationSystem
 {
