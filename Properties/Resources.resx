@@ -124,6 +124,9 @@
   <data name="error" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\error1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="BackgroudRow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroudRow1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="SearchInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SearchInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -142,14 +145,23 @@
   <data name="RegisterBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\RegisterBtn.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="RegisterBadge" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\RegisterBadge.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="home-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\home-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GenderInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GenderInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="TripsPassengerHeading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TripsPassengerHeading.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Capture" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Capture.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PasswordInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PasswordInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="FareInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FareInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DepatureInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DepatureInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoginBtn1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginBtn1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -162,9 +174,6 @@
   </data>
   <data name="attention" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\attention.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PhoneInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PhoneInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PasswordInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PasswordInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -181,8 +190,8 @@
   <data name="VehicleHeading3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VehicleHeading3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="GenderInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\GenderInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ArrivalDate1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrivalDate1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LoginBtn" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LoginBtn.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -193,8 +202,20 @@
   <data name="BusLanding" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BusLanding.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DepatureInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DepatureInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car-journey" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car-journey.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EmailInput3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmailInput3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ArrivalDate" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrivalDate.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BrandInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BrandInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BackgroundRowHeader1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroundRowHeader1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -208,8 +229,14 @@
   <data name="menu-burger (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-burger (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="user-gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user-gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BackgroundRowHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BackgroundRowHeader.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="SalaryInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\SalaryInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -220,17 +247,14 @@
   <data name="settings" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\settings.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="shape-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\shape-menu.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="EmailInput4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\EmailInput4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="home-icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\home-icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GenderInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GenderInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="menu-burger1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\menu-burger1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\warning1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="home" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -241,11 +265,17 @@
   <data name="Capture1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Capture1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Source" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Source.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Coach-Bus-mockup-04" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Coach-Bus-mockup-04.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="5f9c9cfc740569d1a4ca3543" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5f9c9cfc740569d1a4ca3543.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VehicleInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VehicleInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VehicleHeading" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VehicleHeading.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -256,14 +286,26 @@
   <data name="PasswordInput3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PasswordInput3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="DepatureInput3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DepatureInput3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="driver-man" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\driver-man.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="AddressInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\AddressInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icons8_cancel_25px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icons8_cancel_25px1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ArrivalInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ArrivalInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="VehicleHeading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\VehicleHeading2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="VehicleHeading4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\VehicleHeading4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -273,6 +315,9 @@
   </data>
   <data name="sign-out-alt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sign-out-alt1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="car-journey1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\car-journey1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="apps" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apps.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -289,6 +334,9 @@
   <data name="DriverHeading1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DriverHeading1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DriverInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DriverInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="EmailInput5" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmailInput5.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -298,20 +346,26 @@
   <data name="BackgroudRow2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BackgroudRow2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="user-gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="RegisterBadge" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\RegisterBadge.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="DestinationInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DestinationInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="home (1)1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home (1)1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="DepatureInput2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\DepatureInput2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PhoneInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PhoneInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="VehicleHeading2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\VehicleHeading2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="shape-menu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shape-menu.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="EmailInput2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\EmailInput2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -319,8 +373,11 @@
   <data name="input" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\input.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ticket" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ticket.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="warning" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\warning1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="TripsPassengerHeading1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\TripsPassengerHeading1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="PasswordInput2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PasswordInput2.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -328,11 +385,11 @@
   <data name="UsermameInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\UsermameInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="StationInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\StationInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="apps1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\apps1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PasswordInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PasswordInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LicensePlateInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LicensePlateInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -352,8 +409,8 @@
   <data name="Login" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Login.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BrandInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BrandInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="user" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="LicenceInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\LicenceInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -361,8 +418,11 @@
   <data name="home-icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\home-icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackgroundRowHeader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackgroundRowHeader.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FareInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FareInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="PhoneInput1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\PhoneInput1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="CategoryInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CategoryInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -370,11 +430,8 @@
   <data name="shape-menu1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shape-menu1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BackgroudRow1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BackgroudRow1.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="EmailInput4" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\EmailInput4.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="GenderInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\GenderInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="DriverHeading3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\DriverHeading3.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -385,7 +442,7 @@
   <data name="ModelInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ModelInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="AddressInput" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\AddressInput.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ReservationHeading" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ReservationHeading.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

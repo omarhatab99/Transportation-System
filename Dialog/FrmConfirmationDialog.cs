@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Pages.Passengers;
+using TransportReservationSystem.Pages.Trips;
 
 namespace TransportReservationSystem.Dialog
 {
@@ -91,6 +92,68 @@ namespace TransportReservationSystem.Dialog
                     LoadForm(frmPassengers);
 
                     this.Close();
+                }
+                catch (Exception ex)
+                {
+
+                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                    frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
+                }
+            }
+            else if (Collection == "TRIP")
+            {
+
+                Trip trip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == Id)!;
+                try
+                {
+                    DateTime date1 = DateTime.Parse(trip.DepatureDate.ToString());
+                    DateTime date2 = DateTime.Now;
+
+                    if (date2 > date1)
+                    {
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert("Trip is Already Started..!!", FrmValidationDialog.enmType.Warning);
+                        return;
+                    }
+                    else
+                    {
+                        if (trip.Reservations.Count > 0)
+                        {
+                            foreach (var reserve in trip.Reservations)
+                            {
+                                applicaitonDbContext.Reservations.Remove(reserve);
+                                applicaitonDbContext.SaveChanges();
+                            }
+                        }
+
+                        if (trip.HomeAndAway > 0)
+                        {
+                            Trip HomeAndAway = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == trip.HomeAndAway)!;
+                            DateTime homeTrip = DateTime.Parse(trip.DepatureDate.ToString());
+                            DateTime awayTrip = DateTime.Parse(HomeAndAway.DepatureDate.ToString());
+                            if (awayTrip > homeTrip)
+                            {
+                                foreach (var reserve in HomeAndAway.Reservations)
+                                {
+                                    applicaitonDbContext.Reservations.Remove(reserve);
+                                    applicaitonDbContext.SaveChanges();
+                                }
+
+                                applicaitonDbContext.Trips.Remove(HomeAndAway);
+                                applicaitonDbContext.SaveChanges();
+                            }
+                        }
+
+                        applicaitonDbContext.Trips.Remove(trip);
+                        applicaitonDbContext.SaveChanges();
+
+                        FrmTrips frmTrips = new FrmTrips();
+
+                        LoadForm(frmTrips);
+
+                        this.Close();
+                    }
+
                 }
                 catch (Exception ex)
                 {

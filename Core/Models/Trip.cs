@@ -21,6 +21,8 @@ namespace TransportReservationSystem.Core.Models
         public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
         public decimal Fare { get; set; }
         public int AvailableSeats { get; set; }
+        public bool Done { get; set; } = false;
+        public int HomeAndAway {  get; set; }
 
 
     }

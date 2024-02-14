@@ -89,6 +89,9 @@ namespace TransportReservationSystem.Migrations
                     b.Property<bool>("HasBouns")
                         .HasColumnType("bit");
 
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
@@ -431,11 +434,17 @@ namespace TransportReservationSystem.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("Done")
+                        .HasColumnType("bit");
+
                     b.Property<int>("DriverId")
                         .HasColumnType("int");
 
                     b.Property<decimal>("Fare")
                         .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("HomeAndAway")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");

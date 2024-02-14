@@ -220,5 +220,59 @@ namespace TransportReservationSystem.Core.Constants
             }
             return validationResult;
         }
+
+        public static ValidationResult TripValidation(TripVm trip)
+        {
+            ValidationResult validationResult = new ValidationResult();
+
+            if (string.IsNullOrEmpty(trip.Source))
+            {
+                validationResult.MessageError = "Source must be required ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (string.IsNullOrEmpty(trip.Destination))
+            {
+                validationResult.MessageError = "Destination must be required ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (trip.Source.ToLower() == trip.Destination.ToLower())
+            {
+                validationResult.MessageError = "Source station is the same of Destination station ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (trip.Fare <= 0)
+            {
+                validationResult.MessageError = "Please enter a valid Fare ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (string.IsNullOrEmpty(trip.DepatureDate.ToString()))
+            {
+                validationResult.MessageError = "Depature Date must be required ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (trip.DepatureDate < DateTime.Now)
+            {
+                validationResult.MessageError = "Depature Date must be in the future ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (string.IsNullOrEmpty(trip.ArrivalDate.ToString()))
+            {
+                validationResult.MessageError = "Arrival Date must be required ..!!";
+                // ", containing at least one uppercase letter, one lowercase letter, one digit, and one special character ..!!";
+                validationResult.IsValid = false;
+            }
+
+            else if (trip.ArrivalDate <= trip.DepatureDate)
+            {
+                validationResult.MessageError = "Arrival Date must be more than Depature Date ..!!";
+                validationResult.IsValid = false;
+            }
+            else
+            {
+                validationResult.IsValid = true;
+
+            }
+            return validationResult;
+        }
     }
 }

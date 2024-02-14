@@ -23,7 +23,7 @@ namespace TransportReservationSystem.Core.Models
         public virtual ICollection<Maintenance> Maintenances { get; set; } = new List<Maintenance>();
         public virtual ICollection<Trip> Trips { get; set; } = new List<Trip>();
         public bool HasScheduledMaintenance { get; set; } = false;
-        public string? CurrentStation { get; set; }
+        public string? CurrentStation { get; set; } = "FREE";
 
 
     }

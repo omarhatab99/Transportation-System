@@ -283,3 +283,9 @@ G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSys
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCPassenger.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Passengers.FrmPassengerCrud.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmTrips.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmTripCrud.resources
+G:\Transportation-System-master\bin\Debug\net8.0-windows\Guna.UI2.dll
+G:\Transportation-System-master\bin\Debug\net8.0-windows\System.Management.dll
+G:\Transportation-System-master\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCTrip.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Dialog.StationModel.resources

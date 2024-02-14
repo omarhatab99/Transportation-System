@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Pages;
 using TransportReservationSystem.Pages.Passengers;
+using TransportReservationSystem.Pages.Trips;
 
 namespace TransportReservationSystem
 {
@@ -183,6 +184,7 @@ namespace TransportReservationSystem
             ReservationBtn.BackColor = Color.DarkViolet;
             VehicleBtn.BackColor = Color.DarkViolet;
             UsersBtn.BackColor = Color.DarkViolet;
+            TripsBtn.BackColor = Color.DarkViolet;
             activeBtn.BackColor = Color.FromArgb(169, 39, 176);
 
         }
@@ -204,9 +206,23 @@ namespace TransportReservationSystem
             Application.Run(new FrmLogin());
         }
 
+        private void MainPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TripsBtn_Click(object sender, EventArgs e)
+        {
+            FrmTrips frmTrips = new FrmTrips();
+
+            ActivatedForm = frmTrips;
 
 
+            //Change Background To Active
+            ButtonColorChangeByClick(TripsBtn);
 
-
+            //switch
+            LoadForm(frmTrips);
+        }
     }
 }

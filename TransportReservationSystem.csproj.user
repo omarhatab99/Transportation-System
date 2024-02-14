@@ -7,6 +7,9 @@
     <Compile Update="Dialog\FrmValidationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Dialog\StationModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pages\FrmAlert.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -34,7 +37,7 @@
     <Compile Update="Pages\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\FrmReservations.cs">
+    <Compile Update="Pages\Reservations\FrmReservations.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\FrmUsers.cs">
@@ -58,6 +61,9 @@
     <Compile Update="Pages\Vehicles\FrmVehicles.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="RJControls\RashiDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="RJControls\RJButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -71,6 +77,12 @@
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Rows\UCPassenger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Rows\UCReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Rows\UCTrip.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Rows\UCVehicle.cs">

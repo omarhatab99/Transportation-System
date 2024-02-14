@@ -186,6 +186,7 @@
             EditBtn.Text = "Edit";
             EditBtn.TextColor = Color.White;
             EditBtn.UseVisualStyleBackColor = false;
+            EditBtn.Click += EditBtn_Click;
             // 
             // DeleteBtn
             // 

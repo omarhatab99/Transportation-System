@@ -30,40 +30,17 @@
         {
             components = new System.ComponentModel.Container();
             timer1 = new System.Windows.Forms.Timer(components);
-            pictureBox1 = new PictureBox();
-            panel1 = new Panel();
             pictureBox2 = new PictureBox();
             OkBtn = new CustomControls.RJControls.RJButton();
             LblMsg = new Label();
             panel2 = new Panel();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = Color.DarkViolet;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Image = Properties.Resources.icons8_cancel_25px;
-            pictureBox1.Location = new Point(313, 0);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(23, 29);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 0;
-            pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
-            // 
-            // panel1
-            // 
-            panel1.BackColor = Color.DarkViolet;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(339, 29);
-            panel1.TabIndex = 0;
             // 
             // pictureBox2
             // 
@@ -116,6 +93,29 @@
             panel2.Size = new Size(336, 30);
             panel2.TabIndex = 4;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.DarkViolet;
+            pictureBox1.Cursor = Cursors.Hand;
+            pictureBox1.Image = Properties.Resources.icons8_cancel_25px;
+            pictureBox1.Location = new Point(313, 0);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(23, 29);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 0;
+            pictureBox1.TabStop = false;
+            pictureBox1.Click += pictureBox1_Click;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.DarkViolet;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(339, 29);
+            panel1.TabIndex = 0;
+            // 
             // FrmValidationDialog
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -129,20 +129,20 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmValidationDialog";
             Text = "FrmValidationDialog";
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Timer timer1;
-        private PictureBox pictureBox1;
-        private Panel panel1;
         private PictureBox pictureBox2;
         private CustomControls.RJControls.RJButton OkBtn;
         private Label LblMsg;
         private Panel panel2;
+        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }

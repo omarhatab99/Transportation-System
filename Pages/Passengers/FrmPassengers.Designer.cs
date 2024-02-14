@@ -28,10 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panel2 = new Panel();
-            panel10 = new Panel();
-            PassengerSearchInput = new TextBox();
-            pictureBox2 = new PictureBox();
+            CreateDriverBtn = new CustomControls.RJControls.RJButton();
+            pictureBox1 = new PictureBox();
+            CreateVehicleBtn = new CustomControls.RJControls.RJButton();
+            CreatePassengerBtn = new CustomControls.RJControls.RJButton();
+            panel1 = new Panel();
             panel3 = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
@@ -43,63 +44,110 @@
             Label3 = new Label();
             label7 = new Label();
             label8 = new Label();
-            CreateDriverBtn = new CustomControls.RJControls.RJButton();
-            pictureBox1 = new PictureBox();
-            CreateVehicleBtn = new CustomControls.RJControls.RJButton();
-            CreatePassengerBtn = new CustomControls.RJControls.RJButton();
-            panel1 = new Panel();
-            panel2.SuspendLayout();
-            panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel10 = new Panel();
+            panel2 = new Panel();
+            pictureBox2 = new PictureBox();
+            PassengerSearchInput = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel7.SuspendLayout();
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            panel10.SuspendLayout();
+            panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
-            // panel2
+            // CreateDriverBtn
             // 
-            panel2.BackColor = Color.MintCream;
-            panel2.Controls.Add(panel10);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 97);
-            panel2.Name = "panel2";
-            panel2.Padding = new Padding(50, 80, 50, 30);
-            panel2.Size = new Size(960, 516);
-            panel2.TabIndex = 3;
+            CreateDriverBtn.Anchor = AnchorStyles.Right;
+            CreateDriverBtn.BackColor = Color.DarkOrchid;
+            CreateDriverBtn.BackgroundColor = Color.DarkOrchid;
+            CreateDriverBtn.BorderColor = Color.PaleVioletRed;
+            CreateDriverBtn.BorderRadius = 5;
+            CreateDriverBtn.BorderSize = 0;
+            CreateDriverBtn.Cursor = Cursors.Hand;
+            CreateDriverBtn.FlatAppearance.BorderSize = 0;
+            CreateDriverBtn.FlatStyle = FlatStyle.Flat;
+            CreateDriverBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreateDriverBtn.ForeColor = Color.White;
+            CreateDriverBtn.Location = new Point(2371, 25);
+            CreateDriverBtn.Name = "CreateDriverBtn";
+            CreateDriverBtn.Size = new Size(71, 30);
+            CreateDriverBtn.TabIndex = 2;
+            CreateDriverBtn.Text = "Create";
+            CreateDriverBtn.TextColor = Color.White;
+            CreateDriverBtn.UseVisualStyleBackColor = false;
             // 
-            // panel10
+            // pictureBox1
             // 
-            panel10.Controls.Add(PassengerSearchInput);
-            panel10.Controls.Add(pictureBox2);
-            panel10.Location = new Point(50, 9);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(860, 65);
-            panel10.TabIndex = 5;
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.PassengerHeading;
+            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(950, 87);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 3;
+            pictureBox1.TabStop = false;
             // 
-            // PassengerSearchInput
+            // CreateVehicleBtn
             // 
-            PassengerSearchInput.BorderStyle = BorderStyle.None;
-            PassengerSearchInput.Location = new Point(142, 31);
-            PassengerSearchInput.Name = "PassengerSearchInput";
-            PassengerSearchInput.Size = new Size(569, 16);
-            PassengerSearchInput.TabIndex = 2;
-            PassengerSearchInput.KeyUp += PassengerSearchInput_KeyUp;
+            CreateVehicleBtn.Anchor = AnchorStyles.Right;
+            CreateVehicleBtn.BackColor = Color.DarkOrchid;
+            CreateVehicleBtn.BackgroundColor = Color.DarkOrchid;
+            CreateVehicleBtn.BorderColor = Color.PaleVioletRed;
+            CreateVehicleBtn.BorderRadius = 5;
+            CreateVehicleBtn.BorderSize = 0;
+            CreateVehicleBtn.Cursor = Cursors.Hand;
+            CreateVehicleBtn.FlatAppearance.BorderSize = 0;
+            CreateVehicleBtn.FlatStyle = FlatStyle.Flat;
+            CreateVehicleBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreateVehicleBtn.ForeColor = Color.White;
+            CreateVehicleBtn.Location = new Point(1612, 27);
+            CreateVehicleBtn.Name = "CreateVehicleBtn";
+            CreateVehicleBtn.Size = new Size(71, 30);
+            CreateVehicleBtn.TabIndex = 4;
+            CreateVehicleBtn.Text = "Create";
+            CreateVehicleBtn.TextColor = Color.White;
+            CreateVehicleBtn.UseVisualStyleBackColor = false;
             // 
-            // pictureBox2
+            // CreatePassengerBtn
             // 
-            pictureBox2.Dock = DockStyle.Fill;
-            pictureBox2.Image = Properties.Resources.SearchInput;
-            pictureBox2.Location = new Point(0, 0);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(860, 65);
-            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox2.TabIndex = 0;
-            pictureBox2.TabStop = false;
+            CreatePassengerBtn.Anchor = AnchorStyles.Right;
+            CreatePassengerBtn.BackColor = Color.DarkOrchid;
+            CreatePassengerBtn.BackgroundColor = Color.DarkOrchid;
+            CreatePassengerBtn.BorderColor = Color.PaleVioletRed;
+            CreatePassengerBtn.BorderRadius = 5;
+            CreatePassengerBtn.BorderSize = 0;
+            CreatePassengerBtn.Cursor = Cursors.Hand;
+            CreatePassengerBtn.FlatAppearance.BorderSize = 0;
+            CreatePassengerBtn.FlatStyle = FlatStyle.Flat;
+            CreatePassengerBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreatePassengerBtn.ForeColor = Color.White;
+            CreatePassengerBtn.Location = new Point(859, 32);
+            CreatePassengerBtn.Name = "CreatePassengerBtn";
+            CreatePassengerBtn.Size = new Size(71, 30);
+            CreatePassengerBtn.TabIndex = 5;
+            CreatePassengerBtn.Text = "Create";
+            CreatePassengerBtn.TextColor = Color.White;
+            CreatePassengerBtn.UseVisualStyleBackColor = false;
+            CreatePassengerBtn.Click += CreatePassengerBtn_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(CreatePassengerBtn);
+            panel1.Controls.Add(CreateVehicleBtn);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(CreateDriverBtn);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(5);
+            panel1.Size = new Size(960, 97);
+            panel1.TabIndex = 2;
+            panel1.Paint += panel1_Paint;
             // 
             // panel3
             // 
@@ -227,94 +275,45 @@
             label8.Text = "Username";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // CreateDriverBtn
+            // panel10
             // 
-            CreateDriverBtn.Anchor = AnchorStyles.Right;
-            CreateDriverBtn.BackColor = Color.DarkOrchid;
-            CreateDriverBtn.BackgroundColor = Color.DarkOrchid;
-            CreateDriverBtn.BorderColor = Color.PaleVioletRed;
-            CreateDriverBtn.BorderRadius = 5;
-            CreateDriverBtn.BorderSize = 0;
-            CreateDriverBtn.Cursor = Cursors.Hand;
-            CreateDriverBtn.FlatAppearance.BorderSize = 0;
-            CreateDriverBtn.FlatStyle = FlatStyle.Flat;
-            CreateDriverBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CreateDriverBtn.ForeColor = Color.White;
-            CreateDriverBtn.Location = new Point(2371, 25);
-            CreateDriverBtn.Name = "CreateDriverBtn";
-            CreateDriverBtn.Size = new Size(71, 30);
-            CreateDriverBtn.TabIndex = 2;
-            CreateDriverBtn.Text = "Create";
-            CreateDriverBtn.TextColor = Color.White;
-            CreateDriverBtn.UseVisualStyleBackColor = false;
+            panel10.Controls.Add(PassengerSearchInput);
+            panel10.Controls.Add(pictureBox2);
+            panel10.Location = new Point(50, 9);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(860, 65);
+            panel10.TabIndex = 5;
             // 
-            // pictureBox1
+            // panel2
             // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.PassengerHeading;
-            pictureBox1.Location = new Point(5, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(950, 87);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 3;
-            pictureBox1.TabStop = false;
+            panel2.BackColor = Color.MintCream;
+            panel2.Controls.Add(panel10);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 97);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(50, 80, 50, 30);
+            panel2.Size = new Size(960, 516);
+            panel2.TabIndex = 3;
             // 
-            // CreateVehicleBtn
+            // pictureBox2
             // 
-            CreateVehicleBtn.Anchor = AnchorStyles.Right;
-            CreateVehicleBtn.BackColor = Color.DarkOrchid;
-            CreateVehicleBtn.BackgroundColor = Color.DarkOrchid;
-            CreateVehicleBtn.BorderColor = Color.PaleVioletRed;
-            CreateVehicleBtn.BorderRadius = 5;
-            CreateVehicleBtn.BorderSize = 0;
-            CreateVehicleBtn.Cursor = Cursors.Hand;
-            CreateVehicleBtn.FlatAppearance.BorderSize = 0;
-            CreateVehicleBtn.FlatStyle = FlatStyle.Flat;
-            CreateVehicleBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CreateVehicleBtn.ForeColor = Color.White;
-            CreateVehicleBtn.Location = new Point(1612, 27);
-            CreateVehicleBtn.Name = "CreateVehicleBtn";
-            CreateVehicleBtn.Size = new Size(71, 30);
-            CreateVehicleBtn.TabIndex = 4;
-            CreateVehicleBtn.Text = "Create";
-            CreateVehicleBtn.TextColor = Color.White;
-            CreateVehicleBtn.UseVisualStyleBackColor = false;
+            pictureBox2.Dock = DockStyle.Fill;
+            pictureBox2.Image = Properties.Resources.SearchInput;
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(860, 65);
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox2.TabIndex = 1;
+            pictureBox2.TabStop = false;
             // 
-            // CreatePassengerBtn
+            // PassengerSearchInput
             // 
-            CreatePassengerBtn.Anchor = AnchorStyles.Right;
-            CreatePassengerBtn.BackColor = Color.DarkOrchid;
-            CreatePassengerBtn.BackgroundColor = Color.DarkOrchid;
-            CreatePassengerBtn.BorderColor = Color.PaleVioletRed;
-            CreatePassengerBtn.BorderRadius = 5;
-            CreatePassengerBtn.BorderSize = 0;
-            CreatePassengerBtn.Cursor = Cursors.Hand;
-            CreatePassengerBtn.FlatAppearance.BorderSize = 0;
-            CreatePassengerBtn.FlatStyle = FlatStyle.Flat;
-            CreatePassengerBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CreatePassengerBtn.ForeColor = Color.White;
-            CreatePassengerBtn.Location = new Point(859, 32);
-            CreatePassengerBtn.Name = "CreatePassengerBtn";
-            CreatePassengerBtn.Size = new Size(71, 30);
-            CreatePassengerBtn.TabIndex = 5;
-            CreatePassengerBtn.Text = "Create";
-            CreatePassengerBtn.TextColor = Color.White;
-            CreatePassengerBtn.UseVisualStyleBackColor = false;
-            CreatePassengerBtn.Click += CreatePassengerBtn_Click;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(CreatePassengerBtn);
-            panel1.Controls.Add(CreateVehicleBtn);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(CreateDriverBtn);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(5);
-            panel1.Size = new Size(960, 97);
-            panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
+            PassengerSearchInput.BorderStyle = BorderStyle.None;
+            PassengerSearchInput.Location = new Point(142, 34);
+            PassengerSearchInput.Name = "PassengerSearchInput";
+            PassengerSearchInput.Size = new Size(569, 16);
+            PassengerSearchInput.TabIndex = 3;
             // 
             // FrmPassengers
             // 
@@ -328,26 +327,27 @@
             Text = "FrmPassenger";
             Load += FrmPassengers_Load;
             SizeChanged += FrmPassengers_SizeChanged;
-            panel2.ResumeLayout(false);
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
             panel3.ResumeLayout(false);
             panel7.ResumeLayout(false);
             panel8.ResumeLayout(false);
             panel9.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-        private Panel panel2;
-        private Panel panel10;
-        private TextBox PassengerSearchInput;
-        private PictureBox pictureBox2;
+        private CustomControls.RJControls.RJButton CreateDriverBtn;
+        private PictureBox pictureBox1;
+        private CustomControls.RJControls.RJButton CreateVehicleBtn;
+        private CustomControls.RJControls.RJButton CreatePassengerBtn;
+        private Panel panel1;
         private Panel panel3;
         private Panel panel7;
         private Panel panel8;
@@ -359,10 +359,9 @@
         private Label Label3;
         private Label label7;
         private Label label8;
-        private CustomControls.RJControls.RJButton CreateDriverBtn;
-        private PictureBox pictureBox1;
-        private CustomControls.RJControls.RJButton CreateVehicleBtn;
-        private CustomControls.RJControls.RJButton CreatePassengerBtn;
-        private Panel panel1;
+        private Panel panel10;
+        private Panel panel2;
+        private PictureBox pictureBox2;
+        private TextBox PassengerSearchInput;
     }
 }
