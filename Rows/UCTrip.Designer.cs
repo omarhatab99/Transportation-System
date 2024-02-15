@@ -51,33 +51,33 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, resservationToolStripMenuItem, passengersToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(141, 92);
+            contextMenuStrip1.Size = new Size(181, 114);
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(140, 22);
+            editToolStripMenuItem.Size = new Size(180, 22);
             editToolStripMenuItem.Text = "Edit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(140, 22);
+            deleteToolStripMenuItem.Size = new Size(180, 22);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
             // 
             // resservationToolStripMenuItem
             // 
             resservationToolStripMenuItem.Name = "resservationToolStripMenuItem";
-            resservationToolStripMenuItem.Size = new Size(140, 22);
-            resservationToolStripMenuItem.Text = "Resservation";
+            resservationToolStripMenuItem.Size = new Size(180, 22);
+            resservationToolStripMenuItem.Text = "Reservation";
             resservationToolStripMenuItem.Click += resservationToolStripMenuItem_Click;
             // 
             // passengersToolStripMenuItem
             // 
             passengersToolStripMenuItem.Name = "passengersToolStripMenuItem";
-            passengersToolStripMenuItem.Size = new Size(140, 22);
+            passengersToolStripMenuItem.Size = new Size(180, 22);
             passengersToolStripMenuItem.Text = "Passengers";
             passengersToolStripMenuItem.Click += passengersToolStripMenuItem_Click;
             // 

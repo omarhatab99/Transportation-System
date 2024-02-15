@@ -28,20 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
+            CreateReservationBrn = new CustomControls.RJControls.RJButton();
             CreateDriverBtn = new CustomControls.RJControls.RJButton();
             pictureBox1 = new PictureBox();
-            rjButton1 = new CustomControls.RJControls.RJButton();
             panel2 = new Panel();
             panel10 = new Panel();
+            label5 = new Label();
+            CustomCheckBoxAvailabelSearch = new Guna.UI2.WinForms.Guna2CustomCheckBox();
+            label6 = new Label();
+            ComboBoxTripNo = new Guna.UI2.WinForms.Guna2ComboBox();
             panel3 = new Panel();
             panel7 = new Panel();
             panel8 = new Panel();
-            FLBDrivers = new FlowLayoutPanel();
+            FLBReservations = new FlowLayoutPanel();
             panel9 = new Panel();
             tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
@@ -50,10 +54,6 @@
             Label3 = new Label();
             label7 = new Label();
             label8 = new Label();
-            ComboBoxSource = new Guna.UI2.WinForms.Guna2ComboBox();
-            label6 = new Label();
-            CustomCheckBoxAvailabelSearch = new Guna.UI2.WinForms.Guna2CustomCheckBox();
-            label5 = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
@@ -67,7 +67,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(rjButton1);
+            panel1.Controls.Add(CreateReservationBrn);
             panel1.Controls.Add(CreateDriverBtn);
             panel1.Controls.Add(pictureBox1);
             panel1.Dock = DockStyle.Top;
@@ -76,6 +76,28 @@
             panel1.Padding = new Padding(5);
             panel1.Size = new Size(960, 94);
             panel1.TabIndex = 1;
+            // 
+            // CreateReservationBrn
+            // 
+            CreateReservationBrn.Anchor = AnchorStyles.Right;
+            CreateReservationBrn.BackColor = Color.DarkOrchid;
+            CreateReservationBrn.BackgroundColor = Color.DarkOrchid;
+            CreateReservationBrn.BorderColor = Color.PaleVioletRed;
+            CreateReservationBrn.BorderRadius = 5;
+            CreateReservationBrn.BorderSize = 0;
+            CreateReservationBrn.Cursor = Cursors.Hand;
+            CreateReservationBrn.FlatAppearance.BorderSize = 0;
+            CreateReservationBrn.FlatStyle = FlatStyle.Flat;
+            CreateReservationBrn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreateReservationBrn.ForeColor = Color.White;
+            CreateReservationBrn.Location = new Point(856, 32);
+            CreateReservationBrn.Name = "CreateReservationBrn";
+            CreateReservationBrn.Size = new Size(71, 30);
+            CreateReservationBrn.TabIndex = 3;
+            CreateReservationBrn.Text = "Create";
+            CreateReservationBrn.TextColor = Color.White;
+            CreateReservationBrn.UseVisualStyleBackColor = false;
+            CreateReservationBrn.Click += CreateReservationBrn_Click;
             // 
             // CreateDriverBtn
             // 
@@ -109,27 +131,6 @@
             pictureBox1.TabIndex = 1;
             pictureBox1.TabStop = false;
             // 
-            // rjButton1
-            // 
-            rjButton1.Anchor = AnchorStyles.Right;
-            rjButton1.BackColor = Color.DarkOrchid;
-            rjButton1.BackgroundColor = Color.DarkOrchid;
-            rjButton1.BorderColor = Color.PaleVioletRed;
-            rjButton1.BorderRadius = 5;
-            rjButton1.BorderSize = 0;
-            rjButton1.Cursor = Cursors.Hand;
-            rjButton1.FlatAppearance.BorderSize = 0;
-            rjButton1.FlatStyle = FlatStyle.Flat;
-            rjButton1.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            rjButton1.ForeColor = Color.White;
-            rjButton1.Location = new Point(856, 32);
-            rjButton1.Name = "rjButton1";
-            rjButton1.Size = new Size(71, 30);
-            rjButton1.TabIndex = 3;
-            rjButton1.Text = "Create";
-            rjButton1.TextColor = Color.White;
-            rjButton1.UseVisualStyleBackColor = false;
-            // 
             // panel2
             // 
             panel2.BackColor = Color.MintCream;
@@ -147,11 +148,72 @@
             panel10.Controls.Add(label5);
             panel10.Controls.Add(CustomCheckBoxAvailabelSearch);
             panel10.Controls.Add(label6);
-            panel10.Controls.Add(ComboBoxSource);
+            panel10.Controls.Add(ComboBoxTripNo);
             panel10.Location = new Point(50, 9);
             panel10.Name = "panel10";
             panel10.Size = new Size(860, 65);
             panel10.TabIndex = 5;
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.DimGray;
+            label5.Location = new Point(408, 7);
+            label5.Name = "label5";
+            label5.Size = new Size(81, 15);
+            label5.TabIndex = 32;
+            label5.Text = "Enable Search";
+            // 
+            // CustomCheckBoxAvailabelSearch
+            // 
+            CustomCheckBoxAvailabelSearch.CheckedState.BorderColor = Color.GreenYellow;
+            CustomCheckBoxAvailabelSearch.CheckedState.BorderRadius = 2;
+            CustomCheckBoxAvailabelSearch.CheckedState.BorderThickness = 0;
+            CustomCheckBoxAvailabelSearch.CheckedState.FillColor = Color.GreenYellow;
+            CustomCheckBoxAvailabelSearch.CustomizableEdges = customizableEdges1;
+            CustomCheckBoxAvailabelSearch.Location = new Point(406, 35);
+            CustomCheckBoxAvailabelSearch.Name = "CustomCheckBoxAvailabelSearch";
+            CustomCheckBoxAvailabelSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            CustomCheckBoxAvailabelSearch.Size = new Size(37, 18);
+            CustomCheckBoxAvailabelSearch.TabIndex = 30;
+            CustomCheckBoxAvailabelSearch.Text = "CustomCheckBoxSearch";
+            CustomCheckBoxAvailabelSearch.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
+            CustomCheckBoxAvailabelSearch.UncheckedState.BorderRadius = 2;
+            CustomCheckBoxAvailabelSearch.UncheckedState.BorderThickness = 0;
+            CustomCheckBoxAvailabelSearch.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
+            CustomCheckBoxAvailabelSearch.Click += CustomCheckBoxAvailabelSearch_Click;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label6.ForeColor = Color.DimGray;
+            label6.Location = new Point(24, 7);
+            label6.Name = "label6";
+            label6.Size = new Size(109, 15);
+            label6.TabIndex = 29;
+            label6.Text = "Select Trip Number";
+            // 
+            // ComboBoxTripNo
+            // 
+            ComboBoxTripNo.BackColor = Color.Transparent;
+            ComboBoxTripNo.BorderRadius = 5;
+            ComboBoxTripNo.CustomizableEdges = customizableEdges3;
+            ComboBoxTripNo.DrawMode = DrawMode.OwnerDrawFixed;
+            ComboBoxTripNo.DropDownStyle = ComboBoxStyle.DropDownList;
+            ComboBoxTripNo.Enabled = false;
+            ComboBoxTripNo.FocusedColor = Color.FromArgb(94, 148, 255);
+            ComboBoxTripNo.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            ComboBoxTripNo.Font = new Font("Segoe UI", 10F);
+            ComboBoxTripNo.ForeColor = Color.FromArgb(68, 88, 112);
+            ComboBoxTripNo.ItemHeight = 30;
+            ComboBoxTripNo.Location = new Point(24, 25);
+            ComboBoxTripNo.Name = "ComboBoxTripNo";
+            ComboBoxTripNo.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            ComboBoxTripNo.Size = new Size(328, 36);
+            ComboBoxTripNo.TabIndex = 2;
+            ComboBoxTripNo.SelectedIndexChanged += ComboBoxTripNo_SelectedIndexChanged;
             // 
             // panel3
             // 
@@ -175,21 +237,22 @@
             // 
             // panel8
             // 
-            panel8.Controls.Add(FLBDrivers);
+            panel8.Controls.Add(FLBReservations);
             panel8.Dock = DockStyle.Fill;
             panel8.Location = new Point(0, 62);
             panel8.Name = "panel8";
             panel8.Size = new Size(860, 347);
             panel8.TabIndex = 1;
             // 
-            // FLBDrivers
+            // FLBReservations
             // 
-            FLBDrivers.AutoScroll = true;
-            FLBDrivers.Dock = DockStyle.Fill;
-            FLBDrivers.Location = new Point(0, 0);
-            FLBDrivers.Name = "FLBDrivers";
-            FLBDrivers.Size = new Size(860, 347);
-            FLBDrivers.TabIndex = 1;
+            FLBReservations.AutoScroll = true;
+            FLBReservations.Dock = DockStyle.Fill;
+            FLBReservations.Location = new Point(0, 0);
+            FLBReservations.Name = "FLBReservations";
+            FLBReservations.Size = new Size(860, 347);
+            FLBReservations.TabIndex = 1;
+            FLBReservations.SizeChanged += FLBReservations_SizeChanged;
             // 
             // panel9
             // 
@@ -291,65 +354,6 @@
             label8.Text = "TripNo";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // ComboBoxSource
-            // 
-            ComboBoxSource.BackColor = Color.Transparent;
-            ComboBoxSource.BorderRadius = 5;
-            ComboBoxSource.CustomizableEdges = customizableEdges3;
-            ComboBoxSource.DrawMode = DrawMode.OwnerDrawFixed;
-            ComboBoxSource.DropDownStyle = ComboBoxStyle.DropDownList;
-            ComboBoxSource.Enabled = false;
-            ComboBoxSource.FocusedColor = Color.FromArgb(94, 148, 255);
-            ComboBoxSource.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            ComboBoxSource.Font = new Font("Segoe UI", 10F);
-            ComboBoxSource.ForeColor = Color.FromArgb(68, 88, 112);
-            ComboBoxSource.ItemHeight = 30;
-            ComboBoxSource.Location = new Point(24, 25);
-            ComboBoxSource.Name = "ComboBoxSource";
-            ComboBoxSource.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            ComboBoxSource.Size = new Size(328, 36);
-            ComboBoxSource.TabIndex = 2;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.DimGray;
-            label6.Location = new Point(24, 7);
-            label6.Name = "label6";
-            label6.Size = new Size(109, 15);
-            label6.TabIndex = 29;
-            label6.Text = "Select Trip Number";
-            // 
-            // CustomCheckBoxAvailabelSearch
-            // 
-            CustomCheckBoxAvailabelSearch.CheckedState.BorderColor = Color.GreenYellow;
-            CustomCheckBoxAvailabelSearch.CheckedState.BorderRadius = 2;
-            CustomCheckBoxAvailabelSearch.CheckedState.BorderThickness = 0;
-            CustomCheckBoxAvailabelSearch.CheckedState.FillColor = Color.GreenYellow;
-            CustomCheckBoxAvailabelSearch.CustomizableEdges = customizableEdges1;
-            CustomCheckBoxAvailabelSearch.Location = new Point(406, 35);
-            CustomCheckBoxAvailabelSearch.Name = "CustomCheckBoxAvailabelSearch";
-            CustomCheckBoxAvailabelSearch.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            CustomCheckBoxAvailabelSearch.Size = new Size(37, 18);
-            CustomCheckBoxAvailabelSearch.TabIndex = 30;
-            CustomCheckBoxAvailabelSearch.Text = "guna2CustomCheckBox1";
-            CustomCheckBoxAvailabelSearch.UncheckedState.BorderColor = Color.FromArgb(125, 137, 149);
-            CustomCheckBoxAvailabelSearch.UncheckedState.BorderRadius = 2;
-            CustomCheckBoxAvailabelSearch.UncheckedState.BorderThickness = 0;
-            CustomCheckBoxAvailabelSearch.UncheckedState.FillColor = Color.FromArgb(125, 137, 149);
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.DimGray;
-            label5.Location = new Point(408, 7);
-            label5.Name = "label5";
-            label5.Size = new Size(81, 15);
-            label5.TabIndex = 32;
-            label5.Text = "Enable Search";
-            // 
             // FrmReservations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -360,6 +364,7 @@
             Controls.Add(panel1);
             Name = "FrmReservations";
             Text = "FrmReservations";
+            Load += FrmReservations_Load;
             panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
@@ -379,13 +384,13 @@
         private Panel panel1;
         private CustomControls.RJControls.RJButton CreateDriverBtn;
         private PictureBox pictureBox1;
-        private CustomControls.RJControls.RJButton rjButton1;
+        private CustomControls.RJControls.RJButton CreateReservationBrn;
         private Panel panel2;
         private Panel panel10;
         private Panel panel3;
         private Panel panel7;
         private Panel panel8;
-        private FlowLayoutPanel FLBDrivers;
+        private FlowLayoutPanel FLBReservations;
         private Panel panel9;
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
@@ -394,7 +399,7 @@
         private Label Label3;
         private Label label7;
         private Label label8;
-        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxSource;
+        private Guna.UI2.WinForms.Guna2ComboBox ComboBoxTripNo;
         private Label label6;
         private Guna.UI2.WinForms.Guna2CustomCheckBox CustomCheckBoxAvailabelSearch;
         private Label label5;

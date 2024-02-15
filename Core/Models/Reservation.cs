@@ -13,7 +13,8 @@ namespace TransportReservationSystem.Core.Models
         public virtual Passenger Passenger { get; set; } = null!;
         public int TripId { get; set; }
         public virtual Trip Trip { get; set; } = null!;
-        public List<string> Seats { get; set; } = new List<string>();
+        public int SeatsNumber { get; set; } = 0;
+        public List<string> Seats { get; set; }
         public decimal TotalCost {  get; set; }
         public bool Status { get; set; } = true;
 

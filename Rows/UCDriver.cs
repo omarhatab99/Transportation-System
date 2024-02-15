@@ -11,11 +11,13 @@ using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Dialog;
 using TransportReservationSystem.Pages;
+using TransportReservationSystem.Pages.Trips;
 
 namespace TransportReservationSystem.Rows
 {
     public partial class UCDriver : UserControl
     {
+        ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
         public UCDriver()
         {
             InitializeComponent();
@@ -85,14 +87,18 @@ namespace TransportReservationSystem.Rows
             EditBtn_Click(sender, e);
         }
 
-        private void tripsToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void deleteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             DeleteBtn_Click(sender, e);
+        }
+
+        private void tripsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowTrips frmShowTrips = new FrmShowTrips();
+            frmShowTrips.Id = Id;
+            frmShowTrips.Show = "DRIVER";
+            frmShowTrips.StartPosition = FormStartPosition.CenterScreen;
+            frmShowTrips.ShowDialog();
         }
     }
 }

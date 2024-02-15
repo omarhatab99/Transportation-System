@@ -32,16 +32,16 @@
             contextMenuStrip1 = new ContextMenuStrip(components);
             editToolStripMenuItem = new ToolStripMenuItem();
             deleteToolStripMenuItem = new ToolStripMenuItem();
-            tripsToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new Panel();
-            DeleteBtn = new CustomControls.RJControls.RJButton();
             EditBtn = new CustomControls.RJControls.RJButton();
+            DeleteBtn = new CustomControls.RJControls.RJButton();
             LblLicense = new Label();
             LblUsername = new Label();
             LblPhone = new Label();
             LblEmail = new Label();
             LblSalary = new Label();
             tableLayoutPanel1 = new TableLayoutPanel();
+            tripsToolStripMenuItem = new ToolStripMenuItem();
             contextMenuStrip1.SuspendLayout();
             panel1.SuspendLayout();
             tableLayoutPanel1.SuspendLayout();
@@ -51,28 +51,21 @@
             // 
             contextMenuStrip1.Items.AddRange(new ToolStripItem[] { editToolStripMenuItem, deleteToolStripMenuItem, tripsToolStripMenuItem });
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(108, 70);
+            contextMenuStrip1.Size = new Size(181, 92);
             // 
             // editToolStripMenuItem
             // 
             editToolStripMenuItem.Name = "editToolStripMenuItem";
-            editToolStripMenuItem.Size = new Size(107, 22);
+            editToolStripMenuItem.Size = new Size(180, 22);
             editToolStripMenuItem.Text = "Edit";
             editToolStripMenuItem.Click += editToolStripMenuItem_Click;
             // 
             // deleteToolStripMenuItem
             // 
             deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            deleteToolStripMenuItem.Size = new Size(107, 22);
+            deleteToolStripMenuItem.Size = new Size(180, 22);
             deleteToolStripMenuItem.Text = "Delete";
             deleteToolStripMenuItem.Click += deleteToolStripMenuItem_Click;
-            // 
-            // tripsToolStripMenuItem
-            // 
-            tripsToolStripMenuItem.Name = "tripsToolStripMenuItem";
-            tripsToolStripMenuItem.Size = new Size(107, 22);
-            tripsToolStripMenuItem.Text = "Trips";
-            tripsToolStripMenuItem.Click += tripsToolStripMenuItem_Click;
             // 
             // panel1
             // 
@@ -83,25 +76,6 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(153, 43);
             panel1.TabIndex = 5;
-            // 
-            // DeleteBtn
-            // 
-            DeleteBtn.BackColor = Color.FromArgb(192, 0, 0);
-            DeleteBtn.BackgroundColor = Color.FromArgb(192, 0, 0);
-            DeleteBtn.BorderColor = Color.PaleVioletRed;
-            DeleteBtn.BorderRadius = 4;
-            DeleteBtn.BorderSize = 0;
-            DeleteBtn.FlatAppearance.BorderSize = 0;
-            DeleteBtn.FlatStyle = FlatStyle.Flat;
-            DeleteBtn.ForeColor = Color.White;
-            DeleteBtn.Location = new Point(83, 9);
-            DeleteBtn.Name = "DeleteBtn";
-            DeleteBtn.Size = new Size(56, 25);
-            DeleteBtn.TabIndex = 0;
-            DeleteBtn.Text = "Delete";
-            DeleteBtn.TextColor = Color.White;
-            DeleteBtn.UseVisualStyleBackColor = false;
-            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // EditBtn
             // 
@@ -121,6 +95,25 @@
             EditBtn.TextColor = Color.White;
             EditBtn.UseVisualStyleBackColor = false;
             EditBtn.Click += EditBtn_Click;
+            // 
+            // DeleteBtn
+            // 
+            DeleteBtn.BackColor = Color.FromArgb(192, 0, 0);
+            DeleteBtn.BackgroundColor = Color.FromArgb(192, 0, 0);
+            DeleteBtn.BorderColor = Color.PaleVioletRed;
+            DeleteBtn.BorderRadius = 4;
+            DeleteBtn.BorderSize = 0;
+            DeleteBtn.FlatAppearance.BorderSize = 0;
+            DeleteBtn.FlatStyle = FlatStyle.Flat;
+            DeleteBtn.ForeColor = Color.White;
+            DeleteBtn.Location = new Point(83, 9);
+            DeleteBtn.Name = "DeleteBtn";
+            DeleteBtn.Size = new Size(56, 25);
+            DeleteBtn.TabIndex = 0;
+            DeleteBtn.Text = "Delete";
+            DeleteBtn.TextColor = Color.White;
+            DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // LblLicense
             // 
@@ -204,6 +197,13 @@
             tableLayoutPanel1.Size = new Size(860, 49);
             tableLayoutPanel1.TabIndex = 2;
             // 
+            // tripsToolStripMenuItem
+            // 
+            tripsToolStripMenuItem.Name = "tripsToolStripMenuItem";
+            tripsToolStripMenuItem.Size = new Size(180, 22);
+            tripsToolStripMenuItem.Text = "Trips";
+            tripsToolStripMenuItem.Click += tripsToolStripMenuItem_Click;
+            // 
             // UCDriver
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -223,7 +223,6 @@
 
         private ContextMenuStrip contextMenuStrip1;
         private ToolStripMenuItem editToolStripMenuItem;
-        private ToolStripMenuItem tripsToolStripMenuItem;
         private ToolStripMenuItem deleteToolStripMenuItem;
         private Panel panel1;
         private CustomControls.RJControls.RJButton EditBtn;
@@ -234,5 +233,6 @@
         private Label LblEmail;
         private Label LblSalary;
         private TableLayoutPanel tableLayoutPanel1;
+        private ToolStripMenuItem tripsToolStripMenuItem;
     }
 }

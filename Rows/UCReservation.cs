@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TransportReservationSystem.Data.Context;
+using TransportReservationSystem.Dialog;
 
 namespace TransportReservationSystem.Rows
 {
@@ -20,7 +21,7 @@ namespace TransportReservationSystem.Rows
         }
 
         public int Id { get; set; }
-
+        public int ReservationId {  get; set; }
         public int TripNo
         {
             get { return Convert.ToInt32(LblTripNo); }
@@ -48,15 +49,19 @@ namespace TransportReservationSystem.Rows
             set { LblStatus.Text = value; }
         }
 
-
-        private void EditBtn_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void DeleteBtn_Click(object sender, EventArgs e)
         {
+            FrmConfirmationDialog frmConfirmationDialog = new FrmConfirmationDialog();
+            frmConfirmationDialog.Id = Convert.ToInt32(ReservationId);
+            frmConfirmationDialog.Collection = "RESERVATION";
+            frmConfirmationDialog.ShowDialog();
+        }
 
+        private void DetailsBtn_Click(object sender, EventArgs e)
+        {
+            FrmReservationDetails frmReservationDetails = new FrmReservationDetails();
+            frmReservationDetails.Id = Id;
+            frmReservationDetails.ShowDialog();
         }
     }
 }

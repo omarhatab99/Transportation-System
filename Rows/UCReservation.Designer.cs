@@ -35,7 +35,7 @@
             LblPassengerName = new Label();
             LblTripNo = new Label();
             panel1 = new Panel();
-            EditBtn = new CustomControls.RJControls.RJButton();
+            DetailsBtn = new CustomControls.RJControls.RJButton();
             DeleteBtn = new CustomControls.RJControls.RJButton();
             tableLayoutPanel1.SuspendLayout();
             panel1.SuspendLayout();
@@ -125,7 +125,7 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(EditBtn);
+            panel1.Controls.Add(DetailsBtn);
             panel1.Controls.Add(DeleteBtn);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(704, 3);
@@ -133,24 +133,24 @@
             panel1.Size = new Size(153, 43);
             panel1.TabIndex = 5;
             // 
-            // EditBtn
+            // DetailsBtn
             // 
-            EditBtn.BackColor = Color.FromArgb(255, 128, 0);
-            EditBtn.BackgroundColor = Color.FromArgb(255, 128, 0);
-            EditBtn.BorderColor = Color.PaleVioletRed;
-            EditBtn.BorderRadius = 4;
-            EditBtn.BorderSize = 0;
-            EditBtn.FlatAppearance.BorderSize = 0;
-            EditBtn.FlatStyle = FlatStyle.Flat;
-            EditBtn.ForeColor = Color.White;
-            EditBtn.Location = new Point(21, 9);
-            EditBtn.Name = "EditBtn";
-            EditBtn.Size = new Size(56, 25);
-            EditBtn.TabIndex = 1;
-            EditBtn.Text = "Edit";
-            EditBtn.TextColor = Color.White;
-            EditBtn.UseVisualStyleBackColor = false;
-            EditBtn.Click += EditBtn_Click;
+            DetailsBtn.BackColor = Color.Teal;
+            DetailsBtn.BackgroundColor = Color.Teal;
+            DetailsBtn.BorderColor = Color.PaleVioletRed;
+            DetailsBtn.BorderRadius = 4;
+            DetailsBtn.BorderSize = 0;
+            DetailsBtn.FlatAppearance.BorderSize = 0;
+            DetailsBtn.FlatStyle = FlatStyle.Flat;
+            DetailsBtn.ForeColor = Color.White;
+            DetailsBtn.Location = new Point(21, 9);
+            DetailsBtn.Name = "DetailsBtn";
+            DetailsBtn.Size = new Size(56, 25);
+            DetailsBtn.TabIndex = 1;
+            DetailsBtn.Text = "Details";
+            DetailsBtn.TextColor = Color.White;
+            DetailsBtn.UseVisualStyleBackColor = false;
+            DetailsBtn.Click += DetailsBtn_Click;
             // 
             // DeleteBtn
             // 
@@ -193,7 +193,7 @@
         private Label LblPassengerName;
         private Label LblTripNo;
         private Panel panel1;
-        private CustomControls.RJControls.RJButton EditBtn;
+        private CustomControls.RJControls.RJButton DetailsBtn;
         private CustomControls.RJControls.RJButton DeleteBtn;
     }
 }

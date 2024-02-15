@@ -45,9 +45,9 @@
             label7 = new Label();
             label8 = new Label();
             panel10 = new Panel();
-            panel2 = new Panel();
-            pictureBox2 = new PictureBox();
             PassengerSearchInput = new TextBox();
+            pictureBox2 = new PictureBox();
+            panel2 = new Panel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
@@ -56,8 +56,8 @@
             panel9.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
             panel10.SuspendLayout();
-            panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel2.SuspendLayout();
             SuspendLayout();
             // 
             // CreateDriverBtn
@@ -284,17 +284,15 @@
             panel10.Size = new Size(860, 65);
             panel10.TabIndex = 5;
             // 
-            // panel2
+            // PassengerSearchInput
             // 
-            panel2.BackColor = Color.MintCream;
-            panel2.Controls.Add(panel10);
-            panel2.Controls.Add(panel3);
-            panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 97);
-            panel2.Name = "panel2";
-            panel2.Padding = new Padding(50, 80, 50, 30);
-            panel2.Size = new Size(960, 516);
-            panel2.TabIndex = 3;
+            PassengerSearchInput.BorderStyle = BorderStyle.None;
+            PassengerSearchInput.Location = new Point(142, 34);
+            PassengerSearchInput.Name = "PassengerSearchInput";
+            PassengerSearchInput.Size = new Size(569, 16);
+            PassengerSearchInput.TabIndex = 3;
+            PassengerSearchInput.TextChanged += PassengerSearchInput_TextChanged;
+            PassengerSearchInput.KeyUp += PassengerSearchInput_KeyUp;
             // 
             // pictureBox2
             // 
@@ -307,13 +305,17 @@
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
             // 
-            // PassengerSearchInput
+            // panel2
             // 
-            PassengerSearchInput.BorderStyle = BorderStyle.None;
-            PassengerSearchInput.Location = new Point(142, 34);
-            PassengerSearchInput.Name = "PassengerSearchInput";
-            PassengerSearchInput.Size = new Size(569, 16);
-            PassengerSearchInput.TabIndex = 3;
+            panel2.BackColor = Color.MintCream;
+            panel2.Controls.Add(panel10);
+            panel2.Controls.Add(panel3);
+            panel2.Dock = DockStyle.Fill;
+            panel2.Location = new Point(0, 97);
+            panel2.Name = "panel2";
+            panel2.Padding = new Padding(50, 80, 50, 30);
+            panel2.Size = new Size(960, 516);
+            panel2.TabIndex = 3;
             // 
             // FrmPassengers
             // 
@@ -337,8 +339,8 @@
             tableLayoutPanel2.PerformLayout();
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
-            panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel2.ResumeLayout(false);
             ResumeLayout(false);
         }
 

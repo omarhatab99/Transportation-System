@@ -116,12 +116,20 @@ namespace TransportReservationSystem.Rows
 
         private void resservationToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmReservations frmReservations = new FrmReservations();
+            frmReservations.Id = Id;
+            frmReservations.Show = "TRIP";
+            frmReservations.StartPosition = FormStartPosition.CenterScreen;
+            frmReservations.ShowDialog();
         }
 
         private void passengersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmPassengers frmPassengers = new FrmPassengers();
+            frmPassengers.Id = Id;
+            frmPassengers.Show = "TRIP";
+            frmPassengers.StartPosition = FormStartPosition.CenterScreen;
+            frmPassengers.ShowDialog();
         }
     }
 }

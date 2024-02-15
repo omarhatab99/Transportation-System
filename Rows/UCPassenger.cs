@@ -11,7 +11,9 @@ using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Dialog;
 using TransportReservationSystem.Pages;
+using TransportReservationSystem.Pages.Booking;
 using TransportReservationSystem.Pages.Passengers;
+using TransportReservationSystem.Pages.Trips;
 using TransportReservationSystem.Pages.Vehicles;
 
 namespace TransportReservationSystem.Rows
@@ -93,17 +95,28 @@ namespace TransportReservationSystem.Rows
 
         private void tripsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmShowTrips frmShowTrips = new FrmShowTrips();
+            frmShowTrips.Id = Id;
+            frmShowTrips.Show = "PASSENGER";
+            frmShowTrips.StartPosition = FormStartPosition.CenterScreen;
+            frmShowTrips.ShowDialog();
         }
 
         private void reservationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmReservations frmReservations = new FrmReservations();
+            frmReservations.Id = Id;
+            frmReservations.Show = "PASSENGER";
+            frmReservations.StartPosition = FormStartPosition.CenterScreen;
+            frmReservations.ShowDialog();
         }
 
         private void bookTripToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmBooking frmBooking = new FrmBooking();
+            frmBooking.PassengerBookingId = Id;
+            frmBooking.StartPosition = FormStartPosition.CenterScreen;
+            frmBooking.ShowDialog();
         }
 
 

@@ -13,6 +13,8 @@ using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Pages;
 using TransportReservationSystem.Pages.Vehicles;
 using TransportReservationSystem.Dialog;
+using TransportReservationSystem.Pages.Trips;
+using TransportReservationSystem.Pages.Booking;
 
 namespace TransportReservationSystem.Rows
 {
@@ -108,15 +110,29 @@ namespace TransportReservationSystem.Rows
         {
             Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id && x.LicensePlate == LicensePlate);
 
-            vehicle.IsAvailable = !vehicle.IsAvailable;
+            Trip trips = applicaitonDbContext.Trips.FirstOrDefault(x => x.VehicleId == Id && !x.Done)!; 
 
-            applicaitonDbContext.Vehicles.Update(vehicle);
+            if (trips != null)
+            {
 
-            applicaitonDbContext.SaveChanges();
+                FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                frmValidationDialog.showAlert("This Vehicle Has Trips Not Done Edit it firstly..!!", FrmValidationDialog.enmType.Error);
+                return;
+            }
+            else
+            {
+                vehicle.IsAvailable = !vehicle.IsAvailable;
 
-            FrmVehicles frmVehicles = new FrmVehicles();
+                applicaitonDbContext.Vehicles.Update(vehicle);
 
-            LoadForm(frmVehicles);
+                applicaitonDbContext.SaveChanges();
+
+                FrmVehicles frmVehicles = new FrmVehicles();
+
+                LoadForm(frmVehicles);
+            }
+
+
         }
 
 
@@ -133,6 +149,13 @@ namespace TransportReservationSystem.Rows
             applicationForm.Show();
         }
 
-
+        private void tripsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmShowTrips frmShowTrips = new FrmShowTrips();
+            frmShowTrips.Id = Id;
+            frmShowTrips.Show = "VEHICLE";
+            frmShowTrips.StartPosition = FormStartPosition.CenterScreen;
+            frmShowTrips.ShowDialog();
+        }
     }
 }

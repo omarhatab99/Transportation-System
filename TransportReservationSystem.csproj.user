@@ -7,7 +7,22 @@
     <Compile Update="Dialog\FrmValidationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pages\Reservations\FrmReservationDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Dialog\StationModel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Booking\FrmBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Booking\FrmsemiLowFloorSeats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Booking\FrmInterState.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Booking\FrmTouristSeats.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\FrmAlert.cs">
@@ -47,6 +62,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Passengers\FrmPassengers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Trips\FrmShowTrips.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Trips\FrmTripCrud.cs">

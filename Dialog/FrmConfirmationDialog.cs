@@ -162,6 +162,56 @@ namespace TransportReservationSystem.Dialog
                     frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
                 }
             }
+            else if (Collection == "RESERVATION")
+            {
+
+                Reservation reservation = applicaitonDbContext.Reservations.FirstOrDefault(x => x.Id == Id)!;
+                try
+                {
+                    Trip trip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == reservation.TripId)!;
+
+                    DateTime date1 = DateTime.Parse(trip.DepatureDate.ToString());
+                    DateTime date2 = DateTime.Now;
+
+                    if(date2 > date1  && !trip.Done)
+                    {
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert("Trip is Already Started..!!", FrmValidationDialog.enmType.Warning);
+                    }
+                    else if(date1 > date2 && !trip.Done)
+                    {
+                        int numberOfSeats = reservation.SeatsNumber;
+                        applicaitonDbContext.Reservations.Remove(reservation);
+                        int result = applicaitonDbContext.SaveChanges();
+                        if(result != 0)
+                        {
+                            trip.AvailableSeats += numberOfSeats;
+                            applicaitonDbContext.Trips.Update(trip);
+                            applicaitonDbContext.SaveChanges();
+                        }
+                    }
+                    else
+                    {
+                        applicaitonDbContext.Reservations.Remove(reservation);
+                        applicaitonDbContext.SaveChanges();
+                    }
+
+
+                    FrmReservations frmReservations = new FrmReservations();
+
+                    LoadForm(frmReservations);
+
+                    this.Close();
+
+
+                }
+                catch (Exception ex)
+                {
+
+                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                    frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
+                }
+            }
         }
 
 

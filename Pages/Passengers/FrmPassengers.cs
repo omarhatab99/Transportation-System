@@ -25,10 +25,22 @@ namespace TransportReservationSystem.Pages.Passengers
             InitializeComponent();
         }
 
+        public int Id { get; set; }
+        public string Show { get; set; }
+
         private void FrmPassengers_Load(object sender, EventArgs e)
         {
-            List<Passenger> passengerList = applicaitonDbContext.Passengers.ToList();
+            List<Passenger> passengerList = new List<Passenger>();
+            List<Reservation> reservations = applicaitonDbContext.Reservations.Where(x => x.TripId == Id).ToList();
+            if (Id != 0 && Show == "TRIP")
+            {
+                passengerList = reservations.Select(x => x.Passenger).ToList();
+            }
+            else
+            {
+                passengerList = applicaitonDbContext.Passengers.ToList();
 
+            }
 
             List<PassengerVm> passengers = passengerList.Select(x => new PassengerVm
             {
@@ -84,7 +96,20 @@ namespace TransportReservationSystem.Pages.Passengers
         {
             string trim = PassengerSearchInput.Text.ToLower().Trim().ToLower();
 
-            List<Passenger> passengerList = applicaitonDbContext.Passengers.Where(x => !x.IsDeleted).ToList();
+            List<Passenger> passengerList = new List<Passenger>();
+
+            if (Id != 0 && Show == "TRIP")
+            {
+                List<Reservation> reservations = applicaitonDbContext.Reservations.Where(x => x.TripId == Id).ToList();
+                passengerList = reservations.Select(x => x.Passenger).Where(x => !x.IsDeleted).ToList();
+            }
+            else
+            {
+                passengerList = applicaitonDbContext.Passengers.Where(x => !x.IsDeleted).ToList();
+
+            }
+
+
 
             List<PassengerVm> passengers = passengerList.Select(x => new PassengerVm
             {
@@ -118,6 +143,11 @@ namespace TransportReservationSystem.Pages.Passengers
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PassengerSearchInput_TextChanged(object sender, EventArgs e)
         {
 
         }

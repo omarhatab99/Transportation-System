@@ -289,3 +289,10 @@ G:\Transportation-System-master\bin\Debug\net8.0-windows\System.Management.dll
 G:\Transportation-System-master\bin\Debug\net8.0-windows\runtimes\win\lib\net7.0\System.Management.dll
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCTrip.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Dialog.StationModel.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmBooking.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCReservation.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmInterState.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmsemiLowFloorSeats.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmTouristSeats.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Dialog.FrmReservationDetails.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmShowTrips.resources
