@@ -7,6 +7,15 @@
     <Compile Update="Dialog\FrmValidationDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pages\Drivers\FrmDriverTrips.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Passengers\FrmPassengerBooking.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Passengers\FrmPassengerReservation.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Pages\Reservations\FrmReservationDetails.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -40,28 +49,28 @@
     <Compile Update="Pages\FrmHome.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\FrmLogin.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Update="Pages\FrmMain.cs">
+    <Compile Update="Pages\Authentication\FrmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\FrmOverlay.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\FrmRegister.cs">
+    <Compile Update="Pages\Authentication\FrmRegister.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Reservations\FrmReservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Pages\FrmUsers.cs">
+    <Compile Update="Pages\Authentication\FrmUsers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Passengers\FrmPassengerCrud.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Passengers\FrmPassengers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Pages\Trips\FrmPassengerTrips.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Pages\Trips\FrmShowTrips.cs">
@@ -94,7 +103,16 @@
     <Compile Update="Rows\UCDriver.cs">
       <SubType>UserControl</SubType>
     </Compile>
+    <Compile Update="Rows\UCDriverTrips.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
     <Compile Update="Rows\UCPassenger.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Rows\UCPassengerReservation.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Rows\UCPassengerTrips.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="Rows\UCReservation.cs">

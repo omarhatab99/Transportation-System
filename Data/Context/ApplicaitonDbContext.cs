@@ -64,5 +64,7 @@ namespace TransportReservationSystem.Data.Context
         public DbSet<Trip> Trips { get; set; }
         public DbSet<Station> Stations { get; set; }
         public DbSet<Staff> Staff { get; set; }
+        public DbSet<Analatycal> Analatycals { get; set; }
+
     }
 }

@@ -30,64 +30,83 @@
         {
             components = new System.ComponentModel.Container();
             SidebarTimer = new System.Windows.Forms.Timer(components);
-            panel9 = new Panel();
-            panel3 = new Panel();
+            UserSide = new Panel();
+            UsersBtn = new Button();
+            PassengerSide = new Panel();
             PassengersBtn = new Button();
-            panel7 = new Panel();
+            ReservationSide = new Panel();
             ReservationBtn = new Button();
-            panel6 = new Panel();
+            VehicleSide = new Panel();
             VehicleBtn = new Button();
-            panel5 = new Panel();
+            DriverSide = new Panel();
             DriversBtn = new Button();
             panel2 = new Panel();
             MenuBtn = new PictureBox();
             pictureBox3 = new PictureBox();
             Sidebar = new FlowLayoutPanel();
-            sqlCommandBuilder1 = new Microsoft.Data.SqlClient.SqlCommandBuilder();
-            MainPanel = new Panel();
-            UsersBtn = new Button();
+            DashboardSide = new Panel();
             DashboardBtn = new Button();
-            panel4 = new Panel();
-            panel1 = new Panel();
+            TripSide = new Panel();
             TripsBtn = new Button();
-            LogoutBtnShape = new PictureBox();
-            LogoutBtn = new PictureBox();
             panel8 = new Panel();
-            panel9.SuspendLayout();
-            panel3.SuspendLayout();
-            panel7.SuspendLayout();
-            panel6.SuspendLayout();
-            panel5.SuspendLayout();
+            LogoutBtn = new PictureBox();
+            LogoutBtnShape = new PictureBox();
+            MainPanel = new Panel();
+            UserSide.SuspendLayout();
+            PassengerSide.SuspendLayout();
+            ReservationSide.SuspendLayout();
+            VehicleSide.SuspendLayout();
+            DriverSide.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)MenuBtn).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Sidebar.SuspendLayout();
-            panel4.SuspendLayout();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)LogoutBtnShape).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
+            DashboardSide.SuspendLayout();
+            TripSide.SuspendLayout();
             panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtnShape).BeginInit();
             SuspendLayout();
             // 
             // SidebarTimer
             // 
             SidebarTimer.Tick += SidebarTimer_Tick;
             // 
-            // panel9
+            // UserSide
             // 
-            panel9.Controls.Add(UsersBtn);
-            panel9.Location = new Point(3, 376);
-            panel9.Name = "panel9";
-            panel9.Size = new Size(208, 41);
-            panel9.TabIndex = 5;
+            UserSide.Controls.Add(UsersBtn);
+            UserSide.Location = new Point(3, 423);
+            UserSide.Name = "UserSide";
+            UserSide.Size = new Size(208, 41);
+            UserSide.TabIndex = 5;
             // 
-            // panel3
+            // UsersBtn
             // 
-            panel3.Controls.Add(PassengersBtn);
-            panel3.Location = new Point(3, 329);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(208, 41);
-            panel3.TabIndex = 4;
+            UsersBtn.BackColor = Color.DarkViolet;
+            UsersBtn.Cursor = Cursors.Hand;
+            UsersBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(169, 39, 176);
+            UsersBtn.FlatStyle = FlatStyle.Flat;
+            UsersBtn.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            UsersBtn.ForeColor = Color.White;
+            UsersBtn.Image = Properties.Resources.user_gear;
+            UsersBtn.ImageAlign = ContentAlignment.MiddleLeft;
+            UsersBtn.Location = new Point(-12, -12);
+            UsersBtn.Name = "UsersBtn";
+            UsersBtn.Padding = new Padding(30, 0, 0, 0);
+            UsersBtn.Size = new Size(227, 63);
+            UsersBtn.TabIndex = 3;
+            UsersBtn.Text = "                Users";
+            UsersBtn.TextAlign = ContentAlignment.MiddleLeft;
+            UsersBtn.UseVisualStyleBackColor = false;
+            UsersBtn.Click += UsersBtn_Click;
+            // 
+            // PassengerSide
+            // 
+            PassengerSide.Controls.Add(PassengersBtn);
+            PassengerSide.Location = new Point(3, 329);
+            PassengerSide.Name = "PassengerSide";
+            PassengerSide.Size = new Size(208, 41);
+            PassengerSide.TabIndex = 4;
             // 
             // PassengersBtn
             // 
@@ -99,7 +118,7 @@
             PassengersBtn.ForeColor = Color.White;
             PassengersBtn.Image = Properties.Resources.user;
             PassengersBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            PassengersBtn.Location = new Point(-16, -17);
+            PassengersBtn.Location = new Point(-15, -15);
             PassengersBtn.Name = "PassengersBtn";
             PassengersBtn.Padding = new Padding(30, 0, 0, 0);
             PassengersBtn.Size = new Size(240, 72);
@@ -109,13 +128,13 @@
             PassengersBtn.UseVisualStyleBackColor = false;
             PassengersBtn.Click += PassengersBtn_Click;
             // 
-            // panel7
+            // ReservationSide
             // 
-            panel7.Controls.Add(ReservationBtn);
-            panel7.Location = new Point(3, 282);
-            panel7.Name = "panel7";
-            panel7.Size = new Size(208, 41);
-            panel7.TabIndex = 5;
+            ReservationSide.Controls.Add(ReservationBtn);
+            ReservationSide.Location = new Point(3, 376);
+            ReservationSide.Name = "ReservationSide";
+            ReservationSide.Size = new Size(208, 41);
+            ReservationSide.TabIndex = 5;
             // 
             // ReservationBtn
             // 
@@ -127,23 +146,23 @@
             ReservationBtn.ForeColor = Color.White;
             ReservationBtn.Image = Properties.Resources.ticket;
             ReservationBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            ReservationBtn.Location = new Point(-16, -17);
+            ReservationBtn.Location = new Point(-13, -8);
             ReservationBtn.Name = "ReservationBtn";
             ReservationBtn.Padding = new Padding(30, 0, 0, 0);
-            ReservationBtn.Size = new Size(240, 72);
+            ReservationBtn.Size = new Size(240, 56);
             ReservationBtn.TabIndex = 3;
             ReservationBtn.Text = "                Reservations";
             ReservationBtn.TextAlign = ContentAlignment.MiddleLeft;
             ReservationBtn.UseVisualStyleBackColor = false;
             ReservationBtn.Click += ReservationBtn_Click;
             // 
-            // panel6
+            // VehicleSide
             // 
-            panel6.Controls.Add(VehicleBtn);
-            panel6.Location = new Point(3, 235);
-            panel6.Name = "panel6";
-            panel6.Size = new Size(208, 41);
-            panel6.TabIndex = 5;
+            VehicleSide.Controls.Add(VehicleBtn);
+            VehicleSide.Location = new Point(3, 235);
+            VehicleSide.Name = "VehicleSide";
+            VehicleSide.Size = new Size(208, 41);
+            VehicleSide.TabIndex = 5;
             // 
             // VehicleBtn
             // 
@@ -155,23 +174,23 @@
             VehicleBtn.ForeColor = Color.White;
             VehicleBtn.Image = Properties.Resources.bus;
             VehicleBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            VehicleBtn.Location = new Point(-16, -17);
+            VehicleBtn.Location = new Point(-14, -17);
             VehicleBtn.Name = "VehicleBtn";
             VehicleBtn.Padding = new Padding(30, 0, 0, 0);
-            VehicleBtn.Size = new Size(240, 72);
+            VehicleBtn.Size = new Size(240, 74);
             VehicleBtn.TabIndex = 3;
             VehicleBtn.Text = "               Vehicles";
             VehicleBtn.TextAlign = ContentAlignment.MiddleLeft;
             VehicleBtn.UseVisualStyleBackColor = false;
             VehicleBtn.Click += VehicleBtn_Click;
             // 
-            // panel5
+            // DriverSide
             // 
-            panel5.Controls.Add(DriversBtn);
-            panel5.Location = new Point(3, 188);
-            panel5.Name = "panel5";
-            panel5.Size = new Size(208, 41);
-            panel5.TabIndex = 5;
+            DriverSide.Controls.Add(DriversBtn);
+            DriverSide.Location = new Point(3, 188);
+            DriverSide.Name = "DriverSide";
+            DriverSide.Size = new Size(208, 41);
+            DriverSide.TabIndex = 5;
             // 
             // DriversBtn
             // 
@@ -186,7 +205,7 @@
             DriversBtn.Location = new Point(-16, -17);
             DriversBtn.Name = "DriversBtn";
             DriversBtn.Padding = new Padding(30, 0, 0, 0);
-            DriversBtn.Size = new Size(240, 72);
+            DriversBtn.Size = new Size(240, 70);
             DriversBtn.TabIndex = 3;
             DriversBtn.Text = "               Drivers";
             DriversBtn.TextAlign = ContentAlignment.MiddleLeft;
@@ -201,7 +220,6 @@
             panel2.Name = "panel2";
             panel2.Size = new Size(208, 132);
             panel2.TabIndex = 6;
-            panel2.Click += panel2_Click;
             // 
             // MenuBtn
             // 
@@ -230,13 +248,13 @@
             // 
             Sidebar.BackColor = Color.FromArgb(3, 6, 55);
             Sidebar.Controls.Add(panel2);
-            Sidebar.Controls.Add(panel4);
-            Sidebar.Controls.Add(panel5);
-            Sidebar.Controls.Add(panel6);
-            Sidebar.Controls.Add(panel7);
-            Sidebar.Controls.Add(panel3);
-            Sidebar.Controls.Add(panel9);
-            Sidebar.Controls.Add(panel1);
+            Sidebar.Controls.Add(DashboardSide);
+            Sidebar.Controls.Add(DriverSide);
+            Sidebar.Controls.Add(VehicleSide);
+            Sidebar.Controls.Add(TripSide);
+            Sidebar.Controls.Add(PassengerSide);
+            Sidebar.Controls.Add(ReservationSide);
+            Sidebar.Controls.Add(UserSide);
             Sidebar.Controls.Add(panel8);
             Sidebar.Dock = DockStyle.Left;
             Sidebar.Location = new Point(0, 0);
@@ -246,34 +264,13 @@
             Sidebar.Size = new Size(215, 652);
             Sidebar.TabIndex = 0;
             // 
-            // MainPanel
+            // DashboardSide
             // 
-            MainPanel.Dock = DockStyle.Fill;
-            MainPanel.Location = new Point(215, 0);
-            MainPanel.Name = "MainPanel";
-            MainPanel.Size = new Size(978, 652);
-            MainPanel.TabIndex = 1;
-            MainPanel.Paint += MainPanel_Paint;
-            // 
-            // UsersBtn
-            // 
-            UsersBtn.BackColor = Color.DarkViolet;
-            UsersBtn.Cursor = Cursors.Hand;
-            UsersBtn.FlatAppearance.MouseOverBackColor = Color.FromArgb(169, 39, 176);
-            UsersBtn.FlatStyle = FlatStyle.Flat;
-            UsersBtn.Font = new Font("Segoe UI Semibold", 10F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            UsersBtn.ForeColor = Color.White;
-            UsersBtn.Image = Properties.Resources.user_gear;
-            UsersBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            UsersBtn.Location = new Point(-16, -18);
-            UsersBtn.Name = "UsersBtn";
-            UsersBtn.Padding = new Padding(30, 0, 0, 0);
-            UsersBtn.Size = new Size(240, 72);
-            UsersBtn.TabIndex = 3;
-            UsersBtn.Text = "                Users";
-            UsersBtn.TextAlign = ContentAlignment.MiddleLeft;
-            UsersBtn.UseVisualStyleBackColor = false;
-            UsersBtn.Click += UsersBtn_Click;
+            DashboardSide.Controls.Add(DashboardBtn);
+            DashboardSide.Location = new Point(3, 141);
+            DashboardSide.Name = "DashboardSide";
+            DashboardSide.Size = new Size(208, 41);
+            DashboardSide.TabIndex = 6;
             // 
             // DashboardBtn
             // 
@@ -288,28 +285,20 @@
             DashboardBtn.Location = new Point(-14, -18);
             DashboardBtn.Name = "DashboardBtn";
             DashboardBtn.Padding = new Padding(30, 0, 0, 0);
-            DashboardBtn.Size = new Size(240, 72);
+            DashboardBtn.Size = new Size(240, 74);
             DashboardBtn.TabIndex = 3;
             DashboardBtn.Text = "              Dashboard";
             DashboardBtn.TextAlign = ContentAlignment.MiddleLeft;
             DashboardBtn.UseVisualStyleBackColor = false;
             DashboardBtn.Click += DashboardBtn_Click;
             // 
-            // panel4
+            // TripSide
             // 
-            panel4.Controls.Add(DashboardBtn);
-            panel4.Location = new Point(3, 141);
-            panel4.Name = "panel4";
-            panel4.Size = new Size(208, 41);
-            panel4.TabIndex = 6;
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(TripsBtn);
-            panel1.Location = new Point(3, 423);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(208, 41);
-            panel1.TabIndex = 9;
+            TripSide.Controls.Add(TripsBtn);
+            TripSide.Location = new Point(3, 282);
+            TripSide.Name = "TripSide";
+            TripSide.Size = new Size(208, 41);
+            TripSide.TabIndex = 9;
             // 
             // TripsBtn
             // 
@@ -321,25 +310,24 @@
             TripsBtn.ForeColor = Color.White;
             TripsBtn.Image = Properties.Resources.car_journey1;
             TripsBtn.ImageAlign = ContentAlignment.MiddleLeft;
-            TripsBtn.Location = new Point(-14, -16);
+            TripsBtn.Location = new Point(-13, -13);
             TripsBtn.Name = "TripsBtn";
             TripsBtn.Padding = new Padding(30, 0, 0, 0);
-            TripsBtn.Size = new Size(240, 72);
+            TripsBtn.Size = new Size(228, 69);
             TripsBtn.TabIndex = 3;
             TripsBtn.Text = "               Trips";
             TripsBtn.TextAlign = ContentAlignment.MiddleLeft;
             TripsBtn.UseVisualStyleBackColor = false;
             TripsBtn.Click += TripsBtn_Click;
             // 
-            // LogoutBtnShape
+            // panel8
             // 
-            LogoutBtnShape.Image = Properties.Resources.shape_menu;
-            LogoutBtnShape.Location = new Point(-65, 105);
-            LogoutBtnShape.Name = "LogoutBtnShape";
-            LogoutBtnShape.Size = new Size(226, 65);
-            LogoutBtnShape.SizeMode = PictureBoxSizeMode.Zoom;
-            LogoutBtnShape.TabIndex = 7;
-            LogoutBtnShape.TabStop = false;
+            panel8.Controls.Add(LogoutBtn);
+            panel8.Controls.Add(LogoutBtnShape);
+            panel8.Location = new Point(3, 470);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(208, 173);
+            panel8.TabIndex = 5;
             // 
             // LogoutBtn
             // 
@@ -354,14 +342,23 @@
             LogoutBtn.TabStop = false;
             LogoutBtn.Click += LogoutBtn_Click;
             // 
-            // panel8
+            // LogoutBtnShape
             // 
-            panel8.Controls.Add(LogoutBtn);
-            panel8.Controls.Add(LogoutBtnShape);
-            panel8.Location = new Point(3, 470);
-            panel8.Name = "panel8";
-            panel8.Size = new Size(208, 173);
-            panel8.TabIndex = 5;
+            LogoutBtnShape.Image = Properties.Resources.shape_menu;
+            LogoutBtnShape.Location = new Point(-65, 105);
+            LogoutBtnShape.Name = "LogoutBtnShape";
+            LogoutBtnShape.Size = new Size(226, 65);
+            LogoutBtnShape.SizeMode = PictureBoxSizeMode.Zoom;
+            LogoutBtnShape.TabIndex = 7;
+            LogoutBtnShape.TabStop = false;
+            // 
+            // MainPanel
+            // 
+            MainPanel.Dock = DockStyle.Fill;
+            MainPanel.Location = new Point(215, 0);
+            MainPanel.Name = "MainPanel";
+            MainPanel.Size = new Size(978, 652);
+            MainPanel.TabIndex = 1;
             // 
             // FrmDashboard
             // 
@@ -378,44 +375,43 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmDashboard";
             Load += FrmDashboard_Load;
-            panel9.ResumeLayout(false);
-            panel3.ResumeLayout(false);
-            panel7.ResumeLayout(false);
-            panel6.ResumeLayout(false);
-            panel5.ResumeLayout(false);
+            UserSide.ResumeLayout(false);
+            PassengerSide.ResumeLayout(false);
+            ReservationSide.ResumeLayout(false);
+            VehicleSide.ResumeLayout(false);
+            DriverSide.ResumeLayout(false);
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)MenuBtn).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             Sidebar.ResumeLayout(false);
-            panel4.ResumeLayout(false);
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)LogoutBtnShape).EndInit();
-            ((System.ComponentModel.ISupportInitialize)LogoutBtn).EndInit();
+            DashboardSide.ResumeLayout(false);
+            TripSide.ResumeLayout(false);
             panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)LogoutBtn).EndInit();
+            ((System.ComponentModel.ISupportInitialize)LogoutBtnShape).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
         private System.Windows.Forms.Timer SidebarTimer;
-        private Panel panel9;
-        private Panel panel3;
+        private Panel UserSide;
+        private Panel PassengerSide;
         private Button PassengersBtn;
-        private Panel panel7;
+        private Panel ReservationSide;
         private Button ReservationBtn;
-        private Panel panel6;
+        private Panel VehicleSide;
         private Button VehicleBtn;
-        private Panel panel5;
+        private Panel DriverSide;
         private Button DriversBtn;
         private Panel panel2;
         private PictureBox MenuBtn;
         private PictureBox pictureBox3;
         private FlowLayoutPanel Sidebar;
-        private Microsoft.Data.SqlClient.SqlCommandBuilder sqlCommandBuilder1;
         public Panel MainPanel;
         private Button UsersBtn;
-        private Panel panel4;
+        private Panel DashboardSide;
         private Button DashboardBtn;
-        private Panel panel1;
+        private Panel TripSide;
         private Button TripsBtn;
         private Panel panel8;
         private PictureBox LogoutBtn;

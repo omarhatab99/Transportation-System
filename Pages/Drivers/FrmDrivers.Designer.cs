@@ -44,7 +44,6 @@
             tableLayoutPanel2 = new TableLayoutPanel();
             label1 = new Label();
             label2 = new Label();
-            Label4 = new Label();
             Label3 = new Label();
             label7 = new Label();
             label8 = new Label();
@@ -183,16 +182,14 @@
             // tableLayoutPanel2
             // 
             tableLayoutPanel2.BackColor = Color.FromArgb(68, 11, 91);
-            tableLayoutPanel2.ColumnCount = 6;
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.17129F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.8795872F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1712856F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1712856F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 16.1712856F));
-            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.4352665F));
-            tableLayoutPanel2.Controls.Add(label1, 5, 0);
-            tableLayoutPanel2.Controls.Add(label2, 4, 0);
-            tableLayoutPanel2.Controls.Add(Label4, 3, 0);
+            tableLayoutPanel2.ColumnCount = 5;
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.9920616F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 24.6127586F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 18.9920616F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15.7521658F));
+            tableLayoutPanel2.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 21.6509476F));
+            tableLayoutPanel2.Controls.Add(label1, 4, 0);
+            tableLayoutPanel2.Controls.Add(label2, 3, 0);
             tableLayoutPanel2.Controls.Add(Label3, 2, 0);
             tableLayoutPanel2.Controls.Add(label7, 1, 0);
             tableLayoutPanel2.Controls.Add(label8, 0, 0);
@@ -209,9 +206,9 @@
             // 
             label1.AutoSize = true;
             label1.Dock = DockStyle.Fill;
-            label1.Location = new Point(704, 0);
+            label1.Location = new Point(675, 0);
             label1.Name = "label1";
-            label1.Size = new Size(153, 62);
+            label1.Size = new Size(182, 62);
             label1.TabIndex = 5;
             label1.Text = "Actions";
             label1.TextAlign = ContentAlignment.MiddleCenter;
@@ -220,31 +217,20 @@
             // 
             label2.AutoSize = true;
             label2.Dock = DockStyle.Fill;
-            label2.Location = new Point(565, 0);
+            label2.Location = new Point(540, 0);
             label2.Name = "label2";
-            label2.Size = new Size(133, 62);
+            label2.Size = new Size(129, 62);
             label2.TabIndex = 4;
             label2.Text = "Salary";
             label2.TextAlign = ContentAlignment.MiddleCenter;
-            // 
-            // Label4
-            // 
-            Label4.AutoSize = true;
-            Label4.Dock = DockStyle.Fill;
-            Label4.Location = new Point(426, 0);
-            Label4.Name = "Label4";
-            Label4.Size = new Size(133, 62);
-            Label4.TabIndex = 3;
-            Label4.Text = "Email";
-            Label4.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Label3
             // 
             Label3.AutoSize = true;
             Label3.Dock = DockStyle.Fill;
-            Label3.Location = new Point(287, 0);
+            Label3.Location = new Point(377, 0);
             Label3.Name = "Label3";
-            Label3.Size = new Size(133, 62);
+            Label3.Size = new Size(157, 62);
             Label3.TabIndex = 2;
             Label3.Text = "Phone";
             Label3.TextAlign = ContentAlignment.MiddleCenter;
@@ -253,9 +239,9 @@
             // 
             label7.AutoSize = true;
             label7.Dock = DockStyle.Fill;
-            label7.Location = new Point(142, 0);
+            label7.Location = new Point(166, 0);
             label7.Name = "label7";
-            label7.Size = new Size(139, 62);
+            label7.Size = new Size(205, 62);
             label7.TabIndex = 1;
             label7.Text = "Username";
             label7.TextAlign = ContentAlignment.MiddleCenter;
@@ -266,7 +252,7 @@
             label8.Dock = DockStyle.Fill;
             label8.Location = new Point(3, 0);
             label8.Name = "label8";
-            label8.Size = new Size(133, 62);
+            label8.Size = new Size(157, 62);
             label8.TabIndex = 0;
             label8.Text = "Licenece";
             label8.TextAlign = ContentAlignment.MiddleCenter;
@@ -283,9 +269,10 @@
             // DriverSearchInput
             // 
             DriverSearchInput.BorderStyle = BorderStyle.None;
+            DriverSearchInput.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point, 0);
             DriverSearchInput.Location = new Point(142, 31);
             DriverSearchInput.Name = "DriverSearchInput";
-            DriverSearchInput.Size = new Size(569, 22);
+            DriverSearchInput.Size = new Size(569, 16);
             DriverSearchInput.TabIndex = 2;
             DriverSearchInput.KeyUp += DriverSearchInput_KeyUp;
             // 
@@ -401,7 +388,6 @@
         private TableLayoutPanel tableLayoutPanel2;
         private Label label1;
         private Label label2;
-        private Label Label4;
         private Label Label3;
         private Label label7;
         private Label label8;

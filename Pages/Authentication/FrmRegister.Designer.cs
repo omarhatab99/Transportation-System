@@ -36,20 +36,19 @@
             pictureBox2 = new PictureBox();
             EmailInput = new TextBox();
             pictureBox5 = new PictureBox();
-            numericUpDown1 = new NumericUpDown();
             PasswordInput = new TextBox();
             pictureBox6 = new PictureBox();
-            comboBox1 = new ComboBox();
+            CBGender = new ComboBox();
             RegisterBtn = new Button();
             RegisterBtnPic = new PictureBox();
             LoginBtn = new Button();
             LoginBtnPic = new PictureBox();
+            PhoneInput = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)RegisterBtnPic).BeginInit();
             ((System.ComponentModel.ISupportInitialize)LoginBtnPic).BeginInit();
@@ -126,16 +125,6 @@
             pictureBox5.TabIndex = 26;
             pictureBox5.TabStop = false;
             // 
-            // numericUpDown1
-            // 
-            numericUpDown1.BorderStyle = BorderStyle.None;
-            numericUpDown1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            numericUpDown1.ForeColor = Color.DarkGray;
-            numericUpDown1.Location = new Point(918, 378);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(241, 22);
-            numericUpDown1.TabIndex = 28;
-            // 
             // PasswordInput
             // 
             PasswordInput.BorderStyle = BorderStyle.None;
@@ -157,18 +146,18 @@
             pictureBox6.TabIndex = 30;
             pictureBox6.TabStop = false;
             // 
-            // comboBox1
+            // CBGender
             // 
-            comboBox1.FlatStyle = FlatStyle.Flat;
-            comboBox1.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            comboBox1.ForeColor = Color.DarkGray;
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(915, 449);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(244, 28);
-            comboBox1.TabIndex = 31;
-            comboBox1.Text = "Select Gender...";
+            CBGender.FlatStyle = FlatStyle.Flat;
+            CBGender.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            CBGender.ForeColor = Color.DarkGray;
+            CBGender.FormattingEnabled = true;
+            CBGender.Items.AddRange(new object[] { "Male", "Female" });
+            CBGender.Location = new Point(915, 449);
+            CBGender.Name = "CBGender";
+            CBGender.Size = new Size(244, 28);
+            CBGender.TabIndex = 31;
+            CBGender.Text = "Select Gender...";
             // 
             // RegisterBtn
             // 
@@ -230,20 +219,32 @@
             LoginBtnPic.TabIndex = 32;
             LoginBtnPic.TabStop = false;
             // 
+            // PhoneInput
+            // 
+            PhoneInput.BorderStyle = BorderStyle.None;
+            PhoneInput.Font = new Font("Century Gothic", 11.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            PhoneInput.ForeColor = Color.DarkGray;
+            PhoneInput.Location = new Point(918, 376);
+            PhoneInput.Multiline = true;
+            PhoneInput.Name = "PhoneInput";
+            PhoneInput.Size = new Size(222, 20);
+            PhoneInput.TabIndex = 36;
+            PhoneInput.TextChanged += textBox1_TextChanged;
+            // 
             // FrmRegister
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(1193, 652);
+            Controls.Add(PhoneInput);
             Controls.Add(RegisterBtn);
             Controls.Add(RegisterBtnPic);
             Controls.Add(LoginBtn);
             Controls.Add(LoginBtnPic);
-            Controls.Add(comboBox1);
+            Controls.Add(CBGender);
             Controls.Add(pictureBox6);
             Controls.Add(PasswordInput);
-            Controls.Add(numericUpDown1);
             Controls.Add(pictureBox5);
             Controls.Add(label1);
             Controls.Add(pictureBox4);
@@ -262,7 +263,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)RegisterBtnPic).EndInit();
             ((System.ComponentModel.ISupportInitialize)LoginBtnPic).EndInit();
@@ -279,13 +279,13 @@
         private PictureBox pictureBox2;
         private TextBox EmailInput;
         private PictureBox pictureBox5;
-        private NumericUpDown numericUpDown1;
         private TextBox PasswordInput;
         private PictureBox pictureBox6;
-        private ComboBox comboBox1;
+        private ComboBox CBGender;
         private Button RegisterBtn;
         private PictureBox RegisterBtnPic;
         private Button LoginBtn;
         private PictureBox LoginBtnPic;
+        private TextBox PhoneInput;
     }
 }

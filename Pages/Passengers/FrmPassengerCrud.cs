@@ -178,7 +178,7 @@ namespace TransportReservationSystem.Pages.Passengers
                             };
 
                             //Save Object in Database.
-                            applicaitonDbContext.Passengers.Update(passenger);
+                            applicaitonDbContext.Passengers.Add(passenger);
                             applicaitonDbContext.SaveChanges();
 
 

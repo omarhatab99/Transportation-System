@@ -12,6 +12,8 @@ namespace TransportReservationSystem.Core.Models
         public long License { get; set; }
         public string Phone { get; set; } = null!;
         public bool HasBouns { get; set; } = false;
+        public decimal Bouns { get; set; }
+        public int WorkedTrip { get; set; }
         public decimal Salary {  get; set; }
         public string? CurrentStation { get; set; } = "FREE";
         public bool IsAvailable { get; set; } = true;

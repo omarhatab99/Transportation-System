@@ -18,8 +18,6 @@ namespace TransportReservationSystem.Pages.Trips
     public partial class FrmTripCrud : Form
     {
         ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
-
-        public static int parentX, parentY;
         public bool Update { get; set; } = false;
 
         public int Id { get; set; }
@@ -91,9 +89,9 @@ namespace TransportReservationSystem.Pages.Trips
             DateTime depature = DateTime.Parse(Depature.ToString());
             DateTime arrival = DateTime.Parse(Arrival.ToString());
             Driver driver = CBDriver.Items[CBDriver.SelectedIndex] as Driver;
-            var driverId = (int)driver.Id;
+            int driverId = (int)driver.Id;
             Vehicle vehicle = CBVehicle.Items[CBVehicle.SelectedIndex] as Vehicle;
-            var vehicleId = (int)vehicle.Id;
+            int vehicleId = (int)vehicle.Id;
             decimal fare = 0;
 
 
@@ -112,14 +110,12 @@ namespace TransportReservationSystem.Pages.Trips
                 Fare = fare,
                 DriverId = driverId,
                 VehicleId = vehicleId,
+                AvailabelSeats = vehicle.Category.Capacity
 
             };
 
             //validation
             ValidationResult validationResult = Validation.TripValidation(tripVm);
-
-            Vehicle vehicleT = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == tripVm.VehicleId);
-            Driver driverT = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == tripVm.DriverId);
 
             if (validationResult.IsValid)
             {
@@ -129,61 +125,215 @@ namespace TransportReservationSystem.Pages.Trips
 
                     Trip updatedTrip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == Id)!;
 
-                    updatedTrip.Vehicle.IsAvailable = true;
-                    updatedTrip.Vehicle.CurrentStation = updatedTrip.Source.ToUpper();
-                    updatedTrip.Driver.IsAvailable = true;
-                    updatedTrip.Driver.CurrentStation = updatedTrip.Source.ToUpper();
-                    //GET Away Trip From Trip
-                    //Check if this trip has away trip
-                    
 
-                    updatedTrip.Source = tripVm.Source;
-                    updatedTrip.Destination = tripVm.Destination;
-                    updatedTrip.DepatureDate = tripVm.DepatureDate;
-                    updatedTrip.ArrivalDate = tripVm.ArrivalDate;
-                    updatedTrip.Fare = tripVm.Fare;
-                    updatedTrip.DriverId = tripVm.DriverId;
-                    updatedTrip.VehicleId = tripVm.VehicleId;
-
-                    if (updatedTrip.HomeAndAway > 0)
+                    if (updatedTrip.HomeAndAway > 0) //Double Trip
                     {
-                        Trip HomeAndAway = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == updatedTrip.HomeAndAway)!;
-                        HomeAndAway.VehicleId = tripVm.VehicleId;
-                        HomeAndAway.DriverId = tripVm.DriverId;
-                        //TODO::HERE
-                        applicaitonDbContext.Trips.Update(HomeAndAway);
-                        applicaitonDbContext.SaveChanges();
+                        //GET First Trip And Second Trip
+                        Trip homeAndAway = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == updatedTrip.HomeAndAway)!;
+
+                        //Check First Trip or Second Trip
+                        DateTime date1 = DateTime.Parse(updatedTrip.DepatureDate.ToString());
+                        DateTime date2 = DateTime.Parse(homeAndAway.DepatureDate.ToString());
+
+                        if (date2 > date1) // Trip is First
+                        {
+                            updatedTrip.Vehicle.IsAvailable = true;
+                            updatedTrip.Driver.IsAvailable = true;
+
+
+                            applicaitonDbContext.Vehicles.Update(updatedTrip.Vehicle);
+                            applicaitonDbContext.Drivers.Update(updatedTrip.Driver);
+                            applicaitonDbContext.SaveChanges();
+
+                            //GET Away Trip From Trip
+                            //Check if this trip has away trip
+                            updatedTrip.Source = tripVm.Source;
+                            updatedTrip.Destination = tripVm.Destination;
+                            updatedTrip.DepatureDate = tripVm.DepatureDate;
+                            updatedTrip.ArrivalDate = tripVm.ArrivalDate;
+                            updatedTrip.Fare = tripVm.Fare;
+                            updatedTrip.DriverId = tripVm.DriverId;
+                            updatedTrip.VehicleId = tripVm.VehicleId;
+                            updatedTrip.AvailableSeats = tripVm.AvailabelSeats;
+
+
+                            applicaitonDbContext.Trips.Update(updatedTrip);
+
+
+                            //Get new Vehicle and new Driver
+                            Vehicle newVehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == updatedTrip.VehicleId)!;
+                            Driver newDriver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == updatedTrip.DriverId)!;
+
+                            newVehicle.IsAvailable = false;
+                            newDriver.IsAvailable = false;
+
+
+                            applicaitonDbContext.Vehicles.Update(newVehicle);
+                            applicaitonDbContext.Drivers.Update(newDriver);
+                            applicaitonDbContext.SaveChanges();
+
+
+                            //update homeAndAway
+                            var hour = Math.Round(((decimal)updatedTrip.ArrivalDate.Hour - (decimal)updatedTrip.DepatureDate.Hour));
+
+                            homeAndAway.Source = updatedTrip.Destination;
+                            homeAndAway.Destination = updatedTrip.Source;
+                            homeAndAway.DepatureDate = updatedTrip.ArrivalDate;
+                            homeAndAway.ArrivalDate = updatedTrip.ArrivalDate.AddHours((double)hour);
+                            homeAndAway.Fare = updatedTrip.Fare;
+                            homeAndAway.VehicleId = updatedTrip.VehicleId;
+                            homeAndAway.DriverId = updatedTrip.DriverId;
+                            homeAndAway.AvailableSeats = tripVm.AvailabelSeats;
+
+
+                            applicaitonDbContext.Trips.Update(homeAndAway);
+
+                            applicaitonDbContext.SaveChanges();
+
+
+                            //Check Reservations
+                            if(updatedTrip.Reservations.Count() > 0)
+                            {
+                                foreach (var reservation in updatedTrip.Reservations)
+                                {
+                                    updatedTrip.AvailableSeats -= reservation.SeatsNumber;
+                                    reservation.TotalCost = reservation.SeatsNumber * updatedTrip.Fare;
+                                    applicaitonDbContext.Reservations.Update(reservation);
+                                    applicaitonDbContext.Trips.Update(updatedTrip);
+                                }
+                            }
+
+                            if(homeAndAway.Reservations.Count() > 0)
+                            {
+                                foreach (var reservation in homeAndAway.Reservations)
+                                {
+                                    homeAndAway.AvailableSeats -= reservation.SeatsNumber;
+                                    reservation.TotalCost = reservation.SeatsNumber * homeAndAway.Fare;
+                                    applicaitonDbContext.Reservations.Update(reservation);
+                                    applicaitonDbContext.Trips.Update(homeAndAway);
+
+                                }
+                            }
+
+                            applicaitonDbContext.SaveChanges();
+
+                        }
+                        else //Trip is Second
+                        {
+                            Trip FirstTrip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == updatedTrip.HomeAndAway)!;
+
+                            updatedTrip.Vehicle.IsAvailable = true;
+                            updatedTrip.Driver.IsAvailable = true;
+
+
+                            applicaitonDbContext.Vehicles.Update(updatedTrip.Vehicle);
+                            applicaitonDbContext.Drivers.Update(updatedTrip.Driver);
+                            applicaitonDbContext.SaveChanges();
+
+                            updatedTrip.Source = tripVm.Source;
+                            updatedTrip.Destination = tripVm.Destination;
+                            updatedTrip.DepatureDate = tripVm.DepatureDate;
+                            updatedTrip.ArrivalDate = tripVm.ArrivalDate;
+                            updatedTrip.Fare = tripVm.Fare;
+                            updatedTrip.DriverId = tripVm.DriverId;
+                            updatedTrip.VehicleId = tripVm.VehicleId;
+                            updatedTrip.AvailableSeats = tripVm.AvailabelSeats;
+
+
+
+                            //Get new Vehicle and new Driver
+                            Vehicle newVehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == updatedTrip.VehicleId)!;
+                            Driver newDriver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == updatedTrip.DriverId)!;
+
+                            newVehicle.IsAvailable = false;
+                            newDriver.IsAvailable = false;
+
+                            if ((DateTime.Parse(updatedTrip.DepatureDate.ToString()) < DateTime.Parse(FirstTrip.ArrivalDate.ToString())))
+                            {
+                                FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                                frmValidationDialog.showAlert($"This Driver Will be Late arrive at {FirstTrip.ArrivalDate.ToShortTimeString()}", FrmValidationDialog.enmType.Warning);
+                                return;
+                            }
+
+                            //Check Reservations
+                            if (updatedTrip.Reservations.Count() > 0)
+                            {
+                                foreach (var reservation in updatedTrip.Reservations)
+                                {   updatedTrip.AvailableSeats -= reservation.SeatsNumber;
+                                    reservation.TotalCost = reservation.SeatsNumber * updatedTrip.Fare;
+                                    applicaitonDbContext.Reservations.Update(reservation);
+                                    applicaitonDbContext.Trips.Update(updatedTrip);
+                                }
+                            }
+
+                            applicaitonDbContext.SaveChanges();
+
+
+                        }
+
                     }
-
-                    try
+                    else //Single Trip
                     {
+                        updatedTrip.Vehicle.IsAvailable = true;
+                        updatedTrip.Driver.IsAvailable = true;
+
+                        applicaitonDbContext.Vehicles.Update(updatedTrip.Vehicle);
+                        applicaitonDbContext.Drivers.Update(updatedTrip.Driver);
+                        applicaitonDbContext.SaveChanges();
+
+                        //GET Away Trip From Trip
+                        //Check if this trip has away trip
+                        updatedTrip.Source = tripVm.Source;
+                        updatedTrip.Destination = tripVm.Destination;
+                        updatedTrip.DepatureDate = tripVm.DepatureDate;
+                        updatedTrip.ArrivalDate = tripVm.ArrivalDate;
+                        updatedTrip.Fare = tripVm.Fare;
+                        updatedTrip.DriverId = tripVm.DriverId;
+                        updatedTrip.VehicleId = tripVm.VehicleId;
+                        updatedTrip.AvailableSeats = tripVm.AvailabelSeats;
+
                         applicaitonDbContext.Trips.Update(updatedTrip);
 
-                        vehicleT.IsAvailable = false;
-                        vehicleT.CurrentStation = tripVm.Destination.ToUpper();
-                        driverT.IsAvailable = false;
-                        driverT.CurrentStation = tripVm.Destination.ToUpper();
-                        applicaitonDbContext.Drivers.Update(driverT);
-                        applicaitonDbContext.Vehicles.Update(vehicleT);
+                        //Get new Vehicle and new Driver
+                        Vehicle newVehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == updatedTrip.VehicleId)!;
+                        Driver newDriver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == updatedTrip.DriverId)!;
+
+                        newVehicle.IsAvailable = false;
+                        newDriver.IsAvailable = false;
+
+
+                        applicaitonDbContext.Vehicles.Update(newVehicle);
+                        applicaitonDbContext.Drivers.Update(newDriver);
+
                         applicaitonDbContext.SaveChanges();
 
-                        //refresh Combobox
-                        FrmTripCrud_Load(sender, e);
-                        changeDriversComboBox();
-                        changeVehicleComboBox();
+                        //Check Reservations
+                        if (updatedTrip.Reservations.Count() > 0)
+                        {
+                            foreach (var reservation in updatedTrip.Reservations)
+                            {   updatedTrip.AvailableSeats -= reservation.SeatsNumber;
+                                reservation.TotalCost = reservation.SeatsNumber * updatedTrip.Fare;
+                                applicaitonDbContext.Reservations.Update(reservation);
+                                applicaitonDbContext.Trips.Update(updatedTrip);
+                            }
+                        }
 
-                        //Refresh Main Table.
-                        FrmTrips frmTrips = new FrmTrips();
-                        LoadForm(frmTrips);
+                        applicaitonDbContext.SaveChanges();
 
-                        return;
 
                     }
-                    catch (Exception ex)
-                    {
-                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                        frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Warning);
-                    }
+
+
+                    //refresh Combobox
+                    FrmTripCrud_Load(sender, e);
+                    changeDriversComboBox();
+                    changeVehicleComboBox();
+
+                    //Refresh Main Table.
+                    FrmTrips frmTrips = new FrmTrips();
+                    LoadForm(frmTrips);
+
+                    return;
 
                 }
                 else //create
@@ -246,18 +396,20 @@ namespace TransportReservationSystem.Pages.Trips
                                 Fare = tripVm.Fare,
                                 DriverId = tripVm.DriverId,
                                 VehicleId = tripVm.VehicleId,
-                                AvailableSeats = vehicle.Category.Capacity,
+                                AvailableSeats = tripVm.AvailabelSeats,
                                 Done = false,
 
                             };
                             applicaitonDbContext.Trips.Add(trip1);
+                            applicaitonDbContext.SaveChanges();
+
                         }
 
+                        Vehicle vehicleT = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == tripVm.VehicleId)!;
+                        Driver driverT = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == tripVm.DriverId)!;
 
                         vehicleT.IsAvailable = false;
-                        vehicleT.CurrentStation = tripVm.Destination.ToUpper();
                         driverT.IsAvailable = false;
-                        driverT.CurrentStation = tripVm.Destination.ToUpper();
                         applicaitonDbContext.Drivers.Update(driverT);
                         applicaitonDbContext.Vehicles.Update(vehicleT);
                         applicaitonDbContext.SaveChanges();
@@ -280,14 +432,7 @@ namespace TransportReservationSystem.Pages.Trips
                         FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                         frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Warning);
                     }
-
-                    return;
-
-
                 }
-
-
-
 
             }
             else
@@ -333,7 +478,7 @@ namespace TransportReservationSystem.Pages.Trips
             dataGridView2.DataSource = tripsVModels;
 
 
-            if(Update)
+            if (Update)
             {
                 Trip updateTrip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == Id)!;
                 ToggleButtonHomaAndAway.Hide();
@@ -349,6 +494,15 @@ namespace TransportReservationSystem.Pages.Trips
             changeSourceComboBox();
             //Set items to combobox for Destination.
             changeDestinationComboBox();
+
+            if (applicaitonDbContext.Drivers.Count() > 0)
+            {
+                changeDriversComboBox();
+            }
+            if (applicaitonDbContext.Vehicles.Count() > 0)
+            {
+                changeVehicleComboBox();
+            }
         }
 
         public void changeSourceComboBox()
@@ -356,14 +510,12 @@ namespace TransportReservationSystem.Pages.Trips
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Station> stations = applicaitonDbContext.Stations.Where(x => !x.IsDeleted).ToList();
+            List<Station> stations = applicaitonDbContext.Stations.ToList();
             //driver set isAvailable true when done trip
-            foreach (var station in stations)
-            {
-                CBSource.DataSource = new BindingSource(stations, null);
-                CBSource.DisplayMember = "Name";
-                CBSource.ValueMember = "Id";
-            }
+            CBSource.DataSource = new BindingSource(stations, null);
+            CBSource.DisplayMember = "Name";
+            CBSource.ValueMember = "Id";
+
             if (Update == true)
             {
                 Trip updateTrip = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == Id)!;
@@ -377,14 +529,11 @@ namespace TransportReservationSystem.Pages.Trips
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Station> stations = applicaitonDbContext.Stations.Where(x => !x.IsDeleted).ToList();
+            List<Station> stations = applicaitonDbContext.Stations.ToList();
             //driver set isAvailable true when done trip
-            foreach (var station in stations)
-            {
-                CBDestination.DataSource = new BindingSource(stations, null);
-                CBDestination.DisplayMember = "Name";
-                CBDestination.ValueMember = "Id";
-            }
+            CBDestination.DataSource = new BindingSource(stations, null);
+            CBDestination.DisplayMember = "Name";
+            CBDestination.ValueMember = "Id";
 
             if (Update == true)
             {
@@ -399,7 +548,7 @@ namespace TransportReservationSystem.Pages.Trips
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for Driver.
-            List<Driver> drivers = applicaitonDbContext.Drivers.Where(x => !x.IsDeleted && x.IsAvailable && (x.CurrentStation.ToUpper() == Source.ToUpper() || x.CurrentStation == "FREE")).ToList();
+            List<Driver> drivers = applicaitonDbContext.Drivers.Where(x => x.IsAvailable && (x.CurrentStation!.ToUpper() == Source.ToUpper() || x.CurrentStation == "FREE")).ToList();
             //driver set isAvailable true when done trip
 
             if (Update == true)
@@ -426,7 +575,7 @@ namespace TransportReservationSystem.Pages.Trips
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Vehicle> vehicles = applicaitonDbContext.Vehicles.Where(x => !x.IsDeleted && x.IsAvailable && (x.CurrentStation.ToUpper() == Source.ToUpper() || x.CurrentStation == "FREE")).ToList();
+            List<Vehicle> vehicles = applicaitonDbContext.Vehicles.Where(x => x.IsAvailable && (x.CurrentStation!.ToUpper() == Source.ToUpper() || x.CurrentStation == "FREE")).ToList();
 
 
 
@@ -477,20 +626,16 @@ namespace TransportReservationSystem.Pages.Trips
             frmDriverCrud.ShowDialog();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void CBSource_DropDown(object sender, EventArgs e)
         {
             changeSourceComboBox();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void CBDestination_DropDown(object sender, EventArgs e)
         {
-
+            changeDestinationComboBox();
         }
+
 
         private void CBSource_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -498,10 +643,6 @@ namespace TransportReservationSystem.Pages.Trips
             changeVehicleComboBox();
         }
 
-        private void CBVehicle_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
 
         public void LoadForm(Form applicationForm)
         {
@@ -515,6 +656,7 @@ namespace TransportReservationSystem.Pages.Trips
             x.MainPanel.Controls.Add(applicationForm);
             applicationForm.Show();
         }
+
 
     }
 }

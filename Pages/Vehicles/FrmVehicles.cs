@@ -20,6 +20,7 @@ namespace TransportReservationSystem
     {
         ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
+        public int Id {  get; set; }
         public FrmVehicles()
         {
             InitializeComponent();
@@ -49,41 +50,37 @@ namespace TransportReservationSystem
             {
                 UCVehicle uCVehicle = new UCVehicle();
 
-                uCVehicle.Id = (int)vehicle.Id;
-                uCVehicle.LicensePlate = (long)vehicle.LicensePlate;
-                uCVehicle.Category = vehicle.Category;
+                uCVehicle.Id = (int)vehicle.Id!;
+                uCVehicle.LicensePlate = (long)vehicle.LicensePlate!;
+                uCVehicle.Category = vehicle.Category!;
+                uCVehicle.VehicleNo = vehicle.VehicleNo?.ToString()!;
 
-                if(vehicle.Model.Length > 14)
+                if (vehicle.Model?.Length > 14)
                 {
                     uCVehicle.Model = vehicle.Model.ToString().Substring(0, 14);
                 }
                 else
                 {
-                    uCVehicle.Model = vehicle.Model;
+                    uCVehicle.Model = vehicle.Model!;
                 }
 
-                if (vehicle.Brand.Length > 14)
+                if (vehicle.Brand?.Length > 14)
                 {
                     uCVehicle.Brand = vehicle.Brand.ToString().Substring(0, 14);
 
                 }
                 else
                 {
-                    uCVehicle.Brand = vehicle.Brand;
+                    uCVehicle.Brand = vehicle.Brand!;
                 }
-
 
 
                 if (vehicle.IsAvailable)
                 {
-                    uCVehicle.LblAvailable.BackColor = Color.FromArgb(192, 255, 192);
-                    uCVehicle.LblAvailable.Text = "Available";
+                    uCVehicle.tableLayoutPanel1.BackColor = Color.FromArgb(192, 255, 192);
+                    uCVehicle.panel1.BackColor = Color.FromArgb(192, 255, 192);
                 }
-                else
-                {
-                    uCVehicle.LblAvailable.BackColor = Color.FromArgb(255, 192, 192);
-                    uCVehicle.LblAvailable.Text = "Not Available";
-                }
+
 
                 uCVehicle.Width = FLBVehicles.Width;
                 FLBVehicles.Controls.Add(uCVehicle);
@@ -118,8 +115,8 @@ namespace TransportReservationSystem
                 VehicleNo = x.VehicleNo,
                 IsAvailable = x.IsAvailable
 
-            }).Where(x => x.VehicleNo.ToString().ToLower().Trim().Contains(trim) ||
-                x.Category.ToLower().Contains(trim) || x.Brand.ToLower().Contains(trim) || x.Model.ToLower().Contains(trim)).ToList();
+            }).Where(x => x.VehicleNo.ToString()!.ToLower().Trim().Contains(trim) ||
+                x.Category!.ToLower().Contains(trim) || x.Brand!.ToLower().Contains(trim) || x.Model!.ToLower().Contains(trim)).ToList();
 
             FLBVehicles.Controls.Clear();
 
@@ -127,21 +124,36 @@ namespace TransportReservationSystem
             {
                 UCVehicle uCVehicle = new UCVehicle();
 
-                uCVehicle.LicensePlate = (long)vehicle.LicensePlate;
-                uCVehicle.Category = vehicle.Category;
-                uCVehicle.Model = vehicle.Model;
-                uCVehicle.Brand = vehicle.Brand;
+                uCVehicle.Id = (int)vehicle.Id!;
+                uCVehicle.LicensePlate = (long)vehicle.LicensePlate!;
+                uCVehicle.Category = vehicle.Category!;
+                uCVehicle.VehicleNo = vehicle.VehicleNo?.ToString()!;
 
-                if (vehicle.IsAvailable)
+                if (vehicle.Model?.Length > 14)
                 {
-                    uCVehicle.LblAvailable.BackColor = Color.FromArgb(192, 255, 192);
-                    uCVehicle.LblAvailable.Text = "Available";
+                    uCVehicle.Model = vehicle.Model.ToString().Substring(0, 14);
                 }
                 else
                 {
-                    uCVehicle.LblAvailable.BackColor = Color.FromArgb(192, 255, 192);
-                    uCVehicle.LblAvailable.Text = "Not Available";
+                    uCVehicle.Model = vehicle.Model!;
                 }
+
+                if (vehicle.Brand?.Length > 14)
+                {
+                    uCVehicle.Brand = vehicle.Brand.ToString().Substring(0, 14);
+
+                }
+                else
+                {
+                    uCVehicle.Brand = vehicle.Brand!;
+                }
+
+                if (vehicle.IsAvailable)
+                {
+                    uCVehicle.tableLayoutPanel1.BackColor = Color.FromArgb(192, 255, 192);
+                    uCVehicle.panel1.BackColor = Color.FromArgb(192, 255, 192);
+                }
+
 
                 uCVehicle.Width = FLBVehicles.Width;
                 FLBVehicles.Controls.Add(uCVehicle);

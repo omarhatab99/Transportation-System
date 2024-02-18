@@ -28,36 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
+            pictureBox1 = new PictureBox();
             panel1 = new Panel();
-            Dashboard = new Label();
+            label1 = new Label();
             label3 = new Label();
             label2 = new Label();
+            panel2 = new Panel();
+            panel4 = new Panel();
+            DriverNumber = new Label();
+            panel3 = new Panel();
+            label4 = new Label();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            VehiclesNumber = new Label();
+            panel7 = new Panel();
+            label55 = new Label();
+            panel8 = new Panel();
+            panel9 = new Panel();
+            TotalGain = new Label();
+            panel10 = new Panel();
+            Label122 = new Label();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
+            panel2.SuspendLayout();
+            panel4.SuspendLayout();
+            panel3.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
             SuspendLayout();
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = Properties.Resources.BusLanding;
+            pictureBox1.Location = new Point(128, 150);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(713, 302);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 10;
+            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
             panel1.BackColor = Color.AliceBlue;
-            panel1.Controls.Add(Dashboard);
+            panel1.Controls.Add(label1);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(label2);
-            panel1.Location = new Point(125, 45);
+            panel1.Location = new Point(128, 12);
             panel1.Name = "panel1";
             panel1.Size = new Size(713, 132);
-            panel1.TabIndex = 9;
+            panel1.TabIndex = 11;
             // 
-            // Dashboard
+            // label1
             // 
-            Dashboard.AutoSize = true;
-            Dashboard.FlatStyle = FlatStyle.Flat;
-            Dashboard.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            Dashboard.ForeColor = SystemColors.ControlDark;
-            Dashboard.Location = new Point(141, 26);
-            Dashboard.Name = "Dashboard";
-            Dashboard.Size = new Size(215, 44);
-            Dashboard.TabIndex = 1;
-            Dashboard.Text = "Dashboard";
-            Dashboard.TextAlign = ContentAlignment.MiddleCenter;
+            label1.AutoSize = true;
+            label1.FlatStyle = FlatStyle.Flat;
+            label1.Font = new Font("Century Gothic", 27.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = SystemColors.ControlDark;
+            label1.Location = new Point(141, 26);
+            label1.Name = "label1";
+            label1.Size = new Size(534, 44);
+            label1.TabIndex = 1;
+            label1.Text = "Transport Reservation System";
             // 
             // label3
             // 
@@ -81,26 +117,214 @@
             label2.TabIndex = 2;
             label2.Text = "ITI";
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(192, 192, 255);
+            panel2.Controls.Add(panel4);
+            panel2.Controls.Add(panel3);
+            panel2.Location = new Point(138, 488);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(200, 100);
+            panel2.TabIndex = 12;
+            // 
+            // panel4
+            // 
+            panel4.Controls.Add(DriverNumber);
+            panel4.Dock = DockStyle.Fill;
+            panel4.Location = new Point(0, 39);
+            panel4.Name = "panel4";
+            panel4.Size = new Size(200, 61);
+            panel4.TabIndex = 1;
+            // 
+            // DriverNumber
+            // 
+            DriverNumber.AutoSize = true;
+            DriverNumber.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            DriverNumber.ForeColor = Color.Green;
+            DriverNumber.Location = new Point(86, 18);
+            DriverNumber.Name = "DriverNumber";
+            DriverNumber.Size = new Size(23, 25);
+            DriverNumber.TabIndex = 1;
+            DriverNumber.Text = "0";
+            DriverNumber.Click += DriverNumber_Click;
+            // 
+            // panel3
+            // 
+            panel3.Controls.Add(label4);
+            panel3.Dock = DockStyle.Top;
+            panel3.Location = new Point(0, 0);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(200, 39);
+            panel3.TabIndex = 0;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label4.ForeColor = Color.Purple;
+            label4.Location = new Point(60, 7);
+            label4.Name = "label4";
+            label4.Size = new Size(73, 25);
+            label4.TabIndex = 0;
+            label4.Text = "Drivers";
+            label4.Click += label4_Click;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = Color.FromArgb(192, 192, 255);
+            panel5.Controls.Add(panel6);
+            panel5.Controls.Add(panel7);
+            panel5.Location = new Point(392, 488);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(200, 100);
+            panel5.TabIndex = 13;
+            // 
+            // panel6
+            // 
+            panel6.Controls.Add(VehiclesNumber);
+            panel6.Dock = DockStyle.Fill;
+            panel6.Location = new Point(0, 39);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(200, 61);
+            panel6.TabIndex = 1;
+            // 
+            // VehiclesNumber
+            // 
+            VehiclesNumber.AutoSize = true;
+            VehiclesNumber.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            VehiclesNumber.ForeColor = Color.Green;
+            VehiclesNumber.Location = new Point(86, 18);
+            VehiclesNumber.Name = "VehiclesNumber";
+            VehiclesNumber.Size = new Size(23, 25);
+            VehiclesNumber.TabIndex = 1;
+            VehiclesNumber.Text = "0";
+            // 
+            // panel7
+            // 
+            panel7.Controls.Add(label55);
+            panel7.Dock = DockStyle.Top;
+            panel7.Location = new Point(0, 0);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(200, 39);
+            panel7.TabIndex = 0;
+            // 
+            // label55
+            // 
+            label55.AutoSize = true;
+            label55.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label55.ForeColor = Color.Purple;
+            label55.Location = new Point(60, 7);
+            label55.Name = "label55";
+            label55.Size = new Size(81, 25);
+            label55.TabIndex = 0;
+            label55.Text = "Vehicles";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.FromArgb(192, 192, 255);
+            panel8.Controls.Add(panel9);
+            panel8.Controls.Add(panel10);
+            panel8.Location = new Point(641, 488);
+            panel8.Name = "panel8";
+            panel8.Size = new Size(200, 100);
+            panel8.TabIndex = 14;
+            // 
+            // panel9
+            // 
+            panel9.Controls.Add(TotalGain);
+            panel9.Dock = DockStyle.Fill;
+            panel9.Location = new Point(0, 39);
+            panel9.Name = "panel9";
+            panel9.Size = new Size(200, 61);
+            panel9.TabIndex = 1;
+            // 
+            // TotalGain
+            // 
+            TotalGain.AutoSize = true;
+            TotalGain.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            TotalGain.ForeColor = Color.Green;
+            TotalGain.Location = new Point(53, 18);
+            TotalGain.Name = "TotalGain";
+            TotalGain.Size = new Size(23, 25);
+            TotalGain.TabIndex = 1;
+            TotalGain.Text = "0";
+            // 
+            // panel10
+            // 
+            panel10.Controls.Add(Label122);
+            panel10.Dock = DockStyle.Top;
+            panel10.Location = new Point(0, 0);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(200, 39);
+            panel10.TabIndex = 0;
+            // 
+            // Label122
+            // 
+            Label122.AutoSize = true;
+            Label122.Font = new Font("Segoe UI Semibold", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            Label122.ForeColor = Color.Purple;
+            Label122.Location = new Point(47, 7);
+            Label122.Name = "Label122";
+            Label122.Size = new Size(97, 25);
+            Label122.TabIndex = 0;
+            Label122.Text = "Total Gain";
+            // 
             // FrmHome
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.AliceBlue;
             ClientSize = new Size(960, 613);
+            Controls.Add(panel8);
+            Controls.Add(panel5);
+            Controls.Add(panel2);
             Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Name = "FrmHome";
             Text = "FrmHome";
             Load += FrmHome_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            panel2.ResumeLayout(false);
+            panel4.ResumeLayout(false);
+            panel4.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
         }
 
         #endregion
 
+        private PictureBox pictureBox1;
         private Panel panel1;
-        private Label Dashboard;
+        private Label label1;
         private Label label3;
         private Label label2;
+        private Panel panel2;
+        private Panel panel4;
+        private Panel panel3;
+        private Label label4;
+        private Label DriverNumber;
+        private Panel panel5;
+        private Panel panel6;
+        private Label VehiclesNumber;
+        private Panel panel7;
+        private Label label55;
+        private Panel panel8;
+        private Panel panel9;
+        private Label TotalGain;
+        private Panel panel10;
+        private Label Label122;
     }
 }

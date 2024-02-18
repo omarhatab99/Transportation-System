@@ -147,7 +147,6 @@
             panel1.Padding = new Padding(5);
             panel1.Size = new Size(960, 97);
             panel1.TabIndex = 2;
-            panel1.Paint += panel1_Paint;
             // 
             // panel3
             // 
@@ -291,7 +290,6 @@
             PassengerSearchInput.Name = "PassengerSearchInput";
             PassengerSearchInput.Size = new Size(569, 16);
             PassengerSearchInput.TabIndex = 3;
-            PassengerSearchInput.TextChanged += PassengerSearchInput_TextChanged;
             PassengerSearchInput.KeyUp += PassengerSearchInput_KeyUp;
             // 
             // pictureBox2

@@ -65,43 +65,46 @@
             L2 = new CustomControls.RJControls.RJButton();
             R1 = new CustomControls.RJControls.RJButton();
             panel1 = new Panel();
-            panel3 = new Panel();
-            label6 = new Label();
-            label4 = new Label();
             panel2 = new Panel();
-            label5 = new Label();
-            label1 = new Label();
+            LblCapcity = new Label();
+            label9 = new Label();
+            panel3 = new Panel();
+            AvailableSeatLBL = new Label();
+            label4 = new Label();
             TripNumberInput = new TextBox();
             PassengerNameInput = new TextBox();
             pictureBox5 = new PictureBox();
             pictureBox2 = new PictureBox();
             label3 = new Label();
             label2 = new Label();
+            label5 = new Label();
+            label1 = new Label();
             rjButton1 = new CustomControls.RJControls.RJButton();
             rjButton2 = new CustomControls.RJControls.RJButton();
             label7 = new Label();
             label8 = new Label();
-            rjButton3 = new CustomControls.RJControls.RJButton();
-            S46 = new CustomControls.RJControls.RJButton();
+            S47 = new CustomControls.RJControls.RJButton();
+            S45 = new CustomControls.RJControls.RJButton();
             S43 = new CustomControls.RJControls.RJButton();
-            rjButton6 = new CustomControls.RJControls.RJButton();
+            S41 = new CustomControls.RJControls.RJButton();
             S39 = new CustomControls.RJControls.RJButton();
             S37 = new CustomControls.RJControls.RJButton();
             S35 = new CustomControls.RJControls.RJButton();
             S33 = new CustomControls.RJControls.RJButton();
             rjButton11 = new CustomControls.RJControls.RJButton();
             rjButton12 = new CustomControls.RJControls.RJButton();
-            rjButton13 = new CustomControls.RJControls.RJButton();
-            S47 = new CustomControls.RJControls.RJButton();
-            S45 = new CustomControls.RJControls.RJButton();
-            rjButton16 = new CustomControls.RJControls.RJButton();
+            S48 = new CustomControls.RJControls.RJButton();
+            S46 = new CustomControls.RJControls.RJButton();
+            S44 = new CustomControls.RJControls.RJButton();
+            S42 = new CustomControls.RJControls.RJButton();
             S40 = new CustomControls.RJControls.RJButton();
             S38 = new CustomControls.RJControls.RJButton();
             S36 = new CustomControls.RJControls.RJButton();
             S34 = new CustomControls.RJControls.RJButton();
+            ConfirmSeatsBtn = new CustomControls.RJControls.RJButton();
             panel1.SuspendLayout();
-            panel3.SuspendLayout();
             panel2.SuspendLayout();
+            panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -690,7 +693,6 @@
             S2.Text = "S2";
             S2.TextColor = Color.White;
             S2.UseVisualStyleBackColor = false;
-            S2.Click += S2_Click;
             // 
             // S1
             // 
@@ -710,7 +712,6 @@
             S1.Text = "S1";
             S1.TextColor = Color.White;
             S1.UseVisualStyleBackColor = false;
-            S1.Click += S1_Click;
             // 
             // R2
             // 
@@ -790,8 +791,8 @@
             // 
             // panel1
             // 
-            panel1.Controls.Add(panel3);
             panel1.Controls.Add(panel2);
+            panel1.Controls.Add(panel3);
             panel1.Controls.Add(TripNumberInput);
             panel1.Controls.Add(PassengerNameInput);
             panel1.Controls.Add(pictureBox5);
@@ -804,26 +805,58 @@
             panel1.Size = new Size(944, 114);
             panel1.TabIndex = 109;
             // 
+            // panel2
+            // 
+            panel2.BackColor = Color.FromArgb(224, 224, 224);
+            panel2.Controls.Add(LblCapcity);
+            panel2.Controls.Add(label9);
+            panel2.Location = new Point(644, 15);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(128, 82);
+            panel2.TabIndex = 53;
+            // 
+            // LblCapcity
+            // 
+            LblCapcity.AutoSize = true;
+            LblCapcity.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            LblCapcity.ForeColor = Color.Green;
+            LblCapcity.Location = new Point(40, 31);
+            LblCapcity.Name = "LblCapcity";
+            LblCapcity.Size = new Size(42, 32);
+            LblCapcity.TabIndex = 2;
+            LblCapcity.Text = "30";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label9.ForeColor = Color.DimGray;
+            label9.Location = new Point(26, 11);
+            label9.Name = "label9";
+            label9.Size = new Size(67, 20);
+            label9.TabIndex = 1;
+            label9.Text = "Capacity";
+            // 
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(224, 224, 224);
-            panel3.Controls.Add(label6);
+            panel3.Controls.Add(AvailableSeatLBL);
             panel3.Controls.Add(label4);
             panel3.Location = new Point(785, 14);
             panel3.Name = "panel3";
             panel3.Size = new Size(128, 82);
             panel3.TabIndex = 52;
             // 
-            // label6
+            // AvailableSeatLBL
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(192, 0, 0);
-            label6.Location = new Point(40, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(42, 32);
-            label6.TabIndex = 2;
-            label6.Text = "30";
+            AvailableSeatLBL.AutoSize = true;
+            AvailableSeatLBL.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AvailableSeatLBL.ForeColor = Color.FromArgb(192, 0, 0);
+            AvailableSeatLBL.Location = new Point(40, 31);
+            AvailableSeatLBL.Name = "AvailableSeatLBL";
+            AvailableSeatLBL.Size = new Size(42, 32);
+            AvailableSeatLBL.TabIndex = 2;
+            AvailableSeatLBL.Text = "30";
             // 
             // label4
             // 
@@ -835,38 +868,6 @@
             label4.Size = new Size(111, 20);
             label4.TabIndex = 1;
             label4.Text = "Available Seats";
-            // 
-            // panel2
-            // 
-            panel2.BackColor = Color.FromArgb(224, 224, 224);
-            panel2.Controls.Add(label5);
-            panel2.Controls.Add(label1);
-            panel2.Location = new Point(633, 14);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(128, 82);
-            panel2.TabIndex = 51;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Green;
-            label5.Location = new Point(47, 31);
-            label5.Name = "label5";
-            label5.Size = new Size(28, 32);
-            label5.TabIndex = 1;
-            label5.Text = "5";
-            // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label1.ForeColor = Color.DimGray;
-            label1.Location = new Point(27, 11);
-            label1.Name = "label1";
-            label1.Size = new Size(67, 20);
-            label1.TabIndex = 0;
-            label1.Text = "Capacity";
             // 
             // TripNumberInput
             // 
@@ -930,6 +931,28 @@
             label2.TabIndex = 45;
             label2.Text = "Passenger Name";
             // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.Green;
+            label5.Location = new Point(47, 31);
+            label5.Name = "label5";
+            label5.Size = new Size(28, 32);
+            label5.TabIndex = 1;
+            label5.Text = "5";
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI Semibold", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.DimGray;
+            label1.Location = new Point(27, 11);
+            label1.Name = "label1";
+            label1.Size = new Size(67, 20);
+            label1.TabIndex = 0;
+            label1.Text = "Capacity";
+            // 
             // rjButton1
             // 
             rjButton1.BackColor = Color.Green;
@@ -988,43 +1011,43 @@
             label8.TabIndex = 113;
             label8.Text = "Reserved Seat";
             // 
-            // rjButton3
+            // S47
             // 
-            rjButton3.BackColor = Color.Green;
-            rjButton3.BackgroundColor = Color.Green;
-            rjButton3.BorderColor = Color.PaleVioletRed;
-            rjButton3.BorderRadius = 0;
-            rjButton3.BorderSize = 0;
-            rjButton3.Cursor = Cursors.Hand;
-            rjButton3.FlatAppearance.BorderSize = 0;
-            rjButton3.FlatStyle = FlatStyle.Flat;
-            rjButton3.ForeColor = Color.White;
-            rjButton3.Location = new Point(152, 403);
-            rjButton3.Name = "rjButton3";
-            rjButton3.Size = new Size(64, 49);
-            rjButton3.TabIndex = 121;
-            rjButton3.Text = "S48";
-            rjButton3.TextColor = Color.White;
-            rjButton3.UseVisualStyleBackColor = false;
+            S47.BackColor = Color.Green;
+            S47.BackgroundColor = Color.Green;
+            S47.BorderColor = Color.PaleVioletRed;
+            S47.BorderRadius = 0;
+            S47.BorderSize = 0;
+            S47.Cursor = Cursors.Hand;
+            S47.FlatAppearance.BorderSize = 0;
+            S47.FlatStyle = FlatStyle.Flat;
+            S47.ForeColor = Color.White;
+            S47.Location = new Point(152, 403);
+            S47.Name = "S47";
+            S47.Size = new Size(64, 49);
+            S47.TabIndex = 121;
+            S47.Text = "S47";
+            S47.TextColor = Color.White;
+            S47.UseVisualStyleBackColor = false;
             // 
-            // S46
+            // S45
             // 
-            S46.BackColor = Color.Green;
-            S46.BackgroundColor = Color.Green;
-            S46.BorderColor = Color.PaleVioletRed;
-            S46.BorderRadius = 0;
-            S46.BorderSize = 0;
-            S46.Cursor = Cursors.Hand;
-            S46.FlatAppearance.BorderSize = 0;
-            S46.FlatStyle = FlatStyle.Flat;
-            S46.ForeColor = Color.White;
-            S46.Location = new Point(222, 403);
-            S46.Name = "S46";
-            S46.Size = new Size(64, 49);
-            S46.TabIndex = 120;
-            S46.Text = "S46";
-            S46.TextColor = Color.White;
-            S46.UseVisualStyleBackColor = false;
+            S45.BackColor = Color.Green;
+            S45.BackgroundColor = Color.Green;
+            S45.BorderColor = Color.PaleVioletRed;
+            S45.BorderRadius = 0;
+            S45.BorderSize = 0;
+            S45.Cursor = Cursors.Hand;
+            S45.FlatAppearance.BorderSize = 0;
+            S45.FlatStyle = FlatStyle.Flat;
+            S45.ForeColor = Color.White;
+            S45.Location = new Point(222, 403);
+            S45.Name = "S45";
+            S45.Size = new Size(64, 49);
+            S45.TabIndex = 120;
+            S45.Text = "S45";
+            S45.TextColor = Color.White;
+            S45.UseVisualStyleBackColor = false;
             // 
             // S43
             // 
@@ -1044,24 +1067,24 @@
             S43.TextColor = Color.White;
             S43.UseVisualStyleBackColor = false;
             // 
-            // rjButton6
+            // S41
             // 
-            rjButton6.BackColor = Color.Green;
-            rjButton6.BackgroundColor = Color.Green;
-            rjButton6.BorderColor = Color.PaleVioletRed;
-            rjButton6.BorderRadius = 0;
-            rjButton6.BorderSize = 0;
-            rjButton6.Cursor = Cursors.Hand;
-            rjButton6.FlatAppearance.BorderSize = 0;
-            rjButton6.FlatStyle = FlatStyle.Flat;
-            rjButton6.ForeColor = Color.White;
-            rjButton6.Location = new Point(362, 403);
-            rjButton6.Name = "rjButton6";
-            rjButton6.Size = new Size(64, 49);
-            rjButton6.TabIndex = 118;
-            rjButton6.Text = "S41";
-            rjButton6.TextColor = Color.White;
-            rjButton6.UseVisualStyleBackColor = false;
+            S41.BackColor = Color.Green;
+            S41.BackgroundColor = Color.Green;
+            S41.BorderColor = Color.PaleVioletRed;
+            S41.BorderRadius = 0;
+            S41.BorderSize = 0;
+            S41.Cursor = Cursors.Hand;
+            S41.FlatAppearance.BorderSize = 0;
+            S41.FlatStyle = FlatStyle.Flat;
+            S41.ForeColor = Color.White;
+            S41.Location = new Point(362, 403);
+            S41.Name = "S41";
+            S41.Size = new Size(64, 49);
+            S41.TabIndex = 118;
+            S41.Text = "S41";
+            S41.TextColor = Color.White;
+            S41.UseVisualStyleBackColor = false;
             // 
             // S39
             // 
@@ -1138,7 +1161,6 @@
             S33.Text = "S33";
             S33.TextColor = Color.White;
             S33.UseVisualStyleBackColor = false;
-            S33.Click += rjButton10_Click;
             // 
             // rjButton11
             // 
@@ -1178,80 +1200,80 @@
             rjButton12.TextColor = Color.White;
             rjButton12.UseVisualStyleBackColor = false;
             // 
-            // rjButton13
+            // S48
             // 
-            rjButton13.BackColor = Color.Green;
-            rjButton13.BackgroundColor = Color.Green;
-            rjButton13.BorderColor = Color.PaleVioletRed;
-            rjButton13.BorderRadius = 0;
-            rjButton13.BorderSize = 0;
-            rjButton13.Cursor = Cursors.Hand;
-            rjButton13.FlatAppearance.BorderSize = 0;
-            rjButton13.FlatStyle = FlatStyle.Flat;
-            rjButton13.ForeColor = Color.White;
-            rjButton13.Location = new Point(152, 457);
-            rjButton13.Name = "rjButton13";
-            rjButton13.Size = new Size(64, 49);
-            rjButton13.TabIndex = 130;
-            rjButton13.Text = "S48";
-            rjButton13.TextColor = Color.White;
-            rjButton13.UseVisualStyleBackColor = false;
+            S48.BackColor = Color.Green;
+            S48.BackgroundColor = Color.Green;
+            S48.BorderColor = Color.PaleVioletRed;
+            S48.BorderRadius = 0;
+            S48.BorderSize = 0;
+            S48.Cursor = Cursors.Hand;
+            S48.FlatAppearance.BorderSize = 0;
+            S48.FlatStyle = FlatStyle.Flat;
+            S48.ForeColor = Color.White;
+            S48.Location = new Point(152, 457);
+            S48.Name = "S48";
+            S48.Size = new Size(64, 49);
+            S48.TabIndex = 130;
+            S48.Text = "S48";
+            S48.TextColor = Color.White;
+            S48.UseVisualStyleBackColor = false;
             // 
-            // S47
+            // S46
             // 
-            S47.BackColor = Color.Green;
-            S47.BackgroundColor = Color.Green;
-            S47.BorderColor = Color.PaleVioletRed;
-            S47.BorderRadius = 0;
-            S47.BorderSize = 0;
-            S47.Cursor = Cursors.Hand;
-            S47.FlatAppearance.BorderSize = 0;
-            S47.FlatStyle = FlatStyle.Flat;
-            S47.ForeColor = Color.White;
-            S47.Location = new Point(222, 457);
-            S47.Name = "S47";
-            S47.Size = new Size(64, 49);
-            S47.TabIndex = 129;
-            S47.Text = "S47";
-            S47.TextColor = Color.White;
-            S47.UseVisualStyleBackColor = false;
+            S46.BackColor = Color.Green;
+            S46.BackgroundColor = Color.Green;
+            S46.BorderColor = Color.PaleVioletRed;
+            S46.BorderRadius = 0;
+            S46.BorderSize = 0;
+            S46.Cursor = Cursors.Hand;
+            S46.FlatAppearance.BorderSize = 0;
+            S46.FlatStyle = FlatStyle.Flat;
+            S46.ForeColor = Color.White;
+            S46.Location = new Point(222, 457);
+            S46.Name = "S46";
+            S46.Size = new Size(64, 49);
+            S46.TabIndex = 129;
+            S46.Text = "S46";
+            S46.TextColor = Color.White;
+            S46.UseVisualStyleBackColor = false;
             // 
-            // S45
+            // S44
             // 
-            S45.BackColor = Color.Green;
-            S45.BackgroundColor = Color.Green;
-            S45.BorderColor = Color.PaleVioletRed;
-            S45.BorderRadius = 0;
-            S45.BorderSize = 0;
-            S45.FlatAppearance.BorderSize = 0;
-            S45.FlatStyle = FlatStyle.Flat;
-            S45.ForeColor = Color.White;
-            S45.Location = new Point(292, 457);
-            S45.Name = "S45";
-            S45.Size = new Size(64, 49);
-            S45.TabIndex = 128;
-            S45.Text = "S45";
-            S45.TextColor = Color.White;
-            S45.UseVisualStyleBackColor = false;
+            S44.BackColor = Color.Green;
+            S44.BackgroundColor = Color.Green;
+            S44.BorderColor = Color.PaleVioletRed;
+            S44.BorderRadius = 0;
+            S44.BorderSize = 0;
+            S44.FlatAppearance.BorderSize = 0;
+            S44.FlatStyle = FlatStyle.Flat;
+            S44.ForeColor = Color.White;
+            S44.Location = new Point(292, 457);
+            S44.Name = "S44";
+            S44.Size = new Size(64, 49);
+            S44.TabIndex = 128;
+            S44.Text = "S44";
+            S44.TextColor = Color.White;
+            S44.UseVisualStyleBackColor = false;
             // 
-            // rjButton16
+            // S42
             // 
-            rjButton16.BackColor = Color.Green;
-            rjButton16.BackgroundColor = Color.Green;
-            rjButton16.BorderColor = Color.PaleVioletRed;
-            rjButton16.BorderRadius = 0;
-            rjButton16.BorderSize = 0;
-            rjButton16.Cursor = Cursors.Hand;
-            rjButton16.FlatAppearance.BorderSize = 0;
-            rjButton16.FlatStyle = FlatStyle.Flat;
-            rjButton16.ForeColor = Color.White;
-            rjButton16.Location = new Point(362, 457);
-            rjButton16.Name = "rjButton16";
-            rjButton16.Size = new Size(64, 49);
-            rjButton16.TabIndex = 127;
-            rjButton16.Text = "S42";
-            rjButton16.TextColor = Color.White;
-            rjButton16.UseVisualStyleBackColor = false;
+            S42.BackColor = Color.Green;
+            S42.BackgroundColor = Color.Green;
+            S42.BorderColor = Color.PaleVioletRed;
+            S42.BorderRadius = 0;
+            S42.BorderSize = 0;
+            S42.Cursor = Cursors.Hand;
+            S42.FlatAppearance.BorderSize = 0;
+            S42.FlatStyle = FlatStyle.Flat;
+            S42.ForeColor = Color.White;
+            S42.Location = new Point(362, 457);
+            S42.Name = "S42";
+            S42.Size = new Size(64, 49);
+            S42.TabIndex = 127;
+            S42.Text = "S42";
+            S42.TextColor = Color.White;
+            S42.UseVisualStyleBackColor = false;
             // 
             // S40
             // 
@@ -1329,26 +1351,48 @@
             S34.TextColor = Color.White;
             S34.UseVisualStyleBackColor = false;
             // 
+            // ConfirmSeatsBtn
+            // 
+            ConfirmSeatsBtn.BackColor = Color.DarkOrchid;
+            ConfirmSeatsBtn.BackgroundColor = Color.DarkOrchid;
+            ConfirmSeatsBtn.BorderColor = Color.PaleVioletRed;
+            ConfirmSeatsBtn.BorderRadius = 5;
+            ConfirmSeatsBtn.BorderSize = 0;
+            ConfirmSeatsBtn.Cursor = Cursors.Hand;
+            ConfirmSeatsBtn.FlatAppearance.BorderSize = 0;
+            ConfirmSeatsBtn.FlatStyle = FlatStyle.Flat;
+            ConfirmSeatsBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ConfirmSeatsBtn.ForeColor = Color.White;
+            ConfirmSeatsBtn.Location = new Point(633, 530);
+            ConfirmSeatsBtn.Name = "ConfirmSeatsBtn";
+            ConfirmSeatsBtn.Size = new Size(150, 40);
+            ConfirmSeatsBtn.TabIndex = 132;
+            ConfirmSeatsBtn.Text = "Save";
+            ConfirmSeatsBtn.TextColor = Color.White;
+            ConfirmSeatsBtn.UseVisualStyleBackColor = false;
+            ConfirmSeatsBtn.Click += ConfirmSeatsBtn_Click;
+            // 
             // FrmInterState
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(944, 574);
+            Controls.Add(ConfirmSeatsBtn);
             Controls.Add(rjButton12);
-            Controls.Add(rjButton13);
-            Controls.Add(S47);
-            Controls.Add(S45);
-            Controls.Add(rjButton16);
+            Controls.Add(S48);
+            Controls.Add(S46);
+            Controls.Add(S44);
+            Controls.Add(S42);
             Controls.Add(S40);
             Controls.Add(S38);
             Controls.Add(S36);
             Controls.Add(S34);
             Controls.Add(rjButton11);
-            Controls.Add(rjButton3);
-            Controls.Add(S46);
+            Controls.Add(S47);
+            Controls.Add(S45);
             Controls.Add(S43);
-            Controls.Add(rjButton6);
+            Controls.Add(S41);
             Controls.Add(S39);
             Controls.Add(S37);
             Controls.Add(S35);
@@ -1397,12 +1441,13 @@
             Name = "FrmInterState";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmSeats2";
+            Load += FrmInterState_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            panel3.ResumeLayout(false);
-            panel3.PerformLayout();
             panel2.ResumeLayout(false);
             panel2.PerformLayout();
+            panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
@@ -1449,9 +1494,8 @@
         private CustomControls.RJControls.RJButton R1;
         private Panel panel1;
         private Panel panel3;
-        private Label label6;
+        private Label AvailableSeatLBL;
         private Label label4;
-        private Panel panel2;
         private Label label5;
         private Label label1;
         private TextBox TripNumberInput;
@@ -1464,23 +1508,27 @@
         private CustomControls.RJControls.RJButton rjButton2;
         private Label label7;
         private Label label8;
-        private CustomControls.RJControls.RJButton rjButton3;
-        private CustomControls.RJControls.RJButton S46;
+        private CustomControls.RJControls.RJButton S47;
+        private CustomControls.RJControls.RJButton S45;
         private CustomControls.RJControls.RJButton S43;
-        private CustomControls.RJControls.RJButton rjButton6;
+        private CustomControls.RJControls.RJButton S41;
         private CustomControls.RJControls.RJButton S39;
         private CustomControls.RJControls.RJButton S37;
         private CustomControls.RJControls.RJButton S35;
         private CustomControls.RJControls.RJButton S33;
         private CustomControls.RJControls.RJButton rjButton11;
         private CustomControls.RJControls.RJButton rjButton12;
-        private CustomControls.RJControls.RJButton rjButton13;
-        private CustomControls.RJControls.RJButton S47;
-        private CustomControls.RJControls.RJButton S45;
-        private CustomControls.RJControls.RJButton rjButton16;
+        private CustomControls.RJControls.RJButton S48;
+        private CustomControls.RJControls.RJButton S46;
+        private CustomControls.RJControls.RJButton S44;
+        private CustomControls.RJControls.RJButton S42;
         private CustomControls.RJControls.RJButton S40;
         private CustomControls.RJControls.RJButton S38;
         private CustomControls.RJControls.RJButton S36;
         private CustomControls.RJControls.RJButton S34;
+        public CustomControls.RJControls.RJButton ConfirmSeatsBtn;
+        private Panel panel2;
+        private Label LblCapcity;
+        private Label label9;
     }
 }

@@ -32,10 +32,6 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            panel1 = new Panel();
-            CreateReservationBrn = new CustomControls.RJControls.RJButton();
-            CreateDriverBtn = new CustomControls.RJControls.RJButton();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel10 = new Panel();
             label5 = new Label();
@@ -54,8 +50,10 @@
             Label3 = new Label();
             label7 = new Label();
             label8 = new Label();
-            panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            CreateDriverBtn = new CustomControls.RJControls.RJButton();
+            CreateReservationBrn = new CustomControls.RJControls.RJButton();
+            panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             panel2.SuspendLayout();
             panel10.SuspendLayout();
             panel3.SuspendLayout();
@@ -63,73 +61,9 @@
             panel8.SuspendLayout();
             panel9.SuspendLayout();
             tableLayoutPanel2.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // panel1
-            // 
-            panel1.Controls.Add(CreateReservationBrn);
-            panel1.Controls.Add(CreateDriverBtn);
-            panel1.Controls.Add(pictureBox1);
-            panel1.Dock = DockStyle.Top;
-            panel1.Location = new Point(0, 0);
-            panel1.Name = "panel1";
-            panel1.Padding = new Padding(5);
-            panel1.Size = new Size(960, 94);
-            panel1.TabIndex = 1;
-            // 
-            // CreateReservationBrn
-            // 
-            CreateReservationBrn.Anchor = AnchorStyles.Right;
-            CreateReservationBrn.BackColor = Color.DarkOrchid;
-            CreateReservationBrn.BackgroundColor = Color.DarkOrchid;
-            CreateReservationBrn.BorderColor = Color.PaleVioletRed;
-            CreateReservationBrn.BorderRadius = 5;
-            CreateReservationBrn.BorderSize = 0;
-            CreateReservationBrn.Cursor = Cursors.Hand;
-            CreateReservationBrn.FlatAppearance.BorderSize = 0;
-            CreateReservationBrn.FlatStyle = FlatStyle.Flat;
-            CreateReservationBrn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CreateReservationBrn.ForeColor = Color.White;
-            CreateReservationBrn.Location = new Point(856, 32);
-            CreateReservationBrn.Name = "CreateReservationBrn";
-            CreateReservationBrn.Size = new Size(71, 30);
-            CreateReservationBrn.TabIndex = 3;
-            CreateReservationBrn.Text = "Create";
-            CreateReservationBrn.TextColor = Color.White;
-            CreateReservationBrn.UseVisualStyleBackColor = false;
-            CreateReservationBrn.Click += CreateReservationBrn_Click;
-            // 
-            // CreateDriverBtn
-            // 
-            CreateDriverBtn.Anchor = AnchorStyles.Right;
-            CreateDriverBtn.BackColor = Color.DarkOrchid;
-            CreateDriverBtn.BackgroundColor = Color.DarkOrchid;
-            CreateDriverBtn.BorderColor = Color.PaleVioletRed;
-            CreateDriverBtn.BorderRadius = 5;
-            CreateDriverBtn.BorderSize = 0;
-            CreateDriverBtn.Cursor = Cursors.Hand;
-            CreateDriverBtn.FlatAppearance.BorderSize = 0;
-            CreateDriverBtn.FlatStyle = FlatStyle.Flat;
-            CreateDriverBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            CreateDriverBtn.ForeColor = Color.White;
-            CreateDriverBtn.Location = new Point(1616, 26);
-            CreateDriverBtn.Name = "CreateDriverBtn";
-            CreateDriverBtn.Size = new Size(71, 30);
-            CreateDriverBtn.TabIndex = 2;
-            CreateDriverBtn.Text = "Create";
-            CreateDriverBtn.TextColor = Color.White;
-            CreateDriverBtn.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Dock = DockStyle.Fill;
-            pictureBox1.Image = Properties.Resources.ReservationHeading;
-            pictureBox1.Location = new Point(5, 5);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(950, 84);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
             // 
             // panel2
             // 
@@ -354,6 +288,72 @@
             label8.Text = "TripNo";
             label8.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // CreateDriverBtn
+            // 
+            CreateDriverBtn.Anchor = AnchorStyles.Right;
+            CreateDriverBtn.BackColor = Color.DarkOrchid;
+            CreateDriverBtn.BackgroundColor = Color.DarkOrchid;
+            CreateDriverBtn.BorderColor = Color.PaleVioletRed;
+            CreateDriverBtn.BorderRadius = 5;
+            CreateDriverBtn.BorderSize = 0;
+            CreateDriverBtn.Cursor = Cursors.Hand;
+            CreateDriverBtn.FlatAppearance.BorderSize = 0;
+            CreateDriverBtn.FlatStyle = FlatStyle.Flat;
+            CreateDriverBtn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreateDriverBtn.ForeColor = Color.White;
+            CreateDriverBtn.Location = new Point(1616, 26);
+            CreateDriverBtn.Name = "CreateDriverBtn";
+            CreateDriverBtn.Size = new Size(71, 30);
+            CreateDriverBtn.TabIndex = 2;
+            CreateDriverBtn.Text = "Create";
+            CreateDriverBtn.TextColor = Color.White;
+            CreateDriverBtn.UseVisualStyleBackColor = false;
+            // 
+            // CreateReservationBrn
+            // 
+            CreateReservationBrn.Anchor = AnchorStyles.Right;
+            CreateReservationBrn.BackColor = Color.DarkOrchid;
+            CreateReservationBrn.BackgroundColor = Color.DarkOrchid;
+            CreateReservationBrn.BorderColor = Color.PaleVioletRed;
+            CreateReservationBrn.BorderRadius = 5;
+            CreateReservationBrn.BorderSize = 0;
+            CreateReservationBrn.Cursor = Cursors.Hand;
+            CreateReservationBrn.FlatAppearance.BorderSize = 0;
+            CreateReservationBrn.FlatStyle = FlatStyle.Flat;
+            CreateReservationBrn.Font = new Font("Century Gothic", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CreateReservationBrn.ForeColor = Color.White;
+            CreateReservationBrn.Location = new Point(856, 32);
+            CreateReservationBrn.Name = "CreateReservationBrn";
+            CreateReservationBrn.Size = new Size(71, 30);
+            CreateReservationBrn.TabIndex = 3;
+            CreateReservationBrn.Text = "Create";
+            CreateReservationBrn.TextColor = Color.White;
+            CreateReservationBrn.UseVisualStyleBackColor = false;
+            CreateReservationBrn.Click += CreateReservationBrn_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(CreateReservationBrn);
+            panel1.Controls.Add(CreateDriverBtn);
+            panel1.Controls.Add(pictureBox1);
+            panel1.Dock = DockStyle.Top;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(5);
+            panel1.Size = new Size(960, 94);
+            panel1.TabIndex = 1;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Dock = DockStyle.Fill;
+            pictureBox1.Image = Properties.Resources.ReservationHeading;
+            pictureBox1.Location = new Point(5, 5);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(950, 84);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
+            // 
             // FrmReservations
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -365,8 +365,6 @@
             Name = "FrmReservations";
             Text = "FrmReservations";
             Load += FrmReservations_Load;
-            panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
             panel10.ResumeLayout(false);
             panel10.PerformLayout();
@@ -376,15 +374,12 @@
             panel9.ResumeLayout(false);
             tableLayoutPanel2.ResumeLayout(false);
             tableLayoutPanel2.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panel1;
-        private CustomControls.RJControls.RJButton CreateDriverBtn;
-        private PictureBox pictureBox1;
-        private CustomControls.RJControls.RJButton CreateReservationBrn;
         private Panel panel2;
         private Panel panel10;
         private Panel panel3;
@@ -403,5 +398,9 @@
         private Label label6;
         private Guna.UI2.WinForms.Guna2CustomCheckBox CustomCheckBoxAvailabelSearch;
         private Label label5;
+        private CustomControls.RJControls.RJButton CreateDriverBtn;
+        private CustomControls.RJControls.RJButton CreateReservationBrn;
+        private Panel panel1;
+        private PictureBox pictureBox1;
     }
 }

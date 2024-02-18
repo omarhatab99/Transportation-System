@@ -257,7 +257,6 @@ G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSys
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmDrivers.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmHome.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmLogin.resources
-G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmMain.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.FrmOverlay.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.FrmRegister.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.FrmReservations.resources
@@ -296,3 +295,10 @@ G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSys
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmTouristSeats.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Dialog.FrmReservationDetails.resources
 G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmShowTrips.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Trips.FrmPassengerTrips.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCPassengerTrips.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Booking.FrmPassengerBooking.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Passengers.FrmPassengerReservation.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCPassengerReservation.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Pages.Drivers.FrmDriverTrips.resources
+G:\Transportation-System-master\obj\Debug\net8.0-windows\TransportReservationSystem.Rows.UCDriverTrips.resources

@@ -168,7 +168,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(960, 308);
             panel5.TabIndex = 1;
-            panel5.Paint += panel5_Paint;
             // 
             // LicenceTBOX
             // 

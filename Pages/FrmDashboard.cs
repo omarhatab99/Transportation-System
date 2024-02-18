@@ -7,8 +7,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TransportReservationSystem.Core.Constants;
 using TransportReservationSystem.Core.Models;
+using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Pages;
+using TransportReservationSystem.Pages.Drivers;
 using TransportReservationSystem.Pages.Passengers;
 using TransportReservationSystem.Pages.Trips;
 
@@ -16,21 +19,63 @@ namespace TransportReservationSystem
 {
     public partial class FrmDashboard : Form
     {
-        List<User> users = Repository.LoadUsers();
+        ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
+       
+        public string Role { get; set; }
+        public int Id { get; set; }
 
         public static Form ActivatedForm = new Form();
 
         bool sidebarExpanded = true;
 
-        public FrmDashboard()
+        public FrmDashboard(string role, int id)
         {
             InitializeComponent();
+            Role = role;
+            Id = id;
         }
 
         private void FrmDashboard_Load(object sender, EventArgs e)
         {
-            FrmMain frmMaster = new FrmMain();
-            LoadForm(frmMaster);
+            Permission(Role, Id);
+            FrmHome frmHome = new FrmHome();
+            LoadForm(frmHome);
+
+        }
+
+        //Permission 
+        private void Permission(string role, int id)
+        {
+            if (role == "STAFF")
+            {
+                Staff staff = applicaitonDbContext.Staff.FirstOrDefault(x => x.Id == id);
+                if (staff.Role == "USER")
+                {
+                    UserSide.Hide();
+                }
+            }
+            else if (role == "DRIVER")
+            {
+                Driver driver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == id);
+                DriverSide.Hide();
+                UserSide.Hide();
+                PassengerSide.Hide();
+                ReservationSide.Hide();
+                VehicleSide.Hide();
+                DashboardSide.Hide();
+                //TripSide.Hide();
+            }
+            else if (role == "PASSENGER")
+            {
+                Passenger passenger = applicaitonDbContext.Passengers.FirstOrDefault(x => x.Id == id);
+                DriverSide.Hide();
+                UserSide.Hide();
+                PassengerSide.Hide();
+                //ReservationSide.Hide();
+                VehicleSide.Hide();
+                DashboardSide.Hide();
+                //TripSide.Hide();
+            }
         }
 
         private void MenuBtn_Click(object sender, EventArgs e)
@@ -72,17 +117,6 @@ namespace TransportReservationSystem
             }
         }
 
-        private void panel2_Click(object sender, EventArgs e)
-        {
-            FrmMain frmMain = new FrmMain();
-
-            //switch
-            LoadForm(frmMain);
-
-
-        }
-
-
         private void DashboardBtn_Click(object sender, EventArgs e)
         {
             FrmHome frmHome = new FrmHome();
@@ -93,8 +127,6 @@ namespace TransportReservationSystem
             //switch
             LoadForm(frmHome);
         }
-
-
 
         private void DriversBtn_Click(object sender, EventArgs e)
         {
@@ -126,16 +158,36 @@ namespace TransportReservationSystem
 
         private void ReservationBtn_Click(object sender, EventArgs e)
         {
-            FrmReservations frmReservations = new FrmReservations();
 
-            ActivatedForm = frmReservations;
 
+            if (Role == "PASSENGER")
+            {
+                FrmPassengerReservation FrmPassengerReservation = new FrmPassengerReservation();
+                FrmPassengerReservation.PassengerId = Id;
+                ActivatedForm = FrmPassengerReservation;
+
+                LoadForm(FrmPassengerReservation);
+
+            }
+            else
+            {
+                FrmReservations frmReservations = new FrmReservations();
+
+                ActivatedForm = frmReservations;
+
+
+                //Change Background To Active
+                ButtonColorChangeByClick(ReservationBtn);
+
+                LoadForm(frmReservations);
+
+
+            }
 
             //Change Background To Active
             ButtonColorChangeByClick(ReservationBtn);
 
             //switch
-            LoadForm(frmReservations);
 
         }
 
@@ -170,6 +222,12 @@ namespace TransportReservationSystem
 
         private void LogoutBtn_Click(object sender, EventArgs e)
         {
+            void OpenNewForm()
+            {
+                Application.Run(new FrmLogin());
+            }
+
+
             Thread thread = new Thread(OpenNewForm);
             thread.SetApartmentState(ApartmentState.STA);
             thread.Start();
@@ -200,29 +258,40 @@ namespace TransportReservationSystem
             applicationForm.Show();
         }
 
-
-        private void OpenNewForm()
-        {
-            Application.Run(new FrmLogin());
-        }
-
-        private void MainPanel_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void TripsBtn_Click(object sender, EventArgs e)
         {
-            FrmTrips frmTrips = new FrmTrips();
+            if(Role == "PASSENGER")
+            {
+                FrmPassengerTrips frmPassengerTrips = new FrmPassengerTrips();
+                frmPassengerTrips.PassengerId = Id;
+                ActivatedForm = frmPassengerTrips;
 
-            ActivatedForm = frmTrips;
+                LoadForm(frmPassengerTrips);
+
+            }
+            else if(Role == "DRIVER")
+            {
+                FrmDriverTrips frmDriverTrips = new FrmDriverTrips();
+                frmDriverTrips.DriverId = Id; 
+                ActivatedForm = frmDriverTrips;
+
+                LoadForm(frmDriverTrips);
+
+            }
+            else
+            {
+                FrmTrips frmTrips = new FrmTrips();
+
+                ActivatedForm = frmTrips;
+
+                LoadForm(frmTrips);
+            }
 
 
-            //Change Background To Active
+
             ButtonColorChangeByClick(TripsBtn);
 
             //switch
-            LoadForm(frmTrips);
         }
     }
 }

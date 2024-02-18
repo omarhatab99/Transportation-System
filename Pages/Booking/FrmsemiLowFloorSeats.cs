@@ -20,6 +20,7 @@ namespace TransportReservationSystem.Pages.Booking
 
         public int PassengerId { get; set; }
         public int TripId { get; set; }
+        public string Show {  get; set; }
         public List<string> SelectedSeats {  get; set; }
         public FrmsemiLowFloorSeats()
         {
@@ -105,7 +106,16 @@ namespace TransportReservationSystem.Pages.Booking
 
         private void SubmitSeatsFormBtn_Click(object sender, EventArgs e)
         {
-            FrmBooking.Booking.Seats = SelectedSeats;
+
+            if(Show == "PASSENGER")
+            {
+                FrmPassengerBooking.Booking.Seats = SelectedSeats;
+
+            }
+            else
+            {
+                FrmBooking.Booking.Seats = SelectedSeats;
+            }
             this.Close();
         }
     }

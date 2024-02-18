@@ -197,12 +197,6 @@ namespace TransportReservationSystem.Core.Constants
                 // ", containing at least one uppercase letter, one lowercase letter, one digit, and one special character ..!!";
                 validationResult.IsValid = false;
             }
-
-            else if (string.IsNullOrEmpty(passenger.Gender))
-            {
-                validationResult.MessageError = "Gender must be required ..!!";
-                validationResult.IsValid = false;
-            }
             else if (string.IsNullOrEmpty(passenger.Phone))
             {
                 validationResult.MessageError = "Phone must be required ..!!";
@@ -211,6 +205,11 @@ namespace TransportReservationSystem.Core.Constants
             else if (!IsValidPhone(passenger.Phone))
             {
                 validationResult.MessageError = "Please enter a valid phone number ..!!";
+                validationResult.IsValid = false;
+            }
+            else if (string.IsNullOrEmpty(passenger.Gender))
+            {
+                validationResult.MessageError = "Gender must be required ..!!";
                 validationResult.IsValid = false;
             }
             else

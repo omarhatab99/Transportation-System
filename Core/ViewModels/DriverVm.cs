@@ -20,6 +20,7 @@ namespace TransportReservationSystem.Core.ViewModels
         public bool? HasBouns { get; set; }
         public string? CurrentStation { get; set; }
         public int? Trips { get; set; }
+        public bool IsAvailable { get; set; } = true;
         public int? Maintenances { get; set; }
         public DateTime? CreatedAt { get; set; }
         public DateTime? UpdatedAt { get; set; }

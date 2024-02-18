@@ -45,6 +45,7 @@
             LoginBtn = new Button();
             RegisterBtnPic = new PictureBox();
             RegisterBtn = new Button();
+            DriverRBtn = new CustomControls.RJControls.RJRadioButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -157,7 +158,7 @@
             PassengerRBtn.AutoSize = true;
             PassengerRBtn.CheckedColor = Color.MediumSlateBlue;
             PassengerRBtn.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            PassengerRBtn.Location = new Point(28, 10);
+            PassengerRBtn.Location = new Point(18, 10);
             PassengerRBtn.MinimumSize = new Size(0, 21);
             PassengerRBtn.Name = "PassengerRBtn";
             PassengerRBtn.Padding = new Padding(10, 0, 0, 0);
@@ -173,7 +174,7 @@
             StaffRBtn.AutoSize = true;
             StaffRBtn.CheckedColor = Color.MediumSlateBlue;
             StaffRBtn.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            StaffRBtn.Location = new Point(202, 10);
+            StaffRBtn.Location = new Point(218, 10);
             StaffRBtn.MinimumSize = new Size(0, 21);
             StaffRBtn.Name = "StaffRBtn";
             StaffRBtn.Padding = new Padding(10, 0, 0, 0);
@@ -187,6 +188,7 @@
             // panel1
             // 
             panel1.BackColor = Color.AliceBlue;
+            panel1.Controls.Add(DriverRBtn);
             panel1.Controls.Add(PassengerRBtn);
             panel1.Controls.Add(StaffRBtn);
             panel1.Location = new Point(872, 380);
@@ -254,6 +256,22 @@
             RegisterBtn.UseVisualStyleBackColor = false;
             RegisterBtn.Click += RegisterBtn_Click;
             // 
+            // DriverRBtn
+            // 
+            DriverRBtn.AutoSize = true;
+            DriverRBtn.CheckedColor = Color.MediumSlateBlue;
+            DriverRBtn.Font = new Font("Century Gothic", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DriverRBtn.Location = new Point(128, 10);
+            DriverRBtn.MinimumSize = new Size(0, 21);
+            DriverRBtn.Name = "DriverRBtn";
+            DriverRBtn.Padding = new Padding(10, 0, 0, 0);
+            DriverRBtn.Size = new Size(73, 21);
+            DriverRBtn.TabIndex = 19;
+            DriverRBtn.TabStop = true;
+            DriverRBtn.Text = "Driver";
+            DriverRBtn.UnCheckedColor = Color.Gray;
+            DriverRBtn.UseVisualStyleBackColor = true;
+            // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -314,5 +332,6 @@
         private Button LoginBtn;
         private PictureBox RegisterBtnPic;
         private Button RegisterBtn;
+        private CustomControls.RJControls.RJRadioButton DriverRBtn;
     }
 }

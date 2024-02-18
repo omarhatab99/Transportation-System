@@ -38,24 +38,36 @@ namespace TransportReservationSystem
                 Username = x.Username,
                 Phone = x.Phone,
                 Email = x.Email,
-                Salary = x.Salary
+                Salary = x.Salary,
+                IsAvailable = x.IsAvailable
 
             }).ToList();
-
 
             FLBDrivers.Controls.Clear();
 
             foreach (var driver in drivers)
             {
                 UCDriver uCDriver = new UCDriver();
-                uCDriver.Id = (int)driver.Id;
-                uCDriver.License = driver.License.ToString();
-                uCDriver.Username = driver.Username.ToString();
-                uCDriver.Phone = driver.Phone.ToString();
-                uCDriver.Email = driver.Email.ToString();
-                uCDriver.Salary = driver.Salary.ToString();
-
+                uCDriver.Id = (int)driver.Id!;
+                uCDriver.Email = driver.Email!;
+                uCDriver.License = driver.License.ToString()!;
+                uCDriver.Username = driver.Username?.ToString()!;
+                uCDriver.Phone = driver.Phone?.ToString()!;
+                uCDriver.Salary = driver.Salary.ToString()!;
                 uCDriver.Width = FLBDrivers.Width;
+
+                Trip trip = applicaitonDbContext.Trips.FirstOrDefault(x => x.DriverId == driver.Id)!;
+
+                if (driver.IsAvailable)
+                {
+                    uCDriver.tableLayoutPanel1.BackColor = Color.FromArgb(192, 255, 192);
+                    uCDriver.panel1.BackColor = Color.FromArgb(192, 255, 192);
+                }
+                else
+                {
+                    uCDriver.panel1.BackColor = Color.FromArgb(224, 224, 224);
+                }
+
                 FLBDrivers.Controls.Add(uCDriver);
             }
 
@@ -83,28 +95,41 @@ namespace TransportReservationSystem
 
             List<DriverVm> drivers = driverList.Select(x => new DriverVm
             {
-
+                Id = x.Id,
                 License = x.License,
                 Username = x.Username,
                 Phone = x.Phone,
                 Email = x.Email,
                 Salary = x.Salary
 
-            }).Where(x => x.Username.ToLower().Trim().Contains(trim)).ToList();
+            }).Where(x => x.Username!.ToLower().Trim().Contains(trim)).ToList();
 
             FLBDrivers.Controls.Clear();
+
 
             foreach (var driver in drivers)
             {
                 UCDriver uCDriver = new UCDriver();
-
-                uCDriver.License = driver.License.ToString();
-                uCDriver.Username = driver.Username.ToString();
-                uCDriver.Phone = driver.Phone.ToString();
-                uCDriver.Email = driver.Email.ToString();
-                uCDriver.Salary = driver.Salary.ToString();
-
+                uCDriver.Id = (int)driver.Id!;
+                uCDriver.Email = driver.Email!;
+                uCDriver.License = driver.License.ToString()!;
+                uCDriver.Username = driver.Username?.ToString()!;
+                uCDriver.Phone = driver.Phone?.ToString()!;
+                uCDriver.Salary = driver.Salary.ToString()!;
                 uCDriver.Width = FLBDrivers.Width;
+
+                Trip trip = applicaitonDbContext.Trips.FirstOrDefault(x => x.DriverId == driver.Id)!;
+
+                if (driver.IsAvailable)
+                {
+                    uCDriver.tableLayoutPanel1.BackColor = Color.FromArgb(192, 255, 192);
+                    uCDriver.panel1.BackColor = Color.FromArgb(192, 255, 192);
+                }
+                else
+                {
+                    uCDriver.panel1.BackColor = Color.FromArgb(224, 224, 224);
+                }
+
                 FLBDrivers.Controls.Add(uCDriver);
             }
         }
@@ -116,8 +141,5 @@ namespace TransportReservationSystem
             frmDriverCrud.ShowDialog();
 
         }
-
-
-
     }
 }

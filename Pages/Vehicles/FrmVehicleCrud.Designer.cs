@@ -189,7 +189,6 @@
             panel5.Name = "panel5";
             panel5.Size = new Size(960, 308);
             panel5.TabIndex = 2;
-            panel5.Paint += panel5_Paint;
             // 
             // SubmitVehicleForm_CreateBtn
             // 

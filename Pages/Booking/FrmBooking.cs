@@ -18,11 +18,11 @@ namespace TransportReservationSystem.Pages.Booking
     public partial class FrmBooking : Form
     {
         ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
-        public static FrmBooking Booking {  get; set; }
-        public List<string> Seats {  get; set; }
+        public static FrmBooking Booking { get; set; }
+        public List<string> Seats { get; set; }
         public int Id { get; set; }
 
-        public int PassengerBookingId {  get; set; }
+        public int PassengerBookingId { get; set; }
         public FrmBooking()
         {
             InitializeComponent();
@@ -37,21 +37,21 @@ namespace TransportReservationSystem.Pages.Booking
 
             GetPassengerDate();
 
-            if(PassengerBookingId != 0)
+            if (PassengerBookingId != 0)
             {
                 CBPassenger.SelectedIndex = applicaitonDbContext.Passengers.ToList().FindIndex(x => x.Id == PassengerBookingId);
             }
+            if (Id != 0)
+            {
+                CBPassenger.SelectedIndex = applicaitonDbContext.Passengers.ToList().FindIndex(x => x.Id == Id);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-            //Application.OpenForms["FrmBooking"].
-        }
 
         private void ConfirmReservationBtn_Click(object sender, EventArgs e)
         {
             //Get Selected Items 
-            if(CBTrip.Items.Count <= 0)
+            if (CBTrip.Items.Count <= 0)
             {
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert("Not have any trip selected", FrmValidationDialog.enmType.Warning);
@@ -77,12 +77,12 @@ namespace TransportReservationSystem.Pages.Booking
                 Seats = Seats,
                 TotalCost = GetTotalCost(),
                 Status = true,
-                
+
             };
 
-            Reservation rs = applicaitonDbContext.Reservations.FirstOrDefault(x => x.PassengerId == reservationVm.PassengerId && x.TripId == reservationVm.TripId)!; 
+            Reservation rs = applicaitonDbContext.Reservations.FirstOrDefault(x => x.PassengerId == reservationVm.PassengerId && x.TripId == reservationVm.TripId)!;
 
-            if(rs != null)
+            if (rs != null)
             {
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert("Reservation is Already Existed..!!", FrmValidationDialog.enmType.Warning);
@@ -90,7 +90,7 @@ namespace TransportReservationSystem.Pages.Booking
             }
 
             //Validation
-            if(reservationVm.Seats.Count <= 0)
+            if (reservationVm.Seats.Count <= 0)
             {
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert("Please select your seats..!!", FrmValidationDialog.enmType.Warning);
@@ -108,7 +108,7 @@ namespace TransportReservationSystem.Pages.Booking
                 SeatsNumber = Seats.Count()
             };
 
-            if((trip.AvailableSeats - reservation.SeatsNumber) < 0)
+            if ((trip.AvailableSeats - reservation.SeatsNumber) < 0)
             {
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert("Sorry we have a proplem..!!", FrmValidationDialog.enmType.Error);
@@ -119,7 +119,7 @@ namespace TransportReservationSystem.Pages.Booking
 
                 applicaitonDbContext.Reservations.Add(reservation);
                 int result = applicaitonDbContext.SaveChanges();
-                if(result != 0)
+                if (result != 0)
                 {
                     trip.AvailableSeats -= reservation.SeatsNumber;
                     applicaitonDbContext.Trips.Update(trip);
@@ -134,7 +134,7 @@ namespace TransportReservationSystem.Pages.Booking
             LoadForm(frmReservations);
 
             return;
-            
+
 
 
 
@@ -161,45 +161,41 @@ namespace TransportReservationSystem.Pages.Booking
             return Seats.Count * trip.Fare;
         }
 
-        private void panel10_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label14_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void ConfirmSeatsBtn_Click(object sender, EventArgs e)
         {
-            //check category of Vehicle
-            var passenger = CBPassenger.Items[CBPassenger.SelectedIndex] as Passenger;
-            var trip = CBTrip.Items[CBTrip.SelectedIndex] as Trip;
+           if(applicaitonDbContext.Trips.Any(x => x.AvailableSeats > 0 && !x.Done))
+            {
+                //check category of Vehicle
+                var passenger = CBPassenger.Items[CBPassenger.SelectedIndex] as Passenger;
+                var trip = CBTrip.Items[CBTrip.SelectedIndex] as Trip;
 
-            Category category = trip.Vehicle.Category;
+                Category category = trip.Vehicle.Category;
 
-            if(category.Capacity == 16)
-            {
-                FrmTouristSeats frmTouristSeats = new FrmTouristSeats();
-                frmTouristSeats.TripId = trip.Id;
-                frmTouristSeats.PassengerId = passenger.Id;
-                frmTouristSeats.ShowDialog();
-            }
-            else if(category.Capacity == 32)
-            {
-                FrmsemiLowFloorSeats frmsemiLowFloorSeats = new FrmsemiLowFloorSeats();
-                frmsemiLowFloorSeats.TripId = trip.Id;
-                frmsemiLowFloorSeats.PassengerId = passenger.Id;
-                frmsemiLowFloorSeats.SelectedSeats.Clear();
-                frmsemiLowFloorSeats.ShowDialog();
-            }
-            else
-            {
-                FrmInterState frmInterState = new FrmInterState();
-                frmInterState.TripId = trip.Id;
-                frmInterState.PassengerId = passenger.Id;
-                frmInterState.ShowDialog();
+                if (category.Capacity == 16)
+                {
+                    FrmTouristSeats frmTouristSeats = new FrmTouristSeats();
+                    frmTouristSeats.TripId = trip.Id;
+                    frmTouristSeats.PassengerId = passenger.Id;
+                    frmTouristSeats.SelectedSeats.Clear();
+                    frmTouristSeats.ShowDialog();
+                }
+                else if (category.Capacity == 32)
+                {
+                    FrmsemiLowFloorSeats frmsemiLowFloorSeats = new FrmsemiLowFloorSeats();
+                    frmsemiLowFloorSeats.TripId = trip.Id;
+                    frmsemiLowFloorSeats.PassengerId = passenger.Id;
+                    frmsemiLowFloorSeats.SelectedSeats.Clear();
+                    frmsemiLowFloorSeats.ShowDialog();
+                }
+                else
+                {
+                    FrmInterState frmInterState = new FrmInterState();
+                    frmInterState.TripId = trip.Id;
+                    frmInterState.PassengerId = passenger.Id;
+                    frmInterState.SelectedSeats.Clear();
+                    frmInterState.ShowDialog();
+                }
             }
         }
 
@@ -231,19 +227,34 @@ namespace TransportReservationSystem.Pages.Booking
 
         private void GetDataFilter()
         {
-            var trip = CBTrip.Items[CBTrip.SelectedIndex] as Trip;
-            TripNumberInput.Text = trip.TripNo.ToString();
-            DepatureInput.Text = trip.DepatureDate.ToString();
-            ArrivalInput.Text = trip.ArrivalDate.ToString();
-            SourceInput.Text = trip.Source.ToString();
-            DestinationInput.Text = trip.Destination.ToString();
-            FareInput.Text = trip.Fare.ToString();
-            DriverNameInput.Text = trip.Driver.Username.ToString();
-            DriverPhoneInput.Text = trip.Driver.Phone.ToString();
-            DriverLicenseInput.Text = trip.Driver.License.ToString();
-            VehicleNumberInput.Text = trip.Vehicle.VehicleNo.ToString();
-            VehicleModel.Text = trip.Vehicle.Model.ToString();
-            VehicleBrandInput.Text = trip.Vehicle.Brand.ToString();
+            List<Trip> validTrips = new List<Trip>();
+            List<Trip> listTrip = applicaitonDbContext.Trips.ToList();
+            foreach (var trip in listTrip)
+            {
+                DateTime date1 = DateTime.Parse(trip.DepatureDate.ToString());
+                DateTime date2 = DateTime.Now;
+
+                if ((date1 > date2) && trip.AvailableSeats > 0 && !trip.Done)
+                {
+                    validTrips.Add(trip);
+                }
+            }
+            if (validTrips.Any())
+            {
+                var trip = CBTrip.Items[CBTrip.SelectedIndex] as Trip;
+                TripNumberInput.Text = trip.TripNo.ToString();
+                DepatureInput.Text = trip.DepatureDate.ToString();
+                ArrivalInput.Text = trip.ArrivalDate.ToString();
+                SourceInput.Text = trip.Source.ToString();
+                DestinationInput.Text = trip.Destination.ToString();
+                FareInput.Text = trip.Fare.ToString();
+                DriverNameInput.Text = trip.Driver.Username.ToString();
+                DriverPhoneInput.Text = trip.Driver.Phone.ToString();
+                DriverLicenseInput.Text = trip.Driver.License.ToString();
+                VehicleNumberInput.Text = trip.Vehicle.VehicleNo.ToString();
+                VehicleModel.Text = trip.Vehicle.Model.ToString();
+                VehicleBrandInput.Text = trip.Vehicle.Brand.ToString();
+            }
         }
 
         private void GetPassengerDate()
@@ -263,40 +274,61 @@ namespace TransportReservationSystem.Pages.Booking
         }
         public void changePassengerComboBox()
         {
-            ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
+            if(applicaitonDbContext.Passengers.Any())
+            {
+                ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
-            //Set items to combobox for vehicle.
-            List<Passenger> passengers = applicaitonDbContext.Passengers.Where(x => !x.IsDeleted).ToList();
-            //driver set isAvailable true when done trip
-            CBPassenger.DataSource = new BindingSource(passengers, null);
-            CBPassenger.DisplayMember = "Username";
-            CBPassenger.ValueMember = "Id";
-
-            //clear ReservedSeats
-            Seats.Clear();
+                //Set items to combobox for vehicle.
+                List<Passenger> passengers = applicaitonDbContext.Passengers.ToList();
+                //driver set isAvailable true when done trip
+                CBPassenger.DataSource = new BindingSource(passengers, null);
+                CBPassenger.DisplayMember = "Username";
+                CBPassenger.ValueMember = "Id";
+                //clear ReservedSeats
+                Seats.Clear();
+            }
 
         }
         public void changeTripComboBox()
         {
-            ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
+            List<Trip> validTrips = new List<Trip>();
+            List<Trip> listTrip = applicaitonDbContext.Trips.ToList();
+            foreach (var trip in listTrip)
+            {
+                DateTime date1 = DateTime.Parse(trip.DepatureDate.ToString());
+                DateTime date2 = DateTime.Now;
 
-            //Set items to combobox for vehicle.
-            List<Trip> trips = applicaitonDbContext.Trips.Where(x => !x.IsDeleted && x.AvailableSeats > 0 && !x.Done).ToList();
-            //driver set isAvailable true when done trip
-            CBTrip.DataSource = new BindingSource(trips, null);
-            CBTrip.DisplayMember = "TripNo";
-            CBTrip.ValueMember = "Id";
+                if((date1 > date2) && trip.AvailableSeats > 0 && !trip.Done)
+                {
+                    validTrips.Add(trip);
+                }
+            }
 
-            //clear ReservedSeats
-            Seats.Clear();
+            if (validTrips.Any())
+            {
+                ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
+
+                //Set items to combobox for vehicle.
+                List<Trip> trips = validTrips;
+                //driver set isAvailable true when done trip
+                CBTrip.DataSource = new BindingSource(trips, null);
+                CBTrip.DisplayMember = "TripNo";
+                CBTrip.ValueMember = "Id";
+
+                //clear ReservedSeats
+                Seats.Clear();
+            }
+
+
         }
 
         private void ToggleReservationSearch_CheckedChanged(object sender, EventArgs e)
         {
-            if(ToggleReservationSearch.Checked)
+            if (ToggleReservationSearch.Checked)
             {
                 GetDataFilter();
             }
         }
+
     }
 }

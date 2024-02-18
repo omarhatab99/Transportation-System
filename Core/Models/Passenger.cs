@@ -10,7 +10,7 @@ namespace TransportReservationSystem.Core.Models
     {
         public int Id { get; set; }
         public string Phone {  get; set; } = null!;
-        public string Address { get; set; } = null!;
+        public string? Address { get; set; } = null!;
         public string Gender { get; set; } = null!;
         public virtual ICollection<Reservation> Reservations { get; set; } = new List<Reservation>();
         

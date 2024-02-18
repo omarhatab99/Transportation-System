@@ -31,6 +31,28 @@ namespace TransportReservationSystem.Migrations
             modelBuilder.HasSequence<int>("VehicleSequence")
                 .StartsAt(100000000L);
 
+            modelBuilder.Entity("TransportReservationSystem.Core.Models.Analatycal", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("MonthlyGain")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("NumberOfTrips")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("TotalGain")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Analatycals");
+                });
+
             modelBuilder.Entity("TransportReservationSystem.Core.Models.Category", b =>
                 {
                     b.Property<int>("Id")
@@ -73,6 +95,9 @@ namespace TransportReservationSystem.Migrations
                         .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<decimal>("Bouns")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<DateTime>("CreatedAt")
                         .ValueGeneratedOnAdd()
@@ -123,6 +148,9 @@ namespace TransportReservationSystem.Migrations
                         .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
+
+                    b.Property<int>("WorkedTrip")
+                        .HasColumnType("int");
 
                     b.HasKey("Id");
 
@@ -191,7 +219,6 @@ namespace TransportReservationSystem.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Address")
-                        .IsRequired()
                         .HasMaxLength(350)
                         .HasColumnType("nvarchar(350)");
 

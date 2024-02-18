@@ -15,6 +15,7 @@ using TransportReservationSystem.Pages.Vehicles;
 using TransportReservationSystem.Dialog;
 using TransportReservationSystem.Pages.Trips;
 using TransportReservationSystem.Pages.Booking;
+using TransportReservationSystem.Core.Constants;
 
 namespace TransportReservationSystem.Rows
 {
@@ -50,15 +51,15 @@ namespace TransportReservationSystem.Rows
             get { return LblBrand.Text; }
             set { LblBrand.Text = value; }
         }
-        public string IsAvailable
+        public string VehicleNo
         {
-            get { return LblAvailable.Text; }
-            set { LblAvailable.Text = value; }
+            get { return LblVehicleNo.Text; }
+            set { LblVehicleNo.Text = value; }
         }
 
         private void EditBtn_Click(object sender, EventArgs e)
         {
-            Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id && x.LicensePlate == LicensePlate);
+            Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id && x.LicensePlate == LicensePlate)!;
 
             FrmVehicleCrud frmVehicleCrud = new FrmVehicleCrud();
             frmVehicleCrud.Id = vehicle.Id;
@@ -74,13 +75,9 @@ namespace TransportReservationSystem.Rows
             //Set items to combobox.
             List<Category> categories = applicaitonDbContext.Categories.ToList();
 
-            foreach (var category in categories)
-            {
-                frmVehicleCrud.CbBoxCategory.DataSource = new BindingSource(categories, null);
-                frmVehicleCrud.CbBoxCategory.DisplayMember = "Name";
-                frmVehicleCrud.CbBoxCategory.ValueMember = "Id";
-            }
-
+            frmVehicleCrud.CbBoxCategory.DataSource = new BindingSource(categories, null);
+            frmVehicleCrud.CbBoxCategory.DisplayMember = "Name";
+            frmVehicleCrud.CbBoxCategory.ValueMember = "Id";
 
             frmVehicleCrud.Update = true;
 
@@ -108,15 +105,15 @@ namespace TransportReservationSystem.Rows
 
         private void toggleStatusVehicleToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id && x.LicensePlate == LicensePlate);
+            Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id && x.LicensePlate == LicensePlate)!;
 
-            Trip trips = applicaitonDbContext.Trips.FirstOrDefault(x => x.VehicleId == Id && !x.Done)!; 
+            Trip trips = applicaitonDbContext.Trips.FirstOrDefault(x => x.VehicleId == Id)!;
 
             if (trips != null)
             {
 
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                frmValidationDialog.showAlert("This Vehicle Has Trips Not Done Edit it firstly..!!", FrmValidationDialog.enmType.Error);
+                frmValidationDialog.showAlert(Constants.VehicleHasTripsMessageError, FrmValidationDialog.enmType.Error);
                 return;
             }
             else
@@ -157,5 +154,6 @@ namespace TransportReservationSystem.Rows
             frmShowTrips.StartPosition = FormStartPosition.CenterScreen;
             frmShowTrips.ShowDialog();
         }
+
     }
 }

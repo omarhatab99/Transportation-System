@@ -39,30 +39,27 @@ namespace TransportReservationSystem.Pages.Trips
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Station> stations = applicaitonDbContext.Stations.Where(x => !x.IsDeleted).ToList();
-            //driver set isAvailable true when done trip
-            foreach (var station in stations)
-            {
-                ComboBoxSource.DataSource = new BindingSource(stations, null);
-                ComboBoxSource.DisplayMember = "Name";
-                ComboBoxSource.ValueMember = "Id";
-            }
+            List<Station> stations = applicaitonDbContext.Stations.ToList();
+
+            ComboBoxSource.DataSource = new BindingSource(stations, null);
+            ComboBoxSource.DisplayMember = "Name";
+            ComboBoxSource.ValueMember = "Id";
         }
         public void changeDestinationComboBox()
         {
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Station> stations = applicaitonDbContext.Stations.Where(x => !x.IsDeleted).ToList();
+            List<Station> stations = applicaitonDbContext.Stations.ToList();
             //driver set isAvailable true when done trip
-            foreach (var station in stations)
-            {
-                ComboBoxDestination.DataSource = new BindingSource(stations, null);
-                ComboBoxDestination.DisplayMember = "Name";
-                ComboBoxDestination.ValueMember = "Id";
-            }
+            ComboBoxDestination.DataSource = new BindingSource(stations, null);
+            ComboBoxDestination.DisplayMember = "Name";
+            ComboBoxDestination.ValueMember = "Id";
 
-            ComboBoxDestination.SelectedIndex = 1;
+            if(ComboBoxDestination.Items.Count > 1)
+            {
+                ComboBoxDestination.SelectedIndex = 1;
+            }
         }
 
         private void FLBTrips_SizeChanged(object sender, EventArgs e)
@@ -87,13 +84,6 @@ namespace TransportReservationSystem.Pages.Trips
             FLBTrips_SizeChanged(sender, e);
 
         }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-
         private void ComboBoxSource_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (CustomCheckBoxAvailabelSearch.Checked)
@@ -126,7 +116,7 @@ namespace TransportReservationSystem.Pages.Trips
             var triptTimePicker = DateTimePicker_Trips.Value.ToShortDateString();
 
             List<Trip> trips = applicaitonDbContext.Trips.
-                Where(x => !x.IsDeleted && x.Source.Trim().ToUpper() == sourceName && x.Destination.Trim().ToUpper() == destinationName && !x.Done).ToList();
+                Where(x => !x.IsDeleted && x.Source.Trim().ToUpper() == sourceName && x.Destination.Trim().ToUpper() == destinationName).ToList();
 
 
             FLBTrips.Controls.Clear();
@@ -156,9 +146,10 @@ namespace TransportReservationSystem.Pages.Trips
         }
         private void GetAllData()
         {
-            List<Trip> tripList = applicaitonDbContext.Trips.Where(x => !x.IsDeleted).ToList();
 
+            DateTimePicker_Trips.Value = DateTime.Now;
 
+            List<Trip> tripList = applicaitonDbContext.Trips.ToList();
             List<TripVm> trips = tripList.Select(x => new TripVm
             {
                 Id = x.Id,
@@ -186,6 +177,8 @@ namespace TransportReservationSystem.Pages.Trips
                 uCTrip.Width = uCTrip.Width;
                 FLBTrips.Controls.Add(uCTrip);
             }
+
+
         }
 
         private void CustomCheckBoxAvailabelSearch_Click(object sender, EventArgs e)
@@ -209,9 +202,5 @@ namespace TransportReservationSystem.Pages.Trips
             }
         }
 
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

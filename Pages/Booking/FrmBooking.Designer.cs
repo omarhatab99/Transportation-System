@@ -55,16 +55,6 @@
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox5 = new PictureBox();
-            panel10 = new Panel();
-            ToggleReservationSearch = new CustomControls.RJControls.RJToggleButton();
-            label14 = new Label();
-            CBTrip = new ComboBox();
-            pictureBox4 = new PictureBox();
-            CBPassenger = new ComboBox();
-            label18 = new Label();
-            label19 = new Label();
-            pictureBox1 = new PictureBox();
-            textBox1 = new TextBox();
             pictureBox3 = new PictureBox();
             pictureBox2 = new PictureBox();
             label16 = new Label();
@@ -80,6 +70,16 @@
             label4 = new Label();
             label3 = new Label();
             label2 = new Label();
+            textBox1 = new TextBox();
+            pictureBox1 = new PictureBox();
+            label19 = new Label();
+            label18 = new Label();
+            CBPassenger = new ComboBox();
+            pictureBox4 = new PictureBox();
+            CBTrip = new ComboBox();
+            panel10 = new Panel();
+            label14 = new Label();
+            ToggleReservationSearch = new CustomControls.RJControls.RJToggleButton();
             panel2.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox12).BeginInit();
@@ -92,11 +92,11 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            panel10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel10.SuspendLayout();
             SuspendLayout();
             // 
             // panel2
@@ -436,124 +436,6 @@
             pictureBox5.TabIndex = 42;
             pictureBox5.TabStop = false;
             // 
-            // panel10
-            // 
-            panel10.BackColor = Color.FromArgb(224, 224, 224);
-            panel10.Controls.Add(ToggleReservationSearch);
-            panel10.Controls.Add(label14);
-            panel10.Controls.Add(CBTrip);
-            panel10.Controls.Add(pictureBox4);
-            panel10.Controls.Add(CBPassenger);
-            panel10.Controls.Add(label18);
-            panel10.Controls.Add(label19);
-            panel10.Controls.Add(pictureBox1);
-            panel10.Controls.Add(textBox1);
-            panel10.Location = new Point(3, 12);
-            panel10.Name = "panel10";
-            panel10.Size = new Size(954, 89);
-            panel10.TabIndex = 41;
-            panel10.Paint += panel10_Paint;
-            // 
-            // ToggleReservationSearch
-            // 
-            ToggleReservationSearch.AutoSize = true;
-            ToggleReservationSearch.Location = new Point(755, 37);
-            ToggleReservationSearch.MinimumSize = new Size(45, 22);
-            ToggleReservationSearch.Name = "ToggleReservationSearch";
-            ToggleReservationSearch.OffBackColor = Color.Gray;
-            ToggleReservationSearch.OffToggleColor = Color.Gainsboro;
-            ToggleReservationSearch.OnBackColor = Color.FromArgb(192, 0, 192);
-            ToggleReservationSearch.OnToggleColor = Color.WhiteSmoke;
-            ToggleReservationSearch.Size = new Size(45, 22);
-            ToggleReservationSearch.TabIndex = 45;
-            ToggleReservationSearch.UseVisualStyleBackColor = true;
-            ToggleReservationSearch.CheckedChanged += ToggleReservationSearch_CheckedChanged;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label14.ForeColor = Color.DimGray;
-            label14.Location = new Point(749, 4);
-            label14.Name = "label14";
-            label14.Size = new Size(81, 15);
-            label14.TabIndex = 44;
-            label14.Text = "Enable Search";
-            // 
-            // CBTrip
-            // 
-            CBTrip.FlatStyle = FlatStyle.Flat;
-            CBTrip.FormattingEnabled = true;
-            CBTrip.Location = new Point(242, 37);
-            CBTrip.Name = "CBTrip";
-            CBTrip.Size = new Size(185, 23);
-            CBTrip.TabIndex = 14;
-            CBTrip.SelectedIndexChanged += CBTrip_SelectedIndexChanged;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Image = Properties.Resources.General2;
-            pictureBox4.Location = new Point(233, 20);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(208, 57);
-            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox4.TabIndex = 41;
-            pictureBox4.TabStop = false;
-            // 
-            // CBPassenger
-            // 
-            CBPassenger.FlatStyle = FlatStyle.Flat;
-            CBPassenger.FormattingEnabled = true;
-            CBPassenger.Location = new Point(24, 37);
-            CBPassenger.Name = "CBPassenger";
-            CBPassenger.Size = new Size(185, 23);
-            CBPassenger.TabIndex = 13;
-            CBPassenger.SelectedIndexChanged += CBPassenger_SelectedIndexChanged;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label18.ForeColor = Color.DimGray;
-            label18.Location = new Point(236, 4);
-            label18.Name = "label18";
-            label18.Size = new Size(129, 15);
-            label18.TabIndex = 29;
-            label18.Text = "Select Trip For Booking";
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label19.ForeColor = Color.DimGray;
-            label19.Location = new Point(14, 4);
-            label19.Name = "label19";
-            label19.Size = new Size(95, 15);
-            label19.TabIndex = 28;
-            label19.Text = "Select Passenger";
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = Properties.Resources.General2;
-            pictureBox1.Location = new Point(15, 20);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(208, 57);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 38;
-            pictureBox1.TabStop = false;
-            // 
-            // textBox1
-            // 
-            textBox1.BackColor = Color.FromArgb(224, 224, 224);
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Enabled = false;
-            textBox1.Location = new Point(24, 24);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(216, 36);
-            textBox1.TabIndex = 37;
-            textBox1.UseWaitCursor = true;
-            // 
             // pictureBox3
             // 
             pictureBox3.Image = Properties.Resources.ReserveInput;
@@ -717,6 +599,123 @@
             label2.TabIndex = 8;
             label2.Text = "Trip Number";
             // 
+            // textBox1
+            // 
+            textBox1.BackColor = Color.FromArgb(224, 224, 224);
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Enabled = false;
+            textBox1.Location = new Point(24, 24);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(216, 36);
+            textBox1.TabIndex = 37;
+            textBox1.UseWaitCursor = true;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = Properties.Resources.General2;
+            pictureBox1.Location = new Point(15, 20);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(208, 57);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 38;
+            pictureBox1.TabStop = false;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label19.ForeColor = Color.DimGray;
+            label19.Location = new Point(14, 4);
+            label19.Name = "label19";
+            label19.Size = new Size(95, 15);
+            label19.TabIndex = 28;
+            label19.Text = "Select Passenger";
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label18.ForeColor = Color.DimGray;
+            label18.Location = new Point(236, 4);
+            label18.Name = "label18";
+            label18.Size = new Size(129, 15);
+            label18.TabIndex = 29;
+            label18.Text = "Select Trip For Booking";
+            // 
+            // CBPassenger
+            // 
+            CBPassenger.FlatStyle = FlatStyle.Flat;
+            CBPassenger.FormattingEnabled = true;
+            CBPassenger.Location = new Point(24, 37);
+            CBPassenger.Name = "CBPassenger";
+            CBPassenger.Size = new Size(185, 23);
+            CBPassenger.TabIndex = 13;
+            CBPassenger.SelectedIndexChanged += CBPassenger_SelectedIndexChanged;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Image = Properties.Resources.General2;
+            pictureBox4.Location = new Point(233, 20);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(208, 57);
+            pictureBox4.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox4.TabIndex = 41;
+            pictureBox4.TabStop = false;
+            // 
+            // CBTrip
+            // 
+            CBTrip.FlatStyle = FlatStyle.Flat;
+            CBTrip.FormattingEnabled = true;
+            CBTrip.Location = new Point(242, 37);
+            CBTrip.Name = "CBTrip";
+            CBTrip.Size = new Size(185, 23);
+            CBTrip.TabIndex = 14;
+            CBTrip.SelectedIndexChanged += CBTrip_SelectedIndexChanged;
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.FromArgb(224, 224, 224);
+            panel10.Controls.Add(ToggleReservationSearch);
+            panel10.Controls.Add(label14);
+            panel10.Controls.Add(CBTrip);
+            panel10.Controls.Add(pictureBox4);
+            panel10.Controls.Add(CBPassenger);
+            panel10.Controls.Add(label18);
+            panel10.Controls.Add(label19);
+            panel10.Controls.Add(pictureBox1);
+            panel10.Controls.Add(textBox1);
+            panel10.Location = new Point(3, 12);
+            panel10.Name = "panel10";
+            panel10.Size = new Size(954, 89);
+            panel10.TabIndex = 41;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            label14.ForeColor = Color.DimGray;
+            label14.Location = new Point(749, 4);
+            label14.Name = "label14";
+            label14.Size = new Size(81, 15);
+            label14.TabIndex = 44;
+            label14.Text = "Enable Search";
+            // 
+            // ToggleReservationSearch
+            // 
+            ToggleReservationSearch.AutoSize = true;
+            ToggleReservationSearch.Location = new Point(755, 37);
+            ToggleReservationSearch.MinimumSize = new Size(45, 22);
+            ToggleReservationSearch.Name = "ToggleReservationSearch";
+            ToggleReservationSearch.OffBackColor = Color.Gray;
+            ToggleReservationSearch.OffToggleColor = Color.Gainsboro;
+            ToggleReservationSearch.OnBackColor = Color.FromArgb(192, 0, 192);
+            ToggleReservationSearch.OnToggleColor = Color.WhiteSmoke;
+            ToggleReservationSearch.Size = new Size(45, 22);
+            ToggleReservationSearch.TabIndex = 45;
+            ToggleReservationSearch.UseVisualStyleBackColor = true;
+            ToggleReservationSearch.CheckedChanged += ToggleReservationSearch_CheckedChanged;
+            // 
             // FrmBooking
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -741,12 +740,12 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            panel10.ResumeLayout(false);
-            panel10.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -781,15 +780,6 @@
         private TextBox ArrivalInput;
         private TextBox DepatureInput;
         private TextBox TripNumberInput;
-        private Panel panel10;
-        private Label label14;
-        private ComboBox CBTrip;
-        private PictureBox pictureBox4;
-        private ComboBox CBPassenger;
-        private Label label18;
-        private Label label19;
-        private PictureBox pictureBox1;
-        private TextBox textBox1;
         private TextBox VehicleBrandInput;
         private TextBox VehicleModel;
         private TextBox VehicleNumberInput;
@@ -802,6 +792,15 @@
         private Panel panel1;
         private CustomControls.RJControls.RJButton ConfirmSeatsBtn;
         private CustomControls.RJControls.RJButton ConfirmReservationBtn;
+        private Panel panel10;
+        public ComboBox CBTrip;
+        private PictureBox pictureBox4;
+        public ComboBox CBPassenger;
+        private Label label18;
+        private Label label19;
+        private PictureBox pictureBox1;
+        private TextBox textBox1;
         public CustomControls.RJControls.RJToggleButton ToggleReservationSearch;
+        public Label label14;
     }
 }

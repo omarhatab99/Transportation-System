@@ -66,11 +66,6 @@ namespace TransportReservationSystem.Pages.Vehicles
             InitializeComponent();
         }
 
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
         private void FrmVehicleCrud_Load(object sender, EventArgs e)
         {
             List<Vehicle> vehicles = applicaitonDbContext.Vehicles.ToList();
@@ -103,17 +98,13 @@ namespace TransportReservationSystem.Pages.Vehicles
             //Set items to combobox.
             List<Category> categories = applicaitonDbContext.Categories.ToList();
 
-            foreach (var category in categories)
-            {
-                CbBoxCategory.DataSource = new BindingSource(categories, null);
-                CbBoxCategory.DisplayMember = "Name";
-                CbBoxCategory.ValueMember = "Id";
-                
-            }
+            CbBoxCategory.DataSource = new BindingSource(categories, null);
+            CbBoxCategory.DisplayMember = "Name";
+            CbBoxCategory.ValueMember = "Id";
 
-            if(Update == true)
+            if (Update == true)
             {
-                Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id);
+                Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id)!;
 
                 CbBoxCategory.SelectedIndex = categories.FindIndex(x => x.Id == vehicle.Category.Id);
 
@@ -125,10 +116,9 @@ namespace TransportReservationSystem.Pages.Vehicles
         private void SubmitVehicleForm_CreateBtn_Click(object sender, EventArgs e)
         {
 
-
             //Get Data From Form
             var category = CbBoxCategory.Items[CbBoxCategory.SelectedIndex] as Category;
-            var categoryId = (object)category.Id;
+            var categoryId = (object)category!.Id;
             string model = ModelTBOX.Text;
             string brand = BrandTBOX.Text;
             string colors = ColorsTBOX.Text;
@@ -167,7 +157,7 @@ namespace TransportReservationSystem.Pages.Vehicles
             {
                 //check if email not existed.
 
-                Vehicle isExisted = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.LicensePlate == licencePlate);
+                Vehicle isExisted = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.LicensePlate == licencePlate)!;
 
                 bool isValid = isExisted == null || isExisted.Id == Id;
 
@@ -180,7 +170,15 @@ namespace TransportReservationSystem.Pages.Vehicles
                         try
                         {
                             //Create Object From Driver
-                            Vehicle vehicle = applicaitonDbContext.Vehicles.Find(Id);
+                            Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id)!;
+                            Trip trip = applicaitonDbContext.Trips.FirstOrDefault(x => x.VehicleId == vehicle.Id)!;
+
+                            if(trip != null && trip.Reservations.Count > 0 && vehicle?.CategoryId != vehicleVm.CategoryId)
+                            {
+                                FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                                frmValidationDialog.showAlert("Vehicle Has Trip with Reservation Cant Change Category ..!!", FrmValidationDialog.enmType.Error);
+                                return;
+                            }
 
                             if (vehicle != null)
                             {
@@ -190,8 +188,8 @@ namespace TransportReservationSystem.Pages.Vehicles
                                 vehicle.Model = vehicleVm.Model;
                                 vehicle.Brand = vehicleVm.Brand;
                                 vehicle.Year = (int)vehicleVm.Year;
-                                vehicle.UpdatedAt = new DateTime();
-
+                                vehicle.Color = vehicleVm.Color;
+                                vehicle.UpdatedAt = DateTime.Now;
 
 
                                 //Save Object in Database.
@@ -211,6 +209,7 @@ namespace TransportReservationSystem.Pages.Vehicles
                             {
                                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                                 frmValidationDialog.showAlert("Something is wrong try again..!!", FrmValidationDialog.enmType.Error);
+                                return;
                             }
 
 
@@ -220,6 +219,7 @@ namespace TransportReservationSystem.Pages.Vehicles
 
                             FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                             frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
+                            return;
                         }
 
                     }
@@ -262,17 +262,16 @@ namespace TransportReservationSystem.Pages.Vehicles
 
                             FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                             frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
+                            return;
                         }
 
                     }
-
-
-
                 }
                 else
                 {
                     FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                    frmValidationDialog.showAlert("Email or Licence or Phone is already Existed", FrmValidationDialog.enmType.Error);
+                    frmValidationDialog.showAlert("This License is already Existed", FrmValidationDialog.enmType.Error);
+                    return;
                 }
 
 
@@ -281,6 +280,7 @@ namespace TransportReservationSystem.Pages.Vehicles
             {
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert(validationResult.MessageError, FrmValidationDialog.enmType.Warning);
+                return;
             }
         }
 
@@ -304,8 +304,9 @@ namespace TransportReservationSystem.Pages.Vehicles
 
             if (Update)
             {
-                Vehicle vehicle = applicaitonDbContext.Vehicles.Find(id);
+                Vehicle vehicle = applicaitonDbContext.Vehicles.FirstOrDefault(x => x.Id == Id)!;
                 List<Category> categories = applicaitonDbContext.Categories.ToList();
+
                 if (vehicle != null)
                 {
                     Id = (int)id;
@@ -317,7 +318,10 @@ namespace TransportReservationSystem.Pages.Vehicles
 
                     CbBoxCategory.SelectedIndex = categories.FindIndex(x => x.Id == vehicle.Category.Id);
                 }
+                else
                 {
+                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                    frmValidationDialog.showAlert("Something is wrong try again..!!", FrmValidationDialog.enmType.Error);
                     return;
                 }
 

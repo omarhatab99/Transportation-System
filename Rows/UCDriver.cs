@@ -24,6 +24,7 @@ namespace TransportReservationSystem.Rows
         }
 
         public int Id { get; set; }
+        public string Email { get; set; }
 
         public string License
         {
@@ -35,11 +36,6 @@ namespace TransportReservationSystem.Rows
         {
             get { return LblUsername.Text; }
             set { LblUsername.Text = value; }
-        }
-        public string Email
-        {
-            get { return LblEmail.Text; }
-            set { LblEmail.Text = value; }
         }
         public string Phone
         {
@@ -64,7 +60,7 @@ namespace TransportReservationSystem.Rows
         private void EditBtn_Click(object sender, EventArgs e)
         {
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
-            Driver driver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.License == Convert.ToInt64(License) && x.Email == Email);
+            Driver driver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.License == Convert.ToInt64(License))!;
 
             FrmDriverCrud frmDriverCrud = new FrmDriverCrud();
             frmDriverCrud.Id = driver.Id;

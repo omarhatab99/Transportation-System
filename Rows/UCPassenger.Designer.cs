@@ -179,7 +179,7 @@
             EditBtn.FlatAppearance.BorderSize = 0;
             EditBtn.FlatStyle = FlatStyle.Flat;
             EditBtn.ForeColor = Color.White;
-            EditBtn.Location = new Point(21, 9);
+            EditBtn.Location = new Point(38, 9);
             EditBtn.Name = "EditBtn";
             EditBtn.Size = new Size(56, 25);
             EditBtn.TabIndex = 1;
@@ -198,13 +198,14 @@
             DeleteBtn.FlatAppearance.BorderSize = 0;
             DeleteBtn.FlatStyle = FlatStyle.Flat;
             DeleteBtn.ForeColor = Color.White;
-            DeleteBtn.Location = new Point(83, 9);
+            DeleteBtn.Location = new Point(100, 9);
             DeleteBtn.Name = "DeleteBtn";
             DeleteBtn.Size = new Size(56, 25);
             DeleteBtn.TabIndex = 0;
             DeleteBtn.Text = "Delete";
             DeleteBtn.TextColor = Color.White;
             DeleteBtn.UseVisualStyleBackColor = false;
+            DeleteBtn.Click += DeleteBtn_Click;
             // 
             // UCPassenger
             // 

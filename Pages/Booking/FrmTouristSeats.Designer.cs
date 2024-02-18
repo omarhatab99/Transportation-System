@@ -30,10 +30,10 @@
         {
             panel1 = new Panel();
             panel3 = new Panel();
-            label6 = new Label();
+            AvailableSeatsLBL = new Label();
             label4 = new Label();
             panel2 = new Panel();
-            label5 = new Label();
+            CapacityLbl = new Label();
             label1 = new Label();
             TripNumberInput = new TextBox();
             PassengerNameInput = new TextBox();
@@ -63,6 +63,7 @@
             label7 = new Label();
             rjButton2 = new CustomControls.RJControls.RJButton();
             rjButton1 = new CustomControls.RJControls.RJButton();
+            ConfirmSeatsBtn = new CustomControls.RJControls.RJButton();
             panel1.SuspendLayout();
             panel3.SuspendLayout();
             panel2.SuspendLayout();
@@ -89,23 +90,23 @@
             // panel3
             // 
             panel3.BackColor = Color.FromArgb(224, 224, 224);
-            panel3.Controls.Add(label6);
+            panel3.Controls.Add(AvailableSeatsLBL);
             panel3.Controls.Add(label4);
             panel3.Location = new Point(785, 14);
             panel3.Name = "panel3";
             panel3.Size = new Size(128, 82);
             panel3.TabIndex = 52;
             // 
-            // label6
+            // AvailableSeatsLBL
             // 
-            label6.AutoSize = true;
-            label6.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label6.ForeColor = Color.FromArgb(192, 0, 0);
-            label6.Location = new Point(40, 31);
-            label6.Name = "label6";
-            label6.Size = new Size(42, 32);
-            label6.TabIndex = 2;
-            label6.Text = "30";
+            AvailableSeatsLBL.AutoSize = true;
+            AvailableSeatsLBL.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            AvailableSeatsLBL.ForeColor = Color.FromArgb(192, 0, 0);
+            AvailableSeatsLBL.Location = new Point(40, 31);
+            AvailableSeatsLBL.Name = "AvailableSeatsLBL";
+            AvailableSeatsLBL.Size = new Size(42, 32);
+            AvailableSeatsLBL.TabIndex = 2;
+            AvailableSeatsLBL.Text = "30";
             // 
             // label4
             // 
@@ -121,23 +122,23 @@
             // panel2
             // 
             panel2.BackColor = Color.FromArgb(224, 224, 224);
-            panel2.Controls.Add(label5);
+            panel2.Controls.Add(CapacityLbl);
             panel2.Controls.Add(label1);
             panel2.Location = new Point(633, 14);
             panel2.Name = "panel2";
             panel2.Size = new Size(128, 82);
             panel2.TabIndex = 51;
             // 
-            // label5
+            // CapacityLbl
             // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            label5.ForeColor = Color.Green;
-            label5.Location = new Point(47, 31);
-            label5.Name = "label5";
-            label5.Size = new Size(28, 32);
-            label5.TabIndex = 1;
-            label5.Text = "5";
+            CapacityLbl.AutoSize = true;
+            CapacityLbl.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            CapacityLbl.ForeColor = Color.Green;
+            CapacityLbl.Location = new Point(47, 31);
+            CapacityLbl.Name = "CapacityLbl";
+            CapacityLbl.Size = new Size(28, 32);
+            CapacityLbl.TabIndex = 1;
+            CapacityLbl.Text = "5";
             // 
             // label1
             // 
@@ -492,7 +493,6 @@
             S2.Text = "S2";
             S2.TextColor = Color.White;
             S2.UseVisualStyleBackColor = false;
-            S2.Click += S2_Click;
             // 
             // S1
             // 
@@ -609,12 +609,34 @@
             rjButton1.TextColor = Color.White;
             rjButton1.UseVisualStyleBackColor = false;
             // 
+            // ConfirmSeatsBtn
+            // 
+            ConfirmSeatsBtn.BackColor = Color.DarkOrchid;
+            ConfirmSeatsBtn.BackgroundColor = Color.DarkOrchid;
+            ConfirmSeatsBtn.BorderColor = Color.PaleVioletRed;
+            ConfirmSeatsBtn.BorderRadius = 5;
+            ConfirmSeatsBtn.BorderSize = 0;
+            ConfirmSeatsBtn.Cursor = Cursors.Hand;
+            ConfirmSeatsBtn.FlatAppearance.BorderSize = 0;
+            ConfirmSeatsBtn.FlatStyle = FlatStyle.Flat;
+            ConfirmSeatsBtn.Font = new Font("Segoe UI Semibold", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            ConfirmSeatsBtn.ForeColor = Color.White;
+            ConfirmSeatsBtn.Location = new Point(646, 522);
+            ConfirmSeatsBtn.Name = "ConfirmSeatsBtn";
+            ConfirmSeatsBtn.Size = new Size(150, 40);
+            ConfirmSeatsBtn.TabIndex = 170;
+            ConfirmSeatsBtn.Text = "Save";
+            ConfirmSeatsBtn.TextColor = Color.White;
+            ConfirmSeatsBtn.UseVisualStyleBackColor = false;
+            ConfirmSeatsBtn.Click += ConfirmSeatsBtn_Click;
+            // 
             // FrmTouristSeats
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MintCream;
             ClientSize = new Size(944, 574);
+            Controls.Add(ConfirmSeatsBtn);
             Controls.Add(label8);
             Controls.Add(label7);
             Controls.Add(rjButton2);
@@ -641,6 +663,7 @@
             Name = "FrmTouristSeats";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmSeats3";
+            Load += FrmTouristSeats_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             panel3.ResumeLayout(false);
@@ -657,10 +680,10 @@
 
         private Panel panel1;
         private Panel panel3;
-        private Label label6;
+        private Label AvailableSeatsLBL;
         private Label label4;
         private Panel panel2;
-        private Label label5;
+        private Label CapacityLbl;
         private Label label1;
         private TextBox TripNumberInput;
         private TextBox PassengerNameInput;
@@ -690,5 +713,6 @@
         private Label label7;
         private CustomControls.RJControls.RJButton rjButton2;
         private CustomControls.RJControls.RJButton rjButton1;
+        public CustomControls.RJControls.RJButton ConfirmSeatsBtn;
     }
 }

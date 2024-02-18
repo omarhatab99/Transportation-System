@@ -15,6 +15,10 @@ namespace TransportReservationSystem.Core.Constants
             
         }
 
+        public static string DriverHasTripsMessageError = "This Driver has Trips Please Edit or Remove it Firstly..!!";
+        public static string VehicleHasTripsMessageError = "This Vehicle has Trips Please Edit or Remove it Firstly..!!";
+        public static string HasReservationsMessageError = "This Trip has Reservations Please Remove it Firstly..!!";
+
         public static ValidationResult AuthenticationValidation(string email , string password)
         {
             ValidationResult validationResult = new ValidationResult();
@@ -63,7 +67,7 @@ namespace TransportReservationSystem.Core.Constants
         STAFF = 4
     }
 
-    public enum Reservation
+    public enum Reservations
     {
         ONGOING = 1,
         CANCELATION = 2,

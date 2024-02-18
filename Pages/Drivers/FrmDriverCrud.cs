@@ -13,7 +13,6 @@ using TransportReservationSystem.Core.Models;
 using TransportReservationSystem.Core.ViewModels;
 using TransportReservationSystem.Data.Context;
 using TransportReservationSystem.Dialog;
-using TransportReservationSystem.Core.Constants;
 using ValidationResult = TransportReservationSystem.Core.Constants.ValidationResult;
 
 namespace TransportReservationSystem.Pages
@@ -75,6 +74,7 @@ namespace TransportReservationSystem.Pages
                 Phone = x.Phone,
                 Salary = x.Salary,
                 HasBouns = x.HasBouns,
+                Role = x.Role,
                 CurrentStation = x.CurrentStation,
                 Trips = x.Trips?.Count(),
                 Maintenances = x.Maintenances?.Count(),
@@ -133,22 +133,43 @@ namespace TransportReservationSystem.Pages
             ValidationResult validationResult = Validation.DriverValidation(driverVm);
             if (validationResult.IsValid)
             {
-                //check if email not existed.
 
-                Driver isExisted = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Email == email || x.License == licence || x.Phone == phone);
-
-                bool isValid = isExisted == null || isExisted.Id == Id;
-
-                if (isValid)
+                //check updated
+                if (Update) //update
                 {
 
-                    //check updated
-                    if (Update) //update
+                    //check if email not existed.
+
+                    bool isValid = false;
+
+                    if (applicaitonDbContext.Drivers.Any(x => x.Email == driverVm.Email && x.Id != Id))
                     {
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert("This Email is Already Existed..!!", FrmValidationDialog.enmType.Error);
+                        isValid = false;
+                        return;
+                    }
+                    else if (applicaitonDbContext.Drivers.Any(x => x.License == driverVm.License && x.Id != Id))
+                    {
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert("This License is Already Existed..!!", FrmValidationDialog.enmType.Error);
+                        isValid = false;
+                        return;
+                    }
+                    else if (applicaitonDbContext.Drivers.Any(x => x.Phone == driverVm.Phone && x.Id != Id))
+                    {
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert("This Phone is Already Existed..!!", FrmValidationDialog.enmType.Error);
+                        isValid = false;
+                        return;
+                    }
+                    else
+                    {
+                        isValid = true;
                         try
                         {
-                            //Create Object From Driver
-                            Driver driver = applicaitonDbContext.Drivers.Find(Id);
+                            //Get Object Of Updated Driver
+                            Driver driver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == Id)!;
 
                             if (driver != null)
                             {
@@ -160,7 +181,7 @@ namespace TransportReservationSystem.Pages
                                 driver.Password = driverVm.Password;
                                 driver.Salary = (decimal)driverVm.Salary;
                                 driver.Role = Role.DRIVER.ToString();
-                                driver.UpdatedAt = new DateTime();
+                                driver.UpdatedAt = DateTime.Now;
 
 
                                 //Save Object in Database.
@@ -190,14 +211,27 @@ namespace TransportReservationSystem.Pages
                             FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                             frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
                         }
-
                     }
-                    else
-                    { //create
 
-                        try
+
+
+
+                }
+                else
+                { //create
+
+                    try
+                    {
+
+                        Driver exDriver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Email == driverVm.Email || x.Phone == driverVm.Phone || x.License == driverVm.License)!;
+                        if(exDriver != null)
                         {
-
+                            FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                            frmValidationDialog.showAlert("This Email or Phone or License is Already Existed..!!", FrmValidationDialog.enmType.Error);
+                            return;
+                        }
+                        else
+                        {
                             //Create Object From Driver
                             Driver driver = new Driver
                             {
@@ -222,24 +256,16 @@ namespace TransportReservationSystem.Pages
                             FrmDrivers frmDrivers = new FrmDrivers();
                             LoadForm(frmDrivers);
                         }
-                        catch (Exception ex)
-                        {
+                       
+                    }
+                    catch (Exception ex)
+                    {
 
-                            FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                            frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
-                        }
-
+                        FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                        frmValidationDialog.showAlert(ex.Message, FrmValidationDialog.enmType.Error);
                     }
 
-
-
                 }
-                else
-                {
-                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                    frmValidationDialog.showAlert("Email or Licence or Phone is already Existed", FrmValidationDialog.enmType.Error);
-                }
-
 
             }
             else
@@ -247,11 +273,6 @@ namespace TransportReservationSystem.Pages
                 FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
                 frmValidationDialog.showAlert(validationResult.MessageError, FrmValidationDialog.enmType.Warning);
             }
-        }
-
-        private void panel5_Paint(object sender, PaintEventArgs e)
-        {
-
         }
 
         public void LoadForm(Form applicationForm)
@@ -273,7 +294,7 @@ namespace TransportReservationSystem.Pages
             
             if(Update)
             {
-                Driver driver = applicaitonDbContext.Drivers.Find(id);
+                Driver driver = applicaitonDbContext.Drivers.FirstOrDefault(x => x.Id == Id)!;
 
                 if(driver != null)
                 {
@@ -285,12 +306,16 @@ namespace TransportReservationSystem.Pages
                     Password = driver.Password;
                     Salary = (decimal)driver.Salary;
                 }
+                else
                 {
+                    FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
+                    frmValidationDialog.showAlert("Something is wrong try again..!!", FrmValidationDialog.enmType.Error);
                     return;
                 }
 
 
-            }else
+            }
+            else
             {
                 return;
             }

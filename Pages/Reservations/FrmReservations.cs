@@ -66,7 +66,7 @@ namespace TransportReservationSystem
             ApplicaitonDbContext applicaitonDbContext = new ApplicaitonDbContext();
 
             //Set items to combobox for vehicle.
-            List<Trip> trips = applicaitonDbContext.Trips.Where(x => !x.IsDeleted && x.AvailableSeats > 0 && !x.Done).ToList();
+            List<Trip> trips = applicaitonDbContext.Trips.ToList();
             //driver set isAvailable true when done trip
             ComboBoxTripNo.DataSource = new BindingSource(trips, null);
             ComboBoxTripNo.DisplayMember = "TripNo";
@@ -100,6 +100,8 @@ namespace TransportReservationSystem
 
             List<ReservationVm> reservations = reservationList.Select(x => new ReservationVm
             {
+                TripId = x.TripId,
+                ReservationId = x.Id,
                 TripNo = applicaitonDbContext.Trips.FirstOrDefault(m => m.Id == x.TripId).TripNo,
                 PassengerName = x.Passenger.Username,
                 NumberOfSeats = x.Seats.Count,
@@ -114,7 +116,10 @@ namespace TransportReservationSystem
             foreach (var reservation in reservations)
             {
                 UCReservation uCReservation = new UCReservation();
+                uCReservation.Id = reservation.TripId;
+                uCReservation.ReservationId = reservation.ReservationId;
                 uCReservation.TripNo = reservation.TripNo;
+                uCReservation.PassengerName = reservation.PassengerName;
                 uCReservation.NOOFSeat = reservation.NumberOfSeats.ToString();
                 uCReservation.TotalCost = reservation.TotalCost.ToString();
                 uCReservation.Status = (reservation.Status) ? "Available" : "Cancellation";
@@ -161,6 +166,7 @@ namespace TransportReservationSystem
                 UCReservation uCReservation = new UCReservation();
                 uCReservation.Id = reservation.TripId;
                 uCReservation.ReservationId = reservation.ReservationId;
+                uCReservation.PassengerName = reservation.PassengerName;
                 uCReservation.TripNo = reservation.TripNo;
                 uCReservation.NOOFSeat = reservation.NumberOfSeats.ToString();
                 uCReservation.TotalCost = reservation.TotalCost.ToString();

@@ -69,19 +69,140 @@ namespace TransportReservationSystem.Rows
             }
             else if (trip.Reservations.Count > 0)
             {
-                FrmValidationDialog frmValidationDialog = new FrmValidationDialog();
-                frmValidationDialog.showAlert("Cant Edit Trip Has Reservation..!!", FrmValidationDialog.enmType.Warning);
-                return;
+                
+                //Check if Trip HomaAndAway
+                if(trip.HomeAndAway > 0)
+                {
+                    //GET First Trip And Second Trip
+                    Trip homeAndAway = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == trip.HomeAndAway)!;
+
+                    //Check First Trip or Second Trip
+                    DateTime hADate = DateTime.Parse(homeAndAway.DepatureDate.ToString());
+
+
+                    if (hADate > date1) // Trip is First
+                    {
+
+                        FrmTripCrud frmTripCrud = new FrmTripCrud();
+                        frmTripCrud.CBSource.Enabled = false;
+                        frmTripCrud.CBDestination.Enabled = false;
+                        frmTripCrud.CBVehicle.Enabled = false;
+                        frmTripCrud.DateTimePicker_Depature.Enabled = false;
+                        frmTripCrud.DateTimePicker_Arrival.Enabled = false;
+                        frmTripCrud.Id = trip.Id;
+                        frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                        frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                        frmTripCrud.Update = true;
+                        frmTripCrud.ShowDialog();
+
+                    }
+                    else //Trip is Second
+                    {
+                        FrmTripCrud frmTripCrud = new FrmTripCrud();
+                        frmTripCrud.CBSource.Enabled = false;
+                        frmTripCrud.CBDestination.Enabled = false;
+                        frmTripCrud.CBVehicle.Enabled = false;
+                        frmTripCrud.CBDriver.Enabled = false;
+                        frmTripCrud.DateTimePicker_Depature.Enabled = false;
+                        frmTripCrud.DateTimePicker_Arrival.Enabled = false;
+                        frmTripCrud.Id = trip.Id;
+                        frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                        frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                        frmTripCrud.Update = true;
+                        frmTripCrud.ShowDialog();
+                    }
+
+                }
+                else
+                {
+                    FrmTripCrud frmTripCrud = new FrmTripCrud();
+                    frmTripCrud.CBSource.Enabled = false;
+                    frmTripCrud.CBDestination.Enabled = false;
+                    frmTripCrud.CBVehicle.Enabled = false;
+                    frmTripCrud.DateTimePicker_Depature.Enabled = false;
+                    frmTripCrud.DateTimePicker_Arrival.Enabled = false;
+                    frmTripCrud.Id = trip.Id;
+                    frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                    frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                    frmTripCrud.Update = true;
+                    frmTripCrud.ShowDialog();
+                }
+
             }
             else
             {
-                FrmTripCrud frmTripCrud = new FrmTripCrud();
-                frmTripCrud.Id = trip.Id;
-                frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
-                frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
 
-                frmTripCrud.Update = true;
-                frmTripCrud.ShowDialog();
+                if (trip.HomeAndAway > 0) //Double Trip
+                {
+                    //GET First Trip And Second Trip
+                    Trip homeAndAway = applicaitonDbContext.Trips.FirstOrDefault(x => x.Id == trip.HomeAndAway)!;
+
+                    //Check First Trip or Second Trip
+                    DateTime hADate = DateTime.Parse(homeAndAway.DepatureDate.ToString());
+
+                    if (hADate > date1) // Trip is First
+                    {
+
+                        if (homeAndAway.Reservations.Count > 0)
+                        {
+                            FrmTripCrud frmTripCrud = new FrmTripCrud();
+                            frmTripCrud.CBSource.Enabled = false;
+                            frmTripCrud.CBDestination.Enabled = false;
+                            frmTripCrud.CBVehicle.Enabled = false;
+                            frmTripCrud.CBDriver.Enabled = true;
+                            frmTripCrud.DateTimePicker_Depature.Enabled = false;
+                            frmTripCrud.DateTimePicker_Arrival.Enabled = false;
+                            frmTripCrud.Id = trip.Id;
+                            frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                            frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                            frmTripCrud.Update = true;
+                            frmTripCrud.ShowDialog();
+                        }
+                        else
+                        {
+                            FrmTripCrud frmTripCrud = new FrmTripCrud();
+                            frmTripCrud.Id = trip.Id;
+                            frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                            frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                            frmTripCrud.Update = true;
+                            frmTripCrud.ShowDialog();
+                        }
+
+                    }
+                    else //Trip is Second
+                    {
+                        FrmTripCrud frmTripCrud = new FrmTripCrud();
+                        frmTripCrud.CBSource.Enabled = false;
+                        frmTripCrud.CBDestination.Enabled = false;
+                        frmTripCrud.CBVehicle.Enabled = false;
+                        frmTripCrud.CBDriver.Enabled = false;
+                        frmTripCrud.DateTimePicker_Depature.Enabled = true;
+                        frmTripCrud.DateTimePicker_Arrival.Enabled = true;
+                        frmTripCrud.Id = trip.Id;
+                        frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                        frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                        frmTripCrud.Update = true;
+                        frmTripCrud.ShowDialog();
+                    }
+
+                }
+                else //Single Trip
+                {
+
+                    FrmTripCrud frmTripCrud = new FrmTripCrud();
+                    frmTripCrud.Id = trip.Id;
+                    frmTripCrud.SubmitTripForm_CreateBtn.BackColor = Color.Orange;
+                    frmTripCrud.SubmitTripForm_CreateBtn.Text = "Edit";
+
+                    frmTripCrud.Update = true;
+                    frmTripCrud.ShowDialog();
+                }
 
             }
 
